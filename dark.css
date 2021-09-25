@@ -10,7 +10,8 @@ body {
 }
 
 header { 
-  background: url('assets/DSC04805.jpg') center center fixed;
+  background: url('./assets/DSC04805.JPG');
+  background: center center fixed;
   background-size: cover;
   position: relative;
 }
