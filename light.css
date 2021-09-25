@@ -10,11 +10,7 @@ body {
 }
 
 header { 
-<<<<<<< HEAD
-  background-image: url("./assets/IMG_7031.jpg");
-=======
-  background-image: url("https://github.com/Klem35/klem35.github.io/tree/master/assets/IMG_7031.JPG");
->>>>>>> 096effa8c0f92773e5799028d529337de163d58a
+  background-image: url("assets/IMG_7031.JPG");
   background: center center fixed;
   background-size: cover;
   position: relative;
