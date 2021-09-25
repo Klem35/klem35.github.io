@@ -1,0 +1,472 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(240, 240, 240);
+  font-family: 'Rajdhani', sans-serif;
+  color: rgb(41,51,58);
+}
+
+header { 
+  background: url('assets/IMG_7031.jpg') center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+#home {
+  display: flex;
+  justify-content: space-between;
+  transition: all 3s ease;
+  padding: 0 5%;
+}
+
+h1 {
+  width: 40%;
+  position: relative;
+  font-family:'Open Sans', sans-serif;
+  color: rgb(41,51,58);
+  font-size: 2em;
+  align-self: center;
+}
+
+h1 span {
+  color: rgb(14, 194, 146);
+}
+
+.bracket {
+  color: rgb(240, 240, 240);
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 25%;
+  margin: 0 5%;
+}
+
+a.fromLeft {
+  text-align: center;
+  vertical-align: middle;
+  color: rgb(41,51,58);
+  font-weight: bold;
+  padding: .5em .5em;
+  text-decoration: none;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+a.fromLeft:hover {
+  color: rgb(14, 194, 146);
+  border-bottom: solid 3px rgb(41,51,58);
+  transition: transform 250ms ease-in-out;
+}
+
+.bottomButton {
+  display: flex;
+  justify-content: flex-end;
+  margin:0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.links {
+  color: rgb(41,51,58);
+  text-decoration: underline;
+}
+
+.links:hover {
+  color: rgb(14, 194, 146);
+}
+
+#download {
+  width: 20px;
+  height: 20px;
+}
+
+button {
+  color:rgb(240, 240, 240);
+  display: flex;
+  align-items: center;
+  margin: 2em;
+  padding: .5em;
+  background-color: rgb(14, 194, 146);
+  border-radius: 10px;
+  box-shadow: none;
+  border:solid 1px rgb(14, 194, 146);
+  font-family: 'Rajdhani', sans-serif;
+}
+
+button:hover {
+  background-color: rgb(41,51,58);
+  color:rgb(14, 194, 146);
+  transition: all .5s ease;
+  border: solid 1px rgb(14, 194, 146);
+}
+
+.dropbtn {
+  color: rgb(240, 240, 240);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(240, 240, 240);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: rgb(41,51,58);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: rgb(218, 218, 218)
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#pic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10% 0;
+  text-align: center;
+}
+
+.crop {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+  border: solid 3px rgb(14, 194, 146);
+  margin: 2em 0 0 0;
+}
+
+#home:hover {
+  background-color: rgb(240, 240, 240);
+  transition: all .5s ease;
+}
+
+h2 {
+  text-align: left;
+  padding: 0 5%;
+  margin: 1em;
+}
+
+h2 span{
+  font-family: 'Rajdhani', sans-serif;
+  display: inline;
+  background-image: linear-gradient(rgb(240, 240, 240) 60%, rgb(14, 194, 146) 55%);
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  margin: 5%;
+  border-radius: 1em;
+  padding: 3%;
+  text-align: justify;
+  background-color: white;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.12), 
+              2px 2px 2px rgba(0,0,0,0.12), 
+              4px 4px 4px rgba(0,0,0,0.12), 
+              8px 8px 8px rgba(0,0,0,0.12),
+              16px 16px 16px rgba(0,0,0,0.12);
+}
+
+.oneCol {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1em;
+  padding: 3%;
+  margin: 5%;
+  justify-content:flex-start;
+  text-align: justify;
+  background-color: white;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.12), 
+              2px 2px 2px rgba(0,0,0,0.12), 
+              4px 4px 4px rgba(0,0,0,0.12), 
+              8px 8px 8px rgba(0,0,0,0.12),
+              16px 16px 16px rgba(0,0,0,0.12);
+}
+
+.twoCol {
+  display: flex;
+  flex-direction: row;
+  margin: 5%;
+  border-radius: 1em;
+  justify-content:space-between;
+  text-align: justify;
+}
+
+.col {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1em;
+  padding: 3%;
+  justify-content:flex-start;
+  text-align: justify;
+  background-color: white;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.12), 
+              2px 2px 2px rgba(0,0,0,0.12), 
+              4px 4px 4px rgba(0,0,0,0.12), 
+              8px 8px 8px rgba(0,0,0,0.12),
+              16px 16px 16px rgba(0,0,0,0.12);
+}
+
+
+.ref {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  align-items: flex-start;
+}
+
+div {
+  display: flex;
+  align-items: center;
+  padding: .5em;
+}
+
+.attribute {
+  display: flex;
+  justify-content: flex-start;
+  width: 30%;
+  color:rgb(14, 194, 146);
+  font-weight: bold;
+}
+
+.value {
+  display: flex;
+  justify-content:flex-start;
+  width: 70%;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.container2 {
+  width: 100%;
+  background-color: #ddd; /* Grey background */
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+}
+
+.skill {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  height: 2em;
+}
+
+.skillName {
+  width: 50%;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+.skillBar {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.container {
+  width: 100%;
+  background-color: #ddd; /* Grey background */
+  padding: 0;
+  margin: 0;
+  border-radius: 5px;
+}
+
+.skills {
+  text-align: right;
+  padding: 0 10px;
+  color: white;
+}
+
+.autocad {
+  padding: 0;
+  margin: 0;
+  width: 90%;
+  background-color: rgb(14, 194, 146);
+  border-radius: 5px;
+  justify-content: end;
+}
+
+.catia {
+  padding: 0;
+  margin: 0;
+  width: 65%;
+  background-color: rgb(14, 194, 146);
+  border-radius: 5px;
+  justify-content: end;
+}
+
+.matlab {
+  padding: 0;
+  margin: 0;
+  width: 55%;
+  background-color: rgb(14, 194, 146);
+  border-radius: 5px;
+  justify-content: end;
+}
+
+.modeFrontier {
+  padding: 0;
+  margin: 0;
+  width: 60%;
+  background-color: rgb(14, 194, 146);
+  border-radius: 5px;
+  justify-content: end;
+}
+
+.msc {
+  padding: 0;
+  margin: 0;
+  width: 60%;
+  background-color: rgb(14, 194, 146);
+  border-radius: 5px;
+  justify-content: end;
+}
+
+.html {
+  padding: 0;
+  margin: 0;
+  width: 70%;
+  background-color: rgb(14, 194, 146);
+  border-radius: 5px;
+  justify-content: end;
+}
+
+.css {
+  padding: 0;
+  margin: 0;
+  width: 55%;
+  background-color: rgb(14, 194, 146);
+  border-radius: 5px;
+  justify-content: end;
+}
+
+.js {
+  padding: 0;
+  margin: 0;
+  width: 17%;
+  background-color: rgb(14, 194, 146);
+  border-radius: 5px;
+  justify-content: end;
+}
+
+.msOffice {
+  padding: 0;
+  margin: 0;
+  width: 90%;
+  background-color: rgb(14, 194, 146);
+  border-radius: 5px;
+  justify-content: end;
+}
+
+.french {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background-color: rgb(14, 194, 146);
+  border-radius: 5px;
+  justify-content: end;
+}
+
+.english {
+  padding: 0;
+  margin: 0;
+  width: 90%;
+  background-color: rgb(14, 194, 146);
+  border-radius: 5px;
+  justify-content: end;
+}
+
+.hungarian {
+  padding: 0;
+  margin: 0;
+  width: 30%;
+  background-color: rgb(14, 194, 146);
+  border-radius: 5px;
+  justify-content: end;
+}
+
+.spanish {
+  padding: 0;
+  margin: 0;
+  width: 20%;
+  background-color: rgb(14, 194, 146);
+  border-radius: 5px;
+  justify-content: end;
+}
+
+.col > article {
+  text-align: center;
+  padding: .5em 0;
+}
+
+.topic {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon {
+  height: 2em;
+  padding: 0 1em;
+  color:rgb(14, 194, 146);
+}
+
+.bigIcon {
+  height: 40px;
+}
+
+.iconSite {
+  padding: 0 1em 0 0;
+  color:rgb(14, 194, 146);
+}
+
+.proExp {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    border-radius: 1em;
+    padding: 3%;
+    text-align: justify;
+    background-color: white;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.12), 
+                2px 2px 2px rgba(0,0,0,0.12), 
+                4px 4px 4px rgba(0,0,0,0.12), 
+                8px 8px 8px rgba(0,0,0,0.12),
+                16px 16px 16px rgba(0,0,0,0.12);
+  }
+
+
+
