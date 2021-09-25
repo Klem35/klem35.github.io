@@ -10,11 +10,7 @@ body {
 }
 
 header { 
-<<<<<<< HEAD
-  background: url('assets/IMG_7031.jpg') center center fixed;
-=======
   background: url("./assets/IMG_7031.JPG") center center fixed;
->>>>>>> bd0af58c4ded995bb7b8ac6a255ed200ffa8813c
   background-size: cover;
   position: relative;
 }
