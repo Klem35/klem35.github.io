@@ -1,0 +1,286 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/*==================== VARIABLES CSS ====================*/
+:root {
+  --header-height: 3rem;
+
+  /*========== Colors ==========*/
+  /* Change favorite color */
+  --hue-color: 160; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+
+  /* HSL color mode */
+  --main-text-color: black;
+  --first-color: hsl(var(--hue-color), 69%, 61%);
+  --first-color-second: hsl(var(--hue-color), 69%, 61%);
+  --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+  --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+  --title-color: hsl(var(--hue-color), 8%, 15%);
+  --text-color: hsl(var(--hue-color), 8%, 45%);
+  --text-color-light: hsl(var(--hue-color), 8%, 65%);
+  --input-color: hsl(var(--hue-color), 70%, 96%);
+  --body-color: hsl(var(--hue-color), 60%, 99%);
+  --container-color: #fff;
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Poppins', sans-serif;
+
+  /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+  --big-font-size: 2rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1.125rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes Bottom ==========*/
+  /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+  --mb-0-25: .25rem;
+  --mb-0-5: .5rem;
+  --mb-0-75: .75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+
+  /*========== background picture ==========*/
+
+  --background-pic: url("../img/IMG_7031.jpg") center center fixed;
+
+
+}
+
+/* Font size for large devices */
+@media screen and (min-width: 968px) {
+    :root {
+        --big-font-size: 3rem;
+        --h1-font-size: 2.25rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/*========== Variables Dark theme ==========*/
+body.dark {
+    /* HSL color mode */
+    --main-text-color: white;
+    --first-color-second: hsl(var(--hue-color), 30%, 8%);
+    --title-color: hsl(var(--hue-color), 8%, 95%);
+    --text-color: hsl(var(--hue-color), 8%, 75%);
+    --input-color: hsl(var(--hue-color), 29%, 16%);
+    --body-color: hsl(var(--hue-color), 28%, 12%);
+    --container-color: hsl(var(--hue-color), 29%, 16%);
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+    --background-pic: url("../img/DSC04805.jpg") center center fixed;
+}
+
+html{scroll-behavior:smooth}
+
+body {
+  background: var(--background-pic);
+  font-family: var(--body-font);
+  color: var(--main-text-color);
+  justify-content: center;
+  background-size: cover;
+  background-attachment: fixed;
+  transition: background 0.2s linear;
+  position: relative;
+  height: 5000px;
+}
+
+.nav, .nav-link {
+  background-color: transparent !important;
+  color: black;
+  transition: all .2s ease-in-out;
+}
+
+.scroll {
+  background-color: var(--scroll-bar-color) !important;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.label {
+  width: 48px;
+  height: 28px;
+  background-color:rgb(14, 194, 146);
+  
+  border-radius:14px;
+  align-items: center;
+  position: relative;
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+
+/*  target the elemenent after the label*/
+.checkbox:checked + .label .ball{
+  transform: translateX(20px);
+}
+
+#pic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10% 0;
+  text-align: center;
+}
+
+.crop {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 50%;
+  border: solid 3px rgb(14, 194, 146);
+  margin: 2em 0 0 0;
+}
+
+a { color: black;display:inline-block; margin:0; }
+
+a:after {
+  display:block;
+  color: black;
+  content: '';
+  border-bottom: solid 3px rgb(14, 194, 146);  
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+a:hover {
+  color: black !important;
+}
+
+a:hover:after { transform: scaleX(1); }
+
+
+
+/* *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+        letter-spacing: 0.5px;
+        outline: none;
+        border: none;
+        text-decoration: none;
+    } */
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+article {
+  width: 80%;
+  background-color: rgba(255,255,255,0.13);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  padding: 50px 35px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+
+/* SKILLS */
+
+.skill_group_title {
+  display: flex;
+  cursor: pointer;
+}
+
+.skill_close{
+  display: none;
+}
+
+.skill_open {
+  display: block;
+  justify-content: center;
+  align-items: center;
+}
+
+.skillbar_background {
+  display: flex;
+  background-color: #e5a0a0;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.skillbar {
+  display: flex;
+  width: 0;
+  height: 8px;
+  background-color: #EE4443;
+  border-radius: 4px;
+  animation: expand;
+  animation-duration: 5s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes expand {
+  from {
+    width:0;
+  }
+}
+
+.skill_arrow {
+  fill:#EE4443 !important;
+  font-size: 2rem;
+  margin-left: auto;
+  transition: .4s;
+}
+
+.skill_arrow_180 {
+  color:#EE4443 !important;
+  font-size: 2rem;
+  margin-left: auto;
+  transition: .4s;
+  transform: rotate(-180deg);
+}
+
+.skill_value_move {
+  display: flex;
+  transform: translateX(90%);
+  transition-delay: 5s;
+  animation-duration: 5s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: 1;
+}
+
+
