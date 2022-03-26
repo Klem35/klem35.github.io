@@ -18,6 +18,9 @@
   <!--==================== UNICONS ====================-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
+  <!--==================== BOXICONS ====================-->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
   <!--==================== SWIPER CSS ====================-->
   <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
 
@@ -153,7 +156,10 @@
       </div>
       <h1><span class="bracket">{</span>Junior<span class="bracket">}</span><span>Developer</span></h1>
       <img class="crop" src="./assets/img/IMG-20200917-WA0000.jpg" alt="">
-      <button>Download CV <img src="assets/download.png" alt="Download" id="download"></button>
+      <button class="download_button d-flex justify-content-between align-items-center">
+        <div class="download_text">Download CV</div>
+        <div class="download_icon d-flex justify-content-center"><i class='bx bx-download'></i></div>
+      </button>
     </section>
 
   </header>
@@ -161,12 +167,14 @@
 
 
     <article>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia odio ab, officiis in magnam voluptatibus
-      laborum
-      suscipit qui dolorem earum a, necessitatibus neque non, quam autem nam vitae corporis assumenda?
+      I’m a motivated developer who worked in different industries as an engineer. I enjoy
+      working in a friendly environment in phase with my values, where I can grow my computer skills
+      while involving the strong taste I developed over the past few years for automating tasks and
+      calculations as well as creating web applications.
     </article>
-    
+
     <article>
+
       <div onclick="toggleFrontEndSkills()" class="skill_group_title">
         <h2>Front End</h2>
         <i class="uil uil-angle-down skill_arrow"></i>
@@ -189,10 +197,11 @@
       <div class="skill_content skill_close">
         <h3>JS</h3>
         <div class="skillbar_background">
-          <div class="skillbar" style="width: 50%; animation-delay: 2s;">
+          <div class="skillbar" style="width: 55%; animation-delay: 2s;">
           </div>
         </div>
       </div>
+
       <div onclick="toggleBackEndSkills()" class="skill_group_title">
         <h2>Back End</h2>
         <i class="uil uil-angle-down skill_arrow"></i>
@@ -200,14 +209,14 @@
       <div class="skill_content skill_close">
         <h3>Java</h3>
         <div class="skillbar_background">
-          <div class="skillbar" style="width: 75%; animation-delay: 0s;">
+          <div class="skillbar" style="width: 85%; animation-delay: 0s;">
           </div>
         </div>
       </div>
       <div class="skill_content skill_close">
         <h3>Python</h3>
         <div class="skillbar_background">
-          <div class="skillbar" style="width: 40%; animation-delay: 1s;">
+          <div class="skillbar" style="width: 55%; animation-delay: 1s;">
           </div>
         </div>
       </div>
@@ -218,7 +227,358 @@
           </div>
         </div>
       </div>
+
+      <div onclick="toggleFrameworksSkills()" class="skill_group_title">
+        <h2>Frameworks</h2>
+        <i class="uil uil-angle-down skill_arrow"></i>
+      </div>
+      <div class="skill_content skill_close">
+        <h3>Springboot</h3>
+        <div class="skillbar_background">
+          <div class="skillbar" style="width: 65%; animation-delay: 0s;">
+          </div>
+        </div>
+      </div>
+      <div class="skill_content skill_close">
+        <h3>Bootstrap</h3>
+        <div class="skillbar_background">
+          <div class="skillbar" style="width: 60%; animation-delay: 1s;">
+          </div>
+        </div>
+      </div>
+
+      <div onclick="toggleDesignSkills()" class="skill_group_title">
+        <h2>Design</h2>
+        <i class="uil uil-angle-down skill_arrow"></i>
+      </div>
+      <div class="skill_content skill_close">
+        <h3>Figma</h3>
+        <div class="skillbar_background">
+          <div class="skillbar" style="width: 55%; animation-delay: 0s;">
+          </div>
+        </div>
+      </div>
+      <div class="skill_content skill_close">
+        <h3>Inkscape</h3>
+        <div class="skillbar_background">
+          <div class="skillbar" style="width: 65%; animation-delay: 1s;">
+          </div>
+        </div>
+      </div>
+
+      <div onclick="toggleCADSkills()" class="skill_group_title">
+        <h2>CAD</h2>
+        <i class="uil uil-angle-down skill_arrow"></i>
+      </div>
+      <div class="skill_content skill_close">
+        <h3>AutoCAD</h3>
+        <div class="skillbar_background">
+          <div class="skillbar" style="width: 75%; animation-delay: 0s;">
+          </div>
+        </div>
+      </div>
+      <div class="skill_content skill_close">
+        <h3>FreeCAD</h3>
+        <div class="skillbar_background">
+          <div class="skillbar" style="width: 65%; animation-delay: 1s;">
+          </div>
+        </div>
+      </div>
+      <div class="skill_content skill_close">
+        <h3>Catia (Part)</h3>
+        <div class="skillbar_background">
+          <div class="skillbar" style="width: 85%; animation-delay: 1s;">
+          </div>
+        </div>
+      </div>
+      <div class="skill_content skill_close">
+        <h3>Catia (Assembly)</h3>
+        <div class="skillbar_background">
+          <div class="skillbar" style="width: 80%; animation-delay: 1s;">
+          </div>
+        </div>
+      </div>
+      <div class="skill_content skill_close">
+        <h3>Catia (Generative Shape Design)</h3>
+        <div class="skillbar_background">
+          <div class="skillbar" style="width: 60%; animation-delay: 1s;">
+          </div>
+        </div>
+      </div>
+
+      <div onclick="toggleSimulationSkills()" class="skill_group_title">
+        <h2>Simulation & Optimization</h2>
+        <i class="uil uil-angle-down skill_arrow"></i>
+      </div>
+      <div class="skill_content skill_close">
+        <h3>Matlab/Simulink</h3>
+        <div class="skillbar_background">
+          <div class="skillbar" style="width: 55%; animation-delay: 0s;">
+          </div>
+        </div>
+      </div>
+      <div class="skill_content skill_close">
+        <h3>MSC.Marc/Mentat</h3>
+        <div class="skillbar_background">
+          <div class="skillbar" style="width: 60%; animation-delay: 1s;">
+          </div>
+        </div>
+      </div>
+      <div class="skill_content skill_close">
+        <h3>ModeFrontier</h3>
+        <div class="skillbar_background">
+          <div class="skillbar" style="width: 65%; animation-delay: 1s;">
+          </div>
+        </div>
+      </div>
+
     </article>
+
+
+
+
+
+
+
+
+    <!--==================== QUALIFICATION ====================-->
+    <section class="qualification section">
+      <h2 class="section_title">Qualification</h2>
+      <span class="section_subtitle">My personal journey</span>
+
+      <div class="qualification_container container">
+        <div class="qualification_tabs">
+          <div class="qualification_button button--flex qualification_active" data-target="#education">
+            <i class="uil uil-graduation-cap qualification_icon"></i>
+            Education
+          </div>
+
+          <div class="qualification_button button--flex" data-target="#work">
+            <i class="uil uil-briefcase-alt qualification_icon"></i>
+            Work
+          </div>
+        </div>
+        <div class="qualification_sections">
+          <!--==================== QUALIFICATION CONTENT 1====================-->
+          <div class="qualification_content qualification_active" data-content id="education">
+            <!--==================== QUALIFICATION 1====================-->
+            <div class="qualification_data">
+              <div>
+                <h3 class="qualification_title">Computer Engineer</h3>
+                <span class="qualification_subtitle">Petu-Uni</span>
+                <div class="qualification_calendar">
+                  <i class="uil uil-calendar-alt"></i>
+                  2009 - 2014
+                </div>
+
+              </div>
+              <div>
+                <span class="qualification_rounder"></span>
+                <span class="qualification_line"></span>
+              </div>
+            </div>
+            <!--==================== QUALIFICATION 2====================-->
+            <div class="qualification_data">
+              <div></div>
+
+              <div>
+                <span class="qualification_rounder"></span>
+                <span class="qualification_line"></span>
+              </div>
+
+              <div>
+                <h3 class="qualification_title">Web Design</h3>
+                <span class="qualification_subtitle">Spain-Uni</span>
+                <div class="qualification_calendar">
+                  <i class="uil uil-calendar-alt"></i>
+                  2014 - 2017
+                </div>
+              </div>
+            </div>
+            <!--==================== QUALIFICATION 3====================-->
+            <div class="qualification_data">
+              <div>
+                <h3 class="qualification_title">Web Development</h3>
+                <span class="qualification_subtitle">Petu-Uni</span>
+                <div class="qualification_calendar">
+                  <i class="uil uil-calendar-alt"></i>
+                  2017 - 2019
+                </div>
+              </div>
+              <div>
+                <span class="qualification_rounder"></span>
+                <span class="qualification_line"></span>
+              </div>
+            </div>
+            <!--==================== QUALIFICATION 4====================-->
+            <div class="qualification_data">
+              <div></div>
+
+              <div>
+                <span class="qualification_rounder"></span>
+                <!-- <span class="qualification_line"></span> -->
+              </div>
+
+              <div>
+                <h3 class="qualification_title">Masterin UI/UX</h3>
+                <span class="qualification_subtitle">Bolivia-Uni</span>
+                <div class="qualification_calendar">
+                  <i class="uil uil-calendar-alt"></i>
+                  2019 - 2021
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <!--==================== QUALIFICATION CONTENT 2====================-->
+          <div class="qualification_content" data-content id="work">
+            <!--==================== QUALIFICATION 1====================-->
+            <div class="qualification_data">
+              <div>
+                <h3 class="qualification_title">Software Engineer</h3>
+                <span class="qualification_subtitle">PMicrosoft - Peri</span>
+                <div class="qualification_calendar">
+                  <i class="uil uil-calendar-alt"></i>
+                  2016 - 2018
+                </div>
+              </div>
+              <div>
+                <span class="qualification_rounder"></span>
+                <span class="qualification_line"></span>
+              </div>
+            </div>
+            <!--==================== QUALIFICATION 2====================-->
+            <div class="qualification_data">
+              <div></div>
+
+              <div>
+                <span class="qualification_rounder"></span>
+                <span class="qualification_line"></span>
+              </div>
+
+              <div>
+                <h3 class="qualification_title">Frontend Developer</h3>
+                <span class="qualification_subtitle">Apple Inc - Spain</span>
+                <div class="qualification_calendar">
+                  <i class="uil uil-calendar-alt"></i>
+                  2018 - 2020
+                </div>
+              </div>
+              <div>
+                <!-- <span class="qualification_rounder"></span> -->
+                <span class="qualification_line"></span>
+              </div>
+            </div>
+            <!--==================== QUALIFICATION 3====================-->
+            <div class="qualification_data">
+              <div>
+                <h3 class="qualification_title">UI Designer</h3>
+                <span class="qualification_subtitle">Figma - Spain</span>
+                <div class="qualification_calendar">
+                  <i class="uil uil-calendar-alt"></i>
+                  2017 - 2019
+                </div>
+              </div>
+              <div>
+                <span class="qualification_rounder"></span>
+                <!-- <span class="qualification_line"></span> -->
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--==================== PORTFOLIO ====================-->
+    <section class="portfolio section" id="portfolio">
+      <h2 class="section_title">Portfolio</h2>
+      <span class="section_subtitle">Most recent work</span>
+
+      <div class="portfolio_container container swiper">
+        <div class="swiper-wrapper">
+          <!--==================== PORTFOLIO 1====================-->
+          <div class="portfolio_content grid swiper-slide">
+            <img src="./assets/img/portfolio1.jpg" alt="" class="portfolio_img">
+
+            <div class="portfolio_data">
+              <h3 class="portfolio_title">Modern Website</h3>
+              <p class="portfolio_description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Consectetur quasi eligendi dolores vitae id eveniet ducimus quis quibusdam, placeat rem
+                quaerat ad voluptates reprehenderit, maxime eos iste aliquid. Repudiandae, suscipit?</p>
+              <a href="#" class="button button--flex button--small portfolio_button">
+                Demo
+                <i class="uil uil-arrow-right button_icon"></i>
+              </a>
+
+
+            </div>
+          </div>
+          <!--==================== PORTFOLIO 2====================-->
+          <div class="portfolio_content grid swiper-slide">
+            <img src="./assets/img/portfolio2.jpg" alt="" class="portfolio_img">
+
+            <div class="portfolio_data">
+              <h3 class="portfolio_title">Brand Design</h3>
+              <p class="portfolio_description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Consectetur quasi eligendi dolores vitae id eveniet ducimus quis quibusdam, placeat rem
+                quaerat ad voluptates reprehenderit, maxime eos iste aliquid. Repudiandae, suscipit?</p>
+              <a href="#" class="button button--flex button--small portfolio_button">
+                Demo
+                <i class="uil uil-arrow-right button_icon"></i>
+              </a>
+            </div>
+          </div>
+          <!--==================== PORTFOLIO 3====================-->
+          <div class="portfolio_content grid swiper-slide">
+            <img src="assets/img/portfolio3.jpg" alt="" class="portfolio_img">
+
+            <div class="portfolio_data">
+              <h3 class="portfolio_title">Online Store</h3>
+              <p class="portfolio_description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Consectetur quasi eligendi dolores vitae id eveniet ducimus quis quibusdam, placeat rem
+                quaerat ad voluptates reprehenderit, maxime eos iste aliquid. Repudiandae, suscipit?</p>
+              <a href="#" class="button button--flex button--small portfolio_button">
+                Demo
+                <i class="uil uil-arrow-right button_icon"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!--Add Arrows-->
+        <div class="swiper-button-next">
+          <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+        </div>
+        <div class="swiper-button-prev">
+          <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+        </div>
+
+        <!--Add Pagination-->
+        <div class="swiper-pagination"></div>
+
+      </div>
+
+    </section>
 
     <footer>
 
@@ -238,6 +598,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
+  <script src="./assets/js/swiper-bundle.min.js"></script>
   <script src="./assets/js/main.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
@@ -252,6 +613,7 @@
       loop: false
     });
   </script>
+
   <script>
     function toggleFrontEndSkills() {
       var x = document.getElementsByClassName('skill_content');
@@ -305,6 +667,95 @@
         arrow[1].classList.add('skill_arrow');
       }
     }
+
+    function toggleFrameworksSkills() {
+      var x = document.getElementsByClassName('skill_content');
+      var arrow = document.getElementsByClassName('uil');
+      for (i = 6; i < 8; i++) {
+        if (x[i].classList.contains('skill_close')) {
+          x[i].classList.remove('skill_close');
+          x[i].classList.add('skill_open');
+        } else {
+          x[i].classList.remove('skill_open');
+          x[i].classList.add('skill_close');
+        }
+      }
+
+      if (arrow[2].classList.contains('skill_arrow')) {
+        arrow[2].classList.remove('skill_arrow');
+        arrow[2].classList.add('skill_arrow_180');
+      } else {
+        arrow[2].classList.remove('skill_arrow_180');
+        arrow[2].classList.add('skill_arrow');
+      }
+    }
+
+    function toggleDesignSkills() {
+      var x = document.getElementsByClassName('skill_content');
+      var arrow = document.getElementsByClassName('uil');
+      for (i = 8; i < 10; i++) {
+        if (x[i].classList.contains('skill_close')) {
+          x[i].classList.remove('skill_close');
+          x[i].classList.add('skill_open');
+        } else {
+          x[i].classList.remove('skill_open');
+          x[i].classList.add('skill_close');
+        }
+      }
+
+      if (arrow[3].classList.contains('skill_arrow')) {
+        arrow[3].classList.remove('skill_arrow');
+        arrow[3].classList.add('skill_arrow_180');
+      } else {
+        arrow[3].classList.remove('skill_arrow_180');
+        arrow[3].classList.add('skill_arrow');
+      }
+    }
+
+    function toggleCADSkills() {
+      var x = document.getElementsByClassName('skill_content');
+      var arrow = document.getElementsByClassName('uil');
+      for (i = 10; i < 15; i++) {
+        if (x[i].classList.contains('skill_close')) {
+          x[i].classList.remove('skill_close');
+          x[i].classList.add('skill_open');
+        } else {
+          x[i].classList.remove('skill_open');
+          x[i].classList.add('skill_close');
+        }
+      }
+
+      if (arrow[4].classList.contains('skill_arrow')) {
+        arrow[4].classList.remove('skill_arrow');
+        arrow[4].classList.add('skill_arrow_180');
+      } else {
+        arrow[4].classList.remove('skill_arrow_180');
+        arrow[4].classList.add('skill_arrow');
+      }
+    }
+
+    function toggleSimulationSkills() {
+      var x = document.getElementsByClassName('skill_content');
+      var arrow = document.getElementsByClassName('uil');
+      for (i = 15; i < 18; i++) {
+        if (x[i].classList.contains('skill_close')) {
+          x[i].classList.remove('skill_close');
+          x[i].classList.add('skill_open');
+        } else {
+          x[i].classList.remove('skill_open');
+          x[i].classList.add('skill_close');
+        }
+      }
+
+      if (arrow[5].classList.contains('skill_arrow')) {
+        arrow[5].classList.remove('skill_arrow');
+        arrow[5].classList.add('skill_arrow_180');
+      } else {
+        arrow[5].classList.remove('skill_arrow_180');
+        arrow[5].classList.add('skill_arrow');
+      }
+    }
+
   </script>
 
 
