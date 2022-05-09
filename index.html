@@ -2,763 +2,1620 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Required meta tags -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--==================== BOOTSTRAP ====================-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-  <!--==================== BOOTSTRAP ====================-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
 
-  <!--==================== CSS ====================-->
-  <link rel="stylesheet" href="./assets/css/styles.css">
+    <!--==================== BOXICONS ====================-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
-  <!--==================== UNICONS ====================-->
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!--==================== SWIPER CSS ====================-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
-  <!--==================== BOXICONS ====================-->
-  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="assets/css/styles.css">
 
-  <!--==================== SWIPER CSS ====================-->
-  <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
+    <link rel="icon" href="logo.png">
 
-
-
-
-  <title>Portfolio</title>
-
+    <title>Responsive Portfolio Website</title>
 </head>
 
 <body>
 
-  <header>
+    <header>
 
-    <nav class="nav navbar navbar-default navbar-light fixed-top navbar-expand-md d-flex justify-content-around"
-      id="nav">
-      <div class="container">
-        <a href="#" class=" navbar-brand mb-0 h1">
-          Clément HUCHET
-        </a>
-        <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-around" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a href="#" class="nav-link active">
-                Home
+        <!-- <nav class="nav navbar navbar-expand-md navbar-light fixed-top d-flex justify-content-around" id="nav">
+               
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="" style="height: 3em;">
               </a>
-            </li>
-            <li class="nav-item active">
-              <a href="#" class="nav-link">
-                About
-              </a>
-            </li>
-            <li class="nav-item active">
-              <a href="#" class="nav-link">
-                Contact
-              </a>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Resume
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a href="#experience" class="dropdown-item">Experience</a>
-                </li>
-                <li>
-                  <a href="#training" class="dropdown-item">Training</a>
-                </li>
-                <li>
-                  <a href="#awards" class="dropdown-item">Awards</a>
-                </li>
-                <li>
-                  <a href="#references" class="dropdown-item">References</a>
-                </li>
-                <li>
-                  <a href="#skills" class="dropdown-item">Skills</a>
-                </li>
-                <li>
-                  <a href="#languages" class="dropdown-item">Languages</a>
-                </li>
-                <li>
-                  <a href="#interests" class="dropdown-item">Interests</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item active">
-              <a href="#" class="nav-link">
-                Portfolio
-              </a>
-            </li>
-          </ul>
-          <!-- <form class="d-flex">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link nav-title active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-title" href="#about">About</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Resume
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item nav-title" href="#qualifications">Qualifications</a></li>
+                      <li><a class="dropdown-item nav-title" href="#skills">Skills</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <!-- <li><a class="dropdown-item nav-title" href="#">Awards</a></li> -->
+                      <!-- <li><a class="dropdown-item nav-title" href="#">References</a></li> -->
+                      <!-- <li><a class="dropdown-item nav-title" href="#languages">Languages</a></li>
+                      <li><a class="dropdown-item nav-title" href="#hobbies">Hobbies & interests</a></li>
+                    </ul>
+                  </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-title" href="#contact">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-title" href="#portfolio">Portfolio</a>
+                  </li> -->
+                  <!-- <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  </li> -->
+                <!-- </ul> -->
+                <!-- <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form> -->
+              <!-- </div> -->
+
+              
+
+            <!--</div>
+            
+            
+
+          </nav> -->
+
+          
+        <nav class="nav navbar navbar-expand-md navbar-light fixed-top d-flex justify-content-around" id="nav">    
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./assets/img/logo.png" alt="" style="height: 3em;">
+                  </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link nav-title active" aria-current="page" href="#home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-title" href="#about">About</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Resume
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item nav-title" href="#qualifications">Qualifications</a></li>
+                      <li><a class="dropdown-item nav-title" href="#skills">Skills</a></li>
+                      <li><a class="dropdown-item nav-title" href="#languages">Languages</a></li>
+                      <li><a class="dropdown-item nav-title" href="#portfolio">Portfolio</a></li>
+                      <li><a class="dropdown-item nav-title" href="#interests">Interests</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link nav-title" href="#contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- <div class="toggle-dark-mode d-flex align-items-center justify-content-end">
+                <span class="change_theme_text">Light-house</span>
+                <div class="d-flex align-items-center">
+                    <input type="checkbox3" class="checkbox3" id="checkbox3">
+                    <label for="checkbo3x" class="label3">
+                        <div class='ball'></div>
+                    </label>
+                </div>
+                <span class="change_theme_text">Dark ocean</span>
+            </div> -->
+          </nav>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <nav class="nav navbar navbar-default fixed-top navbar-expand-md d-flex justify-content-around"
+            id="nav">
+            <div class="container-fluid">
+                <a href="#" class=" navbar-brand mb-0 h1">
+                    <img src="logo.png" alt="" style="height: 3em;">
+                </a>
+                <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                
+                <div class="collapse navbar-collapse justify-content-around" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a href="#" class="nav-link active nav-title">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="#" class="nav-link nav-title">
+                                About
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="#" class="nav-link nav-title">
+                                Contact
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle nav-title" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Resume
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a href="#experience" class="dropdown-item nav-title">Experience</a>
+                                </li>
+                                <li>
+                                    <a href="#training" class="dropdown-item nav-title">Training</a>
+                                </li>
+                                <li>
+                                    <a href="#awards" class="dropdown-item nav-title">Awards</a>
+                                </li>
+                                <li>
+                                    <a href="#references" class="dropdown-item nav-title">References</a>
+                                </li>
+                                <li>
+                                    <a href="#skills" class="dropdown-item nav-title">Skills</a>
+                                </li>
+                                <li>
+                                    <a href="#languages" class="dropdown-item nav-title">Languages</a>
+                                </li>
+                                <li>
+                                    <a href="#interests" class="dropdown-item nav-title">Interests</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="#" class="nav-link nav-title">
+                                Portfolio
+                            </a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
             <input type="text" class="form-control me-2">
             <button type="submit" class="btn btn-outline-light">Search</button>
-          </form> -->
-        </div>
-        <div class="toggle-dark-mode d-flex align-items-center justify-content-end">
-          <span>light-house</span>
-          <div class="d-flex align-items-center">
-            <input type="checkbox" class="checkbox" id="checkbox">
-            <label for="checkbox" class="label">
-              <div class='ball'></div>
-            </label>
-          </div>
-          <span>dark forest</span>
-        </div>
-      </div>
-    </nav>
+          </form>
+                </div>
 
-    <section id="pic">
-      <div class="d-flex align-items-center justify-content-around">
-        <!-- <svg width="600" height="65" viewBox="0 0 808 81" fill="none" xmlns="http://www.w3.org/2000/svg" id="svg">
-          <path
-            d="M2.12799 44.496C2.12799 37.968 3.59999 32.112 6.54399 26.928C9.48799 21.68 13.488 17.584 18.544 14.64C23.664 11.696 29.328 10.224 35.536 10.224C42.832 10.224 49.2 11.984 54.64 15.504C60.08 19.024 64.048 24.016 66.544 30.48H56.08C54.224 26.448 51.536 23.344 48.016 21.168C44.56 18.992 40.4 17.904 35.536 17.904C30.864 17.904 26.672 18.992 22.96 21.168C19.248 23.344 16.336 26.448 14.224 30.48C12.112 34.448 11.056 39.12 11.056 44.496C11.056 49.808 12.112 54.48 14.224 58.512C16.336 62.48 19.248 65.552 22.96 67.728C26.672 69.904 30.864 70.992 35.536 70.992C40.4 70.992 44.56 69.936 48.016 67.824C51.536 65.648 54.224 62.544 56.08 58.512H66.544C64.048 64.912 60.08 69.872 54.64 73.392C49.2 76.848 42.832 78.576 35.536 78.576C29.328 78.576 23.664 77.136 18.544 74.256C13.488 71.312 9.48799 67.248 6.54399 62.064C3.59999 56.88 2.12799 51.024 2.12799 44.496Z"
-            stroke="white" stroke-width="4" stroke-linejoin="round" />
-          <path d="M88.2842 6.95998V78H79.5482V6.95998H88.2842Z" stroke="white" stroke-width="4"
-            stroke-linejoin="round" />
-          <path
-            d="M151.173 49.68C151.173 51.344 151.077 53.104 150.885 54.96H108.837C109.157 60.144 110.917 64.208 114.117 67.152C117.381 70.032 121.317 71.472 125.925 71.472C129.701 71.472 132.837 70.608 135.333 68.88C137.893 67.088 139.685 64.72 140.709 61.776H150.117C148.709 66.832 145.893 70.96 141.669 74.16C137.445 77.296 132.197 78.864 125.925 78.864C120.933 78.864 116.453 77.744 112.485 75.504C108.581 73.264 105.509 70.096 103.269 66C101.029 61.84 99.9092 57.04 99.9092 51.6C99.9092 46.16 100.997 41.392 103.173 37.296C105.349 33.2 108.389 30.064 112.293 27.888C116.261 25.648 120.805 24.528 125.925 24.528C130.917 24.528 135.333 25.616 139.173 27.792C143.013 29.968 145.957 32.976 148.005 36.816C150.117 40.592 151.173 44.88 151.173 49.68ZM142.149 47.856C142.149 44.528 141.413 41.68 139.941 39.312C138.469 36.88 136.453 35.056 133.893 33.84C131.397 32.56 128.613 31.92 125.541 31.92C121.125 31.92 117.349 33.328 114.213 36.144C111.141 38.96 109.381 42.864 108.933 47.856H142.149ZM134.949 10.512L114.501 21.456V14.928L134.949 2.92798V10.512Z"
-            stroke="white" stroke-width="4" stroke-linejoin="round" />
-          <path
-            d="M225.968 24.432C230.064 24.432 233.712 25.296 236.912 27.024C240.112 28.688 242.64 31.216 244.496 34.608C246.352 38 247.28 42.128 247.28 46.992V78H238.64V48.24C238.64 42.992 237.328 38.992 234.704 36.24C232.144 33.424 228.656 32.016 224.24 32.016C219.696 32.016 216.08 33.488 213.392 36.432C210.704 39.312 209.36 43.504 209.36 49.008V78H200.72V48.24C200.72 42.992 199.408 38.992 196.784 36.24C194.224 33.424 190.736 32.016 186.32 32.016C181.776 32.016 178.16 33.488 175.472 36.432C172.784 39.312 171.44 43.504 171.44 49.008V78H162.704V25.392H171.44V32.976C173.168 30.224 175.472 28.112 178.352 26.64C181.296 25.168 184.528 24.432 188.048 24.432C192.464 24.432 196.368 25.424 199.76 27.408C203.152 29.392 205.68 32.304 207.344 36.144C208.816 32.432 211.248 29.552 214.64 27.504C218.032 25.456 221.808 24.432 225.968 24.432Z"
-            stroke="white" stroke-width="4" stroke-linejoin="round" />
-          <path
-            d="M309.611 49.68C309.611 51.344 309.515 53.104 309.323 54.96H267.275C267.595 60.144 269.355 64.208 272.555 67.152C275.819 70.032 279.755 71.472 284.363 71.472C288.139 71.472 291.275 70.608 293.771 68.88C296.331 67.088 298.123 64.72 299.147 61.776H308.555C307.147 66.832 304.331 70.96 300.107 74.16C295.883 77.296 290.635 78.864 284.363 78.864C279.371 78.864 274.891 77.744 270.923 75.504C267.019 73.264 263.947 70.096 261.707 66C259.467 61.84 258.347 57.04 258.347 51.6C258.347 46.16 259.435 41.392 261.611 37.296C263.787 33.2 266.827 30.064 270.731 27.888C274.699 25.648 279.243 24.528 284.363 24.528C289.355 24.528 293.771 25.616 297.611 27.792C301.451 29.968 304.395 32.976 306.443 36.816C308.555 40.592 309.611 44.88 309.611 49.68ZM300.587 47.856C300.587 44.528 299.851 41.68 298.379 39.312C296.907 36.88 294.891 35.056 292.331 33.84C289.835 32.56 287.051 31.92 283.979 31.92C279.563 31.92 275.787 33.328 272.651 36.144C269.579 38.96 267.819 42.864 267.371 47.856H300.587Z"
-            stroke="white" stroke-width="4" stroke-linejoin="round" />
-          <path
-            d="M346.774 24.432C353.174 24.432 358.358 26.384 362.326 30.288C366.294 34.128 368.278 39.696 368.278 46.992V78H359.638V48.24C359.638 42.992 358.326 38.992 355.702 36.24C353.078 33.424 349.494 32.016 344.95 32.016C340.342 32.016 336.662 33.456 333.91 36.336C331.222 39.216 329.878 43.408 329.878 48.912V78H321.142V25.392H329.878V32.88C331.606 30.192 333.942 28.112 336.886 26.64C339.894 25.168 343.19 24.432 346.774 24.432Z"
-            stroke="white" stroke-width="4" stroke-linejoin="round" />
-          <path
-            d="M393.204 32.592V63.6C393.204 66.16 393.748 67.984 394.836 69.072C395.924 70.096 397.812 70.608 400.5 70.608H406.932V78H399.06C394.196 78 390.548 76.88 388.116 74.64C385.684 72.4 384.468 68.72 384.468 63.6V32.592H377.652V25.392H384.468V12.144H393.204V25.392H406.932V32.592H393.204Z"
-            stroke="white" stroke-width="4" stroke-linejoin="round" />
-          <path d="M494.663 11.088V78H485.927V47.664H451.847V78H443.111V11.088H451.847V40.464H485.927V11.088H494.663Z"
-            stroke="white" stroke-width="4" stroke-linejoin="round" />
-          <path
-            d="M518.123 11.088V53.424C518.123 59.376 519.563 63.792 522.443 66.672C525.387 69.552 529.451 70.992 534.635 70.992C539.755 70.992 543.755 69.552 546.635 66.672C549.579 63.792 551.052 59.376 551.052 53.424V11.088H559.787V53.328C559.787 58.896 558.667 63.6 556.427 67.44C554.187 71.216 551.147 74.032 547.307 75.888C543.531 77.744 539.275 78.672 534.539 78.672C529.803 78.672 525.515 77.744 521.675 75.888C517.899 74.032 514.891 71.216 512.651 67.44C510.475 63.6 509.388 58.896 509.388 53.328V11.088H518.123Z"
-            stroke="white" stroke-width="4" stroke-linejoin="round" />
-          <path
-            d="M571.097 44.496C571.097 37.968 572.569 32.112 575.513 26.928C578.457 21.68 582.457 17.584 587.513 14.64C592.633 11.696 598.297 10.224 604.505 10.224C611.801 10.224 618.169 11.984 623.609 15.504C629.049 19.024 633.017 24.016 635.513 30.48H625.049C623.193 26.448 620.505 23.344 616.985 21.168C613.529 18.992 609.369 17.904 604.505 17.904C599.833 17.904 595.641 18.992 591.929 21.168C588.217 23.344 585.305 26.448 583.193 30.48C581.081 34.448 580.025 39.12 580.025 44.496C580.025 49.808 581.081 54.48 583.193 58.512C585.305 62.48 588.217 65.552 591.929 67.728C595.641 69.904 599.833 70.992 604.505 70.992C609.369 70.992 613.529 69.936 616.985 67.824C620.505 65.648 623.193 62.544 625.049 58.512H635.513C633.017 64.912 629.049 69.872 623.609 73.392C618.169 76.848 611.801 78.576 604.505 78.576C598.297 78.576 592.633 77.136 587.513 74.256C582.457 71.312 578.457 67.248 575.513 62.064C572.569 56.88 571.097 51.024 571.097 44.496Z"
-            stroke="white" stroke-width="4" stroke-linejoin="round" />
-          <path d="M700.069 11.088V78H691.333V47.664H657.253V78H648.517V11.088H657.253V40.464H691.333V11.088H700.069Z"
-            stroke="white" stroke-width="4" stroke-linejoin="round" />
-          <path d="M723.722 18.192V40.56H748.106V47.76H723.722V70.8H750.986V78H714.986V10.992H750.986V18.192H723.722Z"
-            stroke="white" stroke-width="4" stroke-linejoin="round" />
-          <path d="M805.388 11.088V18.192H787.148V78H778.412V18.192H760.076V11.088H805.388Z" stroke="white"
-            stroke-width="4" stroke-linejoin="round" />
-        </svg> -->
-      </div>
-      <h1><span class="bracket">{</span>Junior<span class="bracket">}</span><span>Developer</span></h1>
-      <img class="crop" src="./assets/img/IMG-20200917-WA0000.jpg" alt="">
-      <button class="download_button d-flex justify-content-between align-items-center">
-        <div class="download_text">Download CV</div>
-        <div class="download_icon d-flex justify-content-center"><i class='bx bx-download'></i></div>
-      </button>
+                <div class="toggle-dark-mode d-flex align-items-center justify-content-end">
+                    <span class="change_theme_text">Light-house</span>
+                    <div class="d-flex align-items-center">
+                        <input type="checkbox" class="checkbox" id="checkbox">
+                        <label for="checkbox" class="label">
+                            <div class='ball'></div>
+                        </label>
+                    </div>
+                    <span class="change_theme_text">Dark ocean</span>
+                </div>
+
+            </div>
+
+
+        </nav> -->
+
+
+        <section id="pic">
+            <div class="d-flex align-items-center justify-content-around">
+                <svg width="600" height="65" viewBox="0 0 808 81" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    id="svg">
+
+                    <path
+                        d="M2.12799 44.496C2.12799 37.968 3.59999 32.112 6.54399 26.928C9.48799 21.68 13.488 17.584 18.544 14.64C23.664 11.696 29.328 10.224 35.536 10.224C42.832 10.224 49.2 11.984 54.64 15.504C60.08 19.024 64.048 24.016 66.544 30.48H56.08C54.224 26.448 51.536 23.344 48.016 21.168C44.56 18.992 40.4 17.904 35.536 17.904C30.864 17.904 26.672 18.992 22.96 21.168C19.248 23.344 16.336 26.448 14.224 30.48C12.112 34.448 11.056 39.12 11.056 44.496C11.056 49.808 12.112 54.48 14.224 58.512C16.336 62.48 19.248 65.552 22.96 67.728C26.672 69.904 30.864 70.992 35.536 70.992C40.4 70.992 44.56 69.936 48.016 67.824C51.536 65.648 54.224 62.544 56.08 58.512H66.544C64.048 64.912 60.08 69.872 54.64 73.392C49.2 76.848 42.832 78.576 35.536 78.576C29.328 78.576 23.664 77.136 18.544 74.256C13.488 71.312 9.48799 67.248 6.54399 62.064C3.59999 56.88 2.12799 51.024 2.12799 44.496Z"
+                        stroke="white" stroke-width="4" stroke-linejoin="round" />
+                    <path d="M88.2842 6.95998V78H79.5482V6.95998H88.2842Z" stroke="white" stroke-width="4"
+                        stroke-linejoin="round" />
+                    <path
+                        d="M151.173 49.68C151.173 51.344 151.077 53.104 150.885 54.96H108.837C109.157 60.144 110.917 64.208 114.117 67.152C117.381 70.032 121.317 71.472 125.925 71.472C129.701 71.472 132.837 70.608 135.333 68.88C137.893 67.088 139.685 64.72 140.709 61.776H150.117C148.709 66.832 145.893 70.96 141.669 74.16C137.445 77.296 132.197 78.864 125.925 78.864C120.933 78.864 116.453 77.744 112.485 75.504C108.581 73.264 105.509 70.096 103.269 66C101.029 61.84 99.9092 57.04 99.9092 51.6C99.9092 46.16 100.997 41.392 103.173 37.296C105.349 33.2 108.389 30.064 112.293 27.888C116.261 25.648 120.805 24.528 125.925 24.528C130.917 24.528 135.333 25.616 139.173 27.792C143.013 29.968 145.957 32.976 148.005 36.816C150.117 40.592 151.173 44.88 151.173 49.68ZM142.149 47.856C142.149 44.528 141.413 41.68 139.941 39.312C138.469 36.88 136.453 35.056 133.893 33.84C131.397 32.56 128.613 31.92 125.541 31.92C121.125 31.92 117.349 33.328 114.213 36.144C111.141 38.96 109.381 42.864 108.933 47.856H142.149ZM134.949 10.512L114.501 21.456V14.928L134.949 2.92798V10.512Z"
+                        stroke="white" stroke-width="4" stroke-linejoin="round" />
+                    <path
+                        d="M225.968 24.432C230.064 24.432 233.712 25.296 236.912 27.024C240.112 28.688 242.64 31.216 244.496 34.608C246.352 38 247.28 42.128 247.28 46.992V78H238.64V48.24C238.64 42.992 237.328 38.992 234.704 36.24C232.144 33.424 228.656 32.016 224.24 32.016C219.696 32.016 216.08 33.488 213.392 36.432C210.704 39.312 209.36 43.504 209.36 49.008V78H200.72V48.24C200.72 42.992 199.408 38.992 196.784 36.24C194.224 33.424 190.736 32.016 186.32 32.016C181.776 32.016 178.16 33.488 175.472 36.432C172.784 39.312 171.44 43.504 171.44 49.008V78H162.704V25.392H171.44V32.976C173.168 30.224 175.472 28.112 178.352 26.64C181.296 25.168 184.528 24.432 188.048 24.432C192.464 24.432 196.368 25.424 199.76 27.408C203.152 29.392 205.68 32.304 207.344 36.144C208.816 32.432 211.248 29.552 214.64 27.504C218.032 25.456 221.808 24.432 225.968 24.432Z"
+                        stroke="white" stroke-width="4" stroke-linejoin="round" />
+                    <path
+                        d="M309.611 49.68C309.611 51.344 309.515 53.104 309.323 54.96H267.275C267.595 60.144 269.355 64.208 272.555 67.152C275.819 70.032 279.755 71.472 284.363 71.472C288.139 71.472 291.275 70.608 293.771 68.88C296.331 67.088 298.123 64.72 299.147 61.776H308.555C307.147 66.832 304.331 70.96 300.107 74.16C295.883 77.296 290.635 78.864 284.363 78.864C279.371 78.864 274.891 77.744 270.923 75.504C267.019 73.264 263.947 70.096 261.707 66C259.467 61.84 258.347 57.04 258.347 51.6C258.347 46.16 259.435 41.392 261.611 37.296C263.787 33.2 266.827 30.064 270.731 27.888C274.699 25.648 279.243 24.528 284.363 24.528C289.355 24.528 293.771 25.616 297.611 27.792C301.451 29.968 304.395 32.976 306.443 36.816C308.555 40.592 309.611 44.88 309.611 49.68ZM300.587 47.856C300.587 44.528 299.851 41.68 298.379 39.312C296.907 36.88 294.891 35.056 292.331 33.84C289.835 32.56 287.051 31.92 283.979 31.92C279.563 31.92 275.787 33.328 272.651 36.144C269.579 38.96 267.819 42.864 267.371 47.856H300.587Z"
+                        stroke="white" stroke-width="4" stroke-linejoin="round" />
+                    <path
+                        d="M346.774 24.432C353.174 24.432 358.358 26.384 362.326 30.288C366.294 34.128 368.278 39.696 368.278 46.992V78H359.638V48.24C359.638 42.992 358.326 38.992 355.702 36.24C353.078 33.424 349.494 32.016 344.95 32.016C340.342 32.016 336.662 33.456 333.91 36.336C331.222 39.216 329.878 43.408 329.878 48.912V78H321.142V25.392H329.878V32.88C331.606 30.192 333.942 28.112 336.886 26.64C339.894 25.168 343.19 24.432 346.774 24.432Z"
+                        stroke="white" stroke-width="4" stroke-linejoin="round" />
+                    <path
+                        d="M393.204 32.592V63.6C393.204 66.16 393.748 67.984 394.836 69.072C395.924 70.096 397.812 70.608 400.5 70.608H406.932V78H399.06C394.196 78 390.548 76.88 388.116 74.64C385.684 72.4 384.468 68.72 384.468 63.6V32.592H377.652V25.392H384.468V12.144H393.204V25.392H406.932V32.592H393.204Z"
+                        stroke="white" stroke-width="4" stroke-linejoin="round" />
+                    <path
+                        d="M494.663 11.088V78H485.927V47.664H451.847V78H443.111V11.088H451.847V40.464H485.927V11.088H494.663Z"
+                        stroke="white" stroke-width="4" stroke-linejoin="round" />
+                    <path
+                        d="M518.123 11.088V53.424C518.123 59.376 519.563 63.792 522.443 66.672C525.387 69.552 529.451 70.992 534.635 70.992C539.755 70.992 543.755 69.552 546.635 66.672C549.579 63.792 551.052 59.376 551.052 53.424V11.088H559.787V53.328C559.787 58.896 558.667 63.6 556.427 67.44C554.187 71.216 551.147 74.032 547.307 75.888C543.531 77.744 539.275 78.672 534.539 78.672C529.803 78.672 525.515 77.744 521.675 75.888C517.899 74.032 514.891 71.216 512.651 67.44C510.475 63.6 509.388 58.896 509.388 53.328V11.088H518.123Z"
+                        stroke="white" stroke-width="4" stroke-linejoin="round" />
+                    <path
+                        d="M571.097 44.496C571.097 37.968 572.569 32.112 575.513 26.928C578.457 21.68 582.457 17.584 587.513 14.64C592.633 11.696 598.297 10.224 604.505 10.224C611.801 10.224 618.169 11.984 623.609 15.504C629.049 19.024 633.017 24.016 635.513 30.48H625.049C623.193 26.448 620.505 23.344 616.985 21.168C613.529 18.992 609.369 17.904 604.505 17.904C599.833 17.904 595.641 18.992 591.929 21.168C588.217 23.344 585.305 26.448 583.193 30.48C581.081 34.448 580.025 39.12 580.025 44.496C580.025 49.808 581.081 54.48 583.193 58.512C585.305 62.48 588.217 65.552 591.929 67.728C595.641 69.904 599.833 70.992 604.505 70.992C609.369 70.992 613.529 69.936 616.985 67.824C620.505 65.648 623.193 62.544 625.049 58.512H635.513C633.017 64.912 629.049 69.872 623.609 73.392C618.169 76.848 611.801 78.576 604.505 78.576C598.297 78.576 592.633 77.136 587.513 74.256C582.457 71.312 578.457 67.248 575.513 62.064C572.569 56.88 571.097 51.024 571.097 44.496Z"
+                        stroke="white" stroke-width="4" stroke-linejoin="round" />
+                    <path
+                        d="M700.069 11.088V78H691.333V47.664H657.253V78H648.517V11.088H657.253V40.464H691.333V11.088H700.069Z"
+                        stroke="white" stroke-width="4" stroke-linejoin="round" />
+                    <path
+                        d="M723.722 18.192V40.56H748.106V47.76H723.722V70.8H750.986V78H714.986V10.992H750.986V18.192H723.722Z"
+                        stroke="white" stroke-width="4" stroke-linejoin="round" />
+                    <path d="M805.388 11.088V18.192H787.148V78H778.412V18.192H760.076V11.088H805.388Z" stroke="white"
+                        stroke-width="4" stroke-linejoin="round" />
+
+                </svg>
+            </div>
+            <h1><span class="bracket">{</span>Web<span class="bracket">}</span><span>Developer</span></h1>
+            <img class="crop" src="./assets/img/IMG-20200917-WA0000.jpg" alt="">
+
+            <div class="d-flex align-items-center">
+            
+                <a class="d-flex align-items-start" style="text-decoration: none;" href="./assets/cv/CV_Clément_Huchet.pdf" download="CV_Clément_Huchet.pdf">
+                    <button class="download_button d-flex justify-content-between align-items-center">
+                        <div class="download_text">Download CV</div>
+                        <div class="download_icon d-flex justify-content-center"><i class='bx bx-download'></i></div>
+                    </button>
+                </a>
+
+                <div class="home_scroll d-flex align-self-end">
+                    <a href="#about" class="home_scroll-button button--flex">
+                        <i class="uil uil-mouse-alt home_scroll-mouse"></i>
+                        <span class="home_scroll-name">Scroll down</span>
+                        <i class="uil uil-arrow-down hom_scroll-arrow"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+    </header>
+
+    <!--==================== ABOUT ====================-->
+    <section class="about section" id="about">
+        <h2 class="section_title">About Me</h2>
+        <p style="text-align: justify; padding: 0 5%;">
+        I’m a motivated developer who worked in different industries as an engineer. I enjoy
+        working in a friendly environment in phase with my values, where I can grow my computer skills
+        while involving the strong taste I developed over the past few years for automating tasks and
+        calculations as well as creating web applications.
     </section>
 
-  </header>
-  <main class=".container-fluid">
+    <!--==================== QUALIFICATIONS ====================-->
+    <div class="modal-background" style="z-index: auto;""></div>
 
+    <section class="qualification section" id="qualifications">
+        <h2 class="section_title">Qualifications</h2>
+        <span class="section_subtitle">My personal journey</span>
 
-    <article>
-      I’m a motivated developer who worked in different industries as an engineer. I enjoy
-      working in a friendly environment in phase with my values, where I can grow my computer skills
-      while involving the strong taste I developed over the past few years for automating tasks and
-      calculations as well as creating web applications.
-    </article>
-
-    <article>
-
-      <div onclick="toggleFrontEndSkills()" class="skill_group_title">
-        <h2>Front End</h2>
-        <i class="uil uil-angle-down skill_arrow"></i>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>HTML</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 90%; animation-delay: 0s;">
-            <div class="skill_value" style="animation-delay: 5s">90%</div>
-          </div>
-        </div>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>CSS</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 65%; animation-delay: 1s;">
-          </div>
-        </div>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>JS</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 55%; animation-delay: 2s;">
-          </div>
-        </div>
-      </div>
-
-      <div onclick="toggleBackEndSkills()" class="skill_group_title">
-        <h2>Back End</h2>
-        <i class="uil uil-angle-down skill_arrow"></i>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>Java</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 85%; animation-delay: 0s;">
-          </div>
-        </div>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>Python</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 55%; animation-delay: 1s;">
-          </div>
-        </div>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>MySQL</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 60%; animation-delay: 2s;">
-          </div>
-        </div>
-      </div>
-
-      <div onclick="toggleFrameworksSkills()" class="skill_group_title">
-        <h2>Frameworks</h2>
-        <i class="uil uil-angle-down skill_arrow"></i>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>Springboot</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 65%; animation-delay: 0s;">
-          </div>
-        </div>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>Bootstrap</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 60%; animation-delay: 1s;">
-          </div>
-        </div>
-      </div>
-
-      <div onclick="toggleDesignSkills()" class="skill_group_title">
-        <h2>Design</h2>
-        <i class="uil uil-angle-down skill_arrow"></i>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>Figma</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 55%; animation-delay: 0s;">
-          </div>
-        </div>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>Inkscape</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 65%; animation-delay: 1s;">
-          </div>
-        </div>
-      </div>
-
-      <div onclick="toggleCADSkills()" class="skill_group_title">
-        <h2>CAD</h2>
-        <i class="uil uil-angle-down skill_arrow"></i>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>AutoCAD</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 75%; animation-delay: 0s;">
-          </div>
-        </div>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>FreeCAD</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 65%; animation-delay: 1s;">
-          </div>
-        </div>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>Catia (Part)</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 85%; animation-delay: 1s;">
-          </div>
-        </div>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>Catia (Assembly)</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 80%; animation-delay: 1s;">
-          </div>
-        </div>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>Catia (Generative Shape Design)</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 60%; animation-delay: 1s;">
-          </div>
-        </div>
-      </div>
-
-      <div onclick="toggleSimulationSkills()" class="skill_group_title">
-        <h2>Simulation & Optimization</h2>
-        <i class="uil uil-angle-down skill_arrow"></i>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>Matlab/Simulink</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 55%; animation-delay: 0s;">
-          </div>
-        </div>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>MSC.Marc/Mentat</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 60%; animation-delay: 1s;">
-          </div>
-        </div>
-      </div>
-      <div class="skill_content skill_close">
-        <h3>ModeFrontier</h3>
-        <div class="skillbar_background">
-          <div class="skillbar" style="width: 65%; animation-delay: 1s;">
-          </div>
-        </div>
-      </div>
-
-    </article>
-
-
-
-
-
-
-
-
-    <!--==================== QUALIFICATION ====================-->
-    <section class="qualification section">
-      <h2 class="section_title">Qualification</h2>
-      <span class="section_subtitle">My personal journey</span>
-
-      <div class="qualification_container container">
-        <div class="qualification_tabs">
-          <div class="qualification_button button--flex qualification_active" data-target="#education">
-            <i class="uil uil-graduation-cap qualification_icon"></i>
-            Education
-          </div>
-
-          <div class="qualification_button button--flex" data-target="#work">
-            <i class="uil uil-briefcase-alt qualification_icon"></i>
-            Work
-          </div>
-        </div>
-        <div class="qualification_sections">
-          <!--==================== QUALIFICATION CONTENT 1====================-->
-          <div class="qualification_content qualification_active" data-content id="education">
-            <!--==================== QUALIFICATION 1====================-->
-            <div class="qualification_data">
-              <div>
-                <h3 class="qualification_title">Computer Engineer</h3>
-                <span class="qualification_subtitle">Petu-Uni</span>
-                <div class="qualification_calendar">
-                  <i class="uil uil-calendar-alt"></i>
-                  2009 - 2014
+            <div class="qualification_container container">
+            <div class="qualification_tabs">
+                <div class="qualification_button button--flex qualification_active" data-target="#education">
+                    <i class="uil uil-graduation-cap qualification_icon"></i>
+                    Education
                 </div>
 
-              </div>
-              <div>
-                <span class="qualification_rounder"></span>
-                <span class="qualification_line"></span>
-              </div>
-            </div>
-            <!--==================== QUALIFICATION 2====================-->
-            <div class="qualification_data">
-              <div></div>
-
-              <div>
-                <span class="qualification_rounder"></span>
-                <span class="qualification_line"></span>
-              </div>
-
-              <div>
-                <h3 class="qualification_title">Web Design</h3>
-                <span class="qualification_subtitle">Spain-Uni</span>
-                <div class="qualification_calendar">
-                  <i class="uil uil-calendar-alt"></i>
-                  2014 - 2017
+                <div class="qualification_button button--flex" data-target="#work">
+                    <i class="uil uil-briefcase-alt qualification_icon"></i>
+                    Work
                 </div>
-              </div>
             </div>
-            <!--==================== QUALIFICATION 3====================-->
-            <div class="qualification_data">
-              <div>
-                <h3 class="qualification_title">Web Development</h3>
-                <span class="qualification_subtitle">Petu-Uni</span>
-                <div class="qualification_calendar">
-                  <i class="uil uil-calendar-alt"></i>
-                  2017 - 2019
+            <div class="qualification_sections">
+                <!--==================== QUALIFICATION CONTENT 1====================-->
+                <div class="qualification_content qualification_active" data-content id="education">
+                    <!--==================== QUALIFICATION 1====================-->
+                    <div class="qualification_data">
+                        
+                        <div>
+                            <h3 class="qualification_title">Web Developer</h3>
+                            <span class="qualification_subtitle">
+                                Green Fox Academy
+                                <br>
+                                Budapest, Hungary & Prague, Czech Republic</span>
+                            <div class="qualification_calendar">
+                                <i class="uil uil-calendar-alt"></i>
+                                Sep. 2021 - Jun. 2022
+                            </div>
+                        </div>
+                        <div>
+                            <span class="qualification_rounder"></span>
+                            <span class="qualification_line"></span>
+                        </div>
+                    </div>
+                    <!--==================== QUALIFICATION 2====================-->
+                    <div class="qualification_data">
+                        <div></div>
+
+                        <div>
+                            <span class="qualification_rounder"></span>
+                            <span class="qualification_line"></span>
+                        </div>
+
+                        <div>
+                            <h3 class="qualification_title">Mechanical Engineer</h3>
+                            <span class="qualification_subtitle">
+                                INSA Rennes
+                                <br>
+                                Rennes, France
+                            </span>
+                            <div class="qualification_calendar">
+                                <i class="uil uil-calendar-alt"></i>
+                                Sep. 2009 - Oct. 2014
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--==================== QUALIFICATION 3====================-->
+                    <div class="qualification_data">
+                        <div>
+                            <h3 class="qualification_title">Mechanical Engineer</h3>
+                            <span class="qualification_subtitle">
+                                BME
+                                <br>
+                                Budapest, Hungary
+                            </span>
+                            <div class="qualification_calendar">
+                                <i class="uil uil-calendar-alt"></i>
+                                Feb. 2013 - June 2013
+                            </div>
+                        </div>
+                        <div>
+                            <span class="qualification_rounder"></span>
+                            <span class="qualification_line"></span>
+                        </div>
+                    </div>
+                    <!--==================== QUALIFICATION 4====================-->
+                    <div class="qualification_data">
+                        <div></div>
+
+                        <div>
+                            <span class="qualification_rounder"></span>
+                            <!-- <span class="qualification_line"></span> -->
+                        </div>
+
+                        <div>
+                            <h3 class="qualification_title">High School</h3>
+                            <span class="qualification_subtitle">
+                                Lycée Jeane d'Arc
+                                <br>
+                                Vitré, France
+                            </span>
+                            <div class="qualification_calendar">
+                                <i class="uil uil-calendar-alt"></i>
+                                Sep. 2006 - Jun. 2009
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
-              </div>
-              <div>
-                <span class="qualification_rounder"></span>
-                <span class="qualification_line"></span>
-              </div>
-            </div>
-            <!--==================== QUALIFICATION 4====================-->
-            <div class="qualification_data">
-              <div></div>
+                <!--==================== QUALIFICATION CONTENT 2====================-->
+                <div class="qualification_content" data-content id="work">
+                    <!--==================== QUALIFICATION 1====================-->
+                    <div class="qualification_data">
+                        <div>
+                            <h3 class="qualification_title">Micro-business manager</h3>
+                            <span class="qualification_subtitle">
+                                the 3dopamine lab
+                                <br>
+                                France & Hungary
+                            </span>
+                            <div class="qualification_calendar">
+                                <i class="uil uil-calendar-alt"></i>
+                                Nov. 2020 - Now
+                            </div>
 
-              <div>
-                <span class="qualification_rounder"></span>
-                <!-- <span class="qualification_line"></span> -->
-              </div>
+                            <span class="button button--flex button--small button--link services_button">
+                                Details
+                                <i class="uil uil-arrow-right button_icon"></i>
+                            </span>
+                            <div class="services_modal ">
+                                <div class="services_modal-content">
+                                    <h4 class="services_modal-title">3D Printing services & products.</h4>
+                                    <i class="uil uil-times services_modal-close"></i>
+                                    <ul class="services_modal-services grid">
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Project management.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Business plan.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Ecommerce website.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Accounting.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>3D printing.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>CAD.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
 
-              <div>
-                <h3 class="qualification_title">Masterin UI/UX</h3>
-                <span class="qualification_subtitle">Bolivia-Uni</span>
-                <div class="qualification_calendar">
-                  <i class="uil uil-calendar-alt"></i>
-                  2019 - 2021
+                        </div>
+                        
+                        <div>
+                            <span class="qualification_rounder"></span>
+                            <span class="qualification_line"></span>
+                        </div>
+                    </div>
+                    <!--==================== QUALIFICATION 2====================-->
+                    <div class="qualification_data">
+                        <div></div>
+
+                        <div>
+                            <span class="qualification_rounder"></span>
+                            <span class="qualification_line"></span>
+                        </div>
+
+                        <div>
+                            <h3 class="qualification_title">Technical project leader</h3>
+                            <span class="qualification_subtitle">
+                                Altran & ArianeGroup
+                                <br>
+                                Issac, France
+                            </span>
+                            <div class="qualification_calendar">
+                                <i class="uil uil-calendar-alt"></i>
+                                Sep. 2019 - Nov. 2020
+                            </div>
+
+                            <span class="button button--flex button--small button--link services_button">
+                                Details
+                                <i class="uil uil-arrow-right button_icon"></i>
+                            </span>
+                            <div class="services_modal ">
+                                <div class="services_modal-content">
+                                    <h4 class="services_modal-title">Technical leader and main customer contact for tool development of BAL (Building Assembly Line) of Ariane 6 Launcher.</h4>
+                                    <i class="uil uil-times services_modal-close"></i>
+                                    <ul class="services_modal-services grid">
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Project management.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Supplier management.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Customer relationship.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Bill of specifications.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>CAD.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <!-- <span class="qualification_rounder"></span> -->
+                            <span class="qualification_line"></span>
+                        </div>
+                    </div>
+                    <!--==================== QUALIFICATION 3====================-->
+                    <div class="qualification_data">
+                        <div>
+                            <h3 class="qualification_title">MRSS project leader (Magnet Resonance Siting & Shielding)</h3>
+                            <span class="qualification_subtitle">
+                                GE Healthcare
+                                <br>
+                                Budapest, Hungary
+                            </span>
+                            <div class="qualification_calendar">
+                                <i class="uil uil-calendar-alt"></i>
+                                Mar. 2017 - Sep. 2019
+                            </div>
+
+                            <span class="button button--flex button--small button--link services_button">
+                                Details
+                                <i class="uil uil-arrow-right button_icon"></i>
+                            </span>
+                            <div class="services_modal ">
+                                <div class="services_modal-content">
+                                    <h4 class="services_modal-title">MRI rooms environment study for Europe, EGM & Africa regions.</h4>
+                                    <i class="uil uil-times services_modal-close"></i>
+                                    <ul class="services_modal-services grid">
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Magnetic shield design.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Steel mass analysis.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Helium pressure drops calculations.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>RF cages examination.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Tools & processes improvement.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>EMI analysis.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Vibration examination.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <span class="qualification_rounder"></span>
+                            <span class="qualification_line"></span>
+                        </div>
+                    </div>
+
+                    <!--==================== QUALIFICATION 4====================-->
+                    <div class="qualification_data">
+                        <div></div>
+
+                        <div>
+                            <span class="qualification_rounder"></span>
+                            <span class="qualification_line"></span>
+                        </div>
+
+                        <div>
+                            <h3 class="qualification_title">CAD Designer</h3>
+                            <span class="qualification_subtitle">
+                                GE Healthcare
+                                <br>
+                                Budapest, Hungary
+                            </span>
+                            <div class="qualification_calendar">
+                                <i class="uil uil-calendar-alt"></i>
+                                Oct. 2014 - Mar. 2017
+                            </div>
+
+                            <span class="button button--flex button--small button--link services_button">
+                                Details
+                                <i class="uil uil-arrow-right button_icon"></i>
+                            </span>
+                            <div class="services_modal ">
+                                <div class="services_modal-content">
+                                    <h4 class="services_modal-title">Technical support to PMIs (Project Manager of Installations) for the implementation of GE medical equipment.</h4>
+                                    <i class="uil uil-times services_modal-close"></i>
+                                    <ul class="services_modal-services grid">
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Installation plans design.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>GE medical equipment installation template creation from PIMs (Pre-Installation Manuals).</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Main contact with Western Europe PMIs (Project Manager of Installations) to fulfill local requirements.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <!-- <span class="qualification_rounder"></span> -->
+                            <span class="qualification_line"></span>
+                        </div>
+                    </div>
+                    <!--==================== QUALIFICATION 5====================-->
+                    <div class="qualification_data">
+                        <div>
+                            <h3 class="qualification_title">Project graduation
+                            </h3>
+                            <span class="qualification_subtitle">
+                                Furukawa Electric
+                                <br>
+                                Budapest, Hungary
+                            </span>
+                            <div class="qualification_calendar">
+                                <i class="uil uil-calendar-alt"></i>
+                                Feb. 2014 - Jul. 2014
+                            </div>
+
+                            <span class="button button--flex button--small button--link services_button">
+                                Details
+                                <i class="uil uil-arrow-right button_icon"></i>
+                            </span>
+                            <div class="services_modal ">
+                                <div class="services_modal-content">
+                                    <h4 class="services_modal-title">Study of a thermoforming process of a microcellular polycarbonate foam. (product of the lighting industry).</h4>
+                                    <i class="uil uil-times services_modal-close"></i>
+                                    <ul class="services_modal-services grid">
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Identification of the material mechanical behavior.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Determination of the strain rate.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Finite element simulation of thermoforming process.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Tensile tests.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Compression tests.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <span class="qualification_rounder"></span>
+                            <span class="qualification_line"></span>
+                        </div>
+                    </div>
+                    <!--==================== QUALIFICATION 6====================-->
+                    <div class="qualification_data">
+                        <div></div>
+
+                        <div>
+                            <span class="qualification_rounder"></span>
+                            <!-- <span class="qualification_line"></span> -->
+                        </div>
+
+                        <div>
+                            <h3 class="qualification_title">Industrial Project</h3>
+                            <span class="qualification_subtitle">
+                                Faurecia/INSA
+                                <br>
+                                Rennes, France
+                            </span>
+                            <div class="qualification_calendar">
+                                <i class="uil uil-calendar-alt"></i>
+                                Sep. 2013 - Jan. 2014
+                            </div>
+
+                            <span class="button button--flex button--small button--link services_button">
+                                Details
+                                <i class="uil uil-arrow-right button_icon"></i>
+                            </span>
+                            <div class="services_modal ">
+                                <div class="services_modal-content">
+                                    <h4 class="services_modal-title">Characterization of the dynamic behavior of a high strength steel (DP980).</h4>
+                                    <i class="uil uil-times services_modal-close"></i>
+                                    <ul class="services_modal-services grid">
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p> Identification of the material mechanical behavior.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Finite element simulation of an automotive seat rail.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Determination of the strain rate.</p>
+                                        </li>
+                                        <li class="services_modal-service">
+                                            <i class="uil uil-check-circle services_modal-icon"></i>
+                                            <p>Tensile tests.</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>
+                            <!-- <span class="qualification_rounder"></span> -->
+                            <!-- <span class="qualification_line"></span> -->
+                        </div>
+                    </div>
+
+
+
                 </div>
-              </div>
+
+
             </div>
-
-
-          </div>
-          <!--==================== QUALIFICATION CONTENT 2====================-->
-          <div class="qualification_content" data-content id="work">
-            <!--==================== QUALIFICATION 1====================-->
-            <div class="qualification_data">
-              <div>
-                <h3 class="qualification_title">Software Engineer</h3>
-                <span class="qualification_subtitle">PMicrosoft - Peri</span>
-                <div class="qualification_calendar">
-                  <i class="uil uil-calendar-alt"></i>
-                  2016 - 2018
-                </div>
-              </div>
-              <div>
-                <span class="qualification_rounder"></span>
-                <span class="qualification_line"></span>
-              </div>
-            </div>
-            <!--==================== QUALIFICATION 2====================-->
-            <div class="qualification_data">
-              <div></div>
-
-              <div>
-                <span class="qualification_rounder"></span>
-                <span class="qualification_line"></span>
-              </div>
-
-              <div>
-                <h3 class="qualification_title">Frontend Developer</h3>
-                <span class="qualification_subtitle">Apple Inc - Spain</span>
-                <div class="qualification_calendar">
-                  <i class="uil uil-calendar-alt"></i>
-                  2018 - 2020
-                </div>
-              </div>
-              <div>
-                <!-- <span class="qualification_rounder"></span> -->
-                <span class="qualification_line"></span>
-              </div>
-            </div>
-            <!--==================== QUALIFICATION 3====================-->
-            <div class="qualification_data">
-              <div>
-                <h3 class="qualification_title">UI Designer</h3>
-                <span class="qualification_subtitle">Figma - Spain</span>
-                <div class="qualification_calendar">
-                  <i class="uil uil-calendar-alt"></i>
-                  2017 - 2019
-                </div>
-              </div>
-              <div>
-                <span class="qualification_rounder"></span>
-                <!-- <span class="qualification_line"></span> -->
-              </div>
-            </div>
-
-
-
-          </div>
-
 
         </div>
-
-      </div>
 
     </section>
 
+    <!--==================== SKILLS ====================-->
 
+    <section class="skill section" id="skills">
+        <h2 class="section_title">Skills</h2>
 
-
-
-
-
-
-
-
-
-
-
-    <!-- ==================== PORTFOLIO ====================-->
-    <!-- <section class="portfolio section" id="portfolio">
-      <h2 class="section_title">Portfolio</h2>
-      <span class="section_subtitle">Most recent work</span>
-
-      <div class="portfolio_container container swiper">
-        <div class="swiper-wrapper"> -->
-          <!--==================== PORTFOLIO 1====================-->
-          <!-- <div class="portfolio_content grid swiper-slide">
-            <img src="./assets/img/portfolio1.jpg" alt="" class="portfolio_img">
-
-            <div class="portfolio_data">
-              <h3 class="portfolio_title">Modern Website</h3>
-              <p class="portfolio_description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consectetur quasi eligendi dolores vitae id eveniet ducimus quis quibusdam, placeat rem
-                quaerat ad voluptates reprehenderit, maxime eos iste aliquid. Repudiandae, suscipit?</p>
-              <a href="#" class="button button--flex button--small portfolio_button">
-                Demo
-                <i class="uil uil-arrow-right button_icon"></i>
-              </a>
-
-
-            </div>
-          </div> -->
-          <!--==================== PORTFOLIO 2====================-->
-          <!-- <div class="portfolio_content grid swiper-slide">
-            <img src="./assets/img/portfolio2.jpg" alt="" class="portfolio_img">
-
-            <div class="portfolio_data">
-              <h3 class="portfolio_title">Brand Design</h3>
-              <p class="portfolio_description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consectetur quasi eligendi dolores vitae id eveniet ducimus quis quibusdam, placeat rem
-                quaerat ad voluptates reprehenderit, maxime eos iste aliquid. Repudiandae, suscipit?</p>
-              <a href="#" class="button button--flex button--small portfolio_button">
-                Demo
-                <i class="uil uil-arrow-right button_icon"></i>
-              </a>
-            </div>
-          </div> -->
-          <!--==================== PORTFOLIO 3====================-->
-          <!-- <div class="portfolio_content grid swiper-slide">
-            <img src="assets/img/portfolio3.jpg" alt="" class="portfolio_img">
-
-            <div class="portfolio_data">
-              <h3 class="portfolio_title">Online Store</h3>
-              <p class="portfolio_description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consectetur quasi eligendi dolores vitae id eveniet ducimus quis quibusdam, placeat rem
-                quaerat ad voluptates reprehenderit, maxime eos iste aliquid. Repudiandae, suscipit?</p>
-              <a href="#" class="button button--flex button--small portfolio_button">
-                Demo
-                <i class="uil uil-arrow-right button_icon"></i>
-              </a>
-            </div>
-          </div>
-        </div> -->
-
-        <!--Add Arrows-->
-        <!-- <div class="swiper-button-next">
-          <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+        <div onclick="toggleFrontEndSkills()" class="skill_group_title">
+            <h2>Front End</h2>
+            <i class="uil uil-angle-down skill_arrow"></i>
         </div>
-        <div class="swiper-button-prev">
-          <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">HTML</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 90%; animation-delay: 0s;"></div>
+                </div>
+                <div class="skill_value">90%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">CSS</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 65%; animation-delay: 1s;"></div>
+                </div>
+                <div class="skill_value">65%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">JavaScript</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 60%; animation-delay: 2s;"></div>
+                </div>
+                <div class="skill_value">60%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">TypeScript</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 50%; animation-delay: 3s;"></div>
+                </div>
+                <div class="skill_value">50%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">Angular</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 55%; animation-delay: 4s;"></div>
+                </div>
+                <div class="skill_value">55%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">Bootstrap</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 65%; animation-delay: 5s;"></div>
+                </div>
+                <div class="skill_value">65%</div>
+            </div>
+        </div>
+
+        <div onclick="toggleBackEndSkills()" class="skill_group_title">
+            <h2>Back End</h2>
+            <i class="uil uil-angle-down skill_arrow"></i>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">Java</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 85%; animation-delay: 0s;"></div>
+                </div>
+                <div class="skill_value">85%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">JavaScript</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 70%; animation-delay: 1s;"></div>
+                </div>
+                <div class="skill_value">70%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">Python</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 55%; animation-delay: 2s;"></div>
+                </div>
+                <div class="skill_value">55%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">Springboot</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 70%; animation-delay: 3s;"></div>
+                </div>
+                <div class="skill_value">70%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">Node</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 70%; animation-delay: 4s;"></div>
+                </div>
+                <div class="skill_value">70%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">MySQL</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 60%; animation-delay: 5s;"></div>
+                </div>
+                <div class="skill_value">60%</div>
+            </div>
+        </div>
+
+        <!-- <div onclick="toggleFrameworksSkills()" class="skill_group_title">
+            <h2>Frameworks</h2>
+            <i class="uil uil-angle-down skill_arrow"></i>
         </div> -->
 
-        <!--Add Pagination-->
-        <!-- <div class="swiper-pagination"></div>
+        <div onclick="toggleDesignSkills()" class="skill_group_title">
+            <h2>Design</h2>
+            <i class="uil uil-angle-down skill_arrow"></i>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">Figma</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 55%; animation-delay: 0s;"></div>
+                </div>
+                <div class="skill_value">55%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">Inkscape</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 65%; animation-delay: 1s;"></div>
+                </div>
+                <div class="skill_value">65%</div>
+            </div>
+        </div>
 
-      </div>
+        <div onclick="toggleCADSkills()" class="skill_group_title">
+            <h2>CAD</h2>
+            <i class="uil uil-angle-down skill_arrow"></i>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">AutoCAD</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 75%; animation-delay: 0s;"></div>
+                </div>
+                <div class="skill_value">75%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">FreeCAD</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 65%; animation-delay: 1s;"></div>
+                </div>
+                <div class="skill_value">65%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">Catia (Part)</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 85%; animation-delay: 2s;"></div>
+                </div>
+                <div class="skill_value">85%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">Catia (Assembly)</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 80%; animation-delay: 3s;"></div>
+                </div>
+                <div class="skill_value">80%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">Catia (Generative Shape Design)</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 60%; animation-delay: 4s;"></div>
+                </div>
+                <div class="skill_value">60%</div>
+            </div>
+        </div>
 
-    </section> -->
+        <div onclick="toggleSimulationSkills()" class="skill_group_title">
+            <h2>Simulation & Optimization</h2>
+            <i class="uil uil-angle-down skill_arrow"></i>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">Matlab/Simulink</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 55%; animation-delay: 0s;"></div>
+                </div>
+                <div class="skill_value">55%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">MSC.Marc/Mentat</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 60%; animation-delay: 1s;"></div>
+                </div>
+                <div class="skill_value">60%</div>
+            </div>
+        </div>
+        <div class="skill_content skill_close">
+            <h3 class="skill_title">ModeFrontier</h3>
+            <div class="skill_elements">
+                <div class="skillbar_background">
+                    <div class="skillbar" style="width: 65%; animation-delay: 2s;"></div>
+                </div>
+                <div class="skill_value">65%</div>
+            </div>
+        </div>
 
-    <footer>
+    </section>
+
+    <!--==================== LANGUAGES ====================-->
+
+    <section class="language section" id="languages">
+        <h2 class="section_title">Languages</h2>
+
+        <div class="languages">
+            <div class="lang_container">
+                <div class="circular">
+                    <div class="inner"></div>
+                    <div class="outer"></div>
+                    <div class="numb french_numb">
+                        100%
+                    </div>
+                    <div class="circle">
+                        <div class="dot dot_french">
+                            <span></span>
+                        </div>
+                        <div class="bar left_french">
+                            <div class="progress progress_french"></div>
+                        </div>
+                        <div class="bar right_french">
+                            <div class="progress progress_french"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="language_text">
+                    French: native
+                </div>
+            </div>
+
+            <div class="lang_container">
+                <div class="circular">
+                    <div class="inner"></div>
+                    <div class="outer"></div>
+                    <div class="numb english_numb">
+                        90%
+                    </div>
+                    <div class="circle">
+                        <div class="dot dot_english">
+                            <span></span>
+                        </div>
+                        <div class="bar left_english">
+                            <div class="progress progress_english"></div>
+                        </div>
+                        <div class="bar right_english">
+                            <div class="progress progress_english"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="language_text">
+                    English: fluent
+                </div>
+            </div>
+
+            <div class="lang_container">
+                <div class="circular">
+                    <div class="inner"></div>
+                    <div class="outer"></div>
+                    <div class="numb hungarian_numb">
+                        55%
+                    </div>
+                    <div class="circle">
+                        <div class="dot dot_hungarian">
+                            <span></span>
+                        </div>
+                        <div class="bar left_hungarian">
+                            <div class="progress progress_hungarian"></div>
+                        </div>
+                        <div class="bar right_hungarian">
+                            <div class="progress progress_hungarian"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="language_text">
+                    Hungarian: intermediate
+                </div>
+            </div>
+
+            <div class="lang_container">
+                <div class="circular">
+                    <div class="inner"></div>
+                    <div class="outer"></div>
+                    <div class="numb spanish_numb">
+                        35%
+                    </div>
+                    <div class="circle">
+                        <div class="dot dot_spanish">
+                            <span></span>
+                        </div>
+                        <div class="bar left_spanish">
+                            <div class="progress progress_spanish"></div>
+                        </div>
+                        <div class="bar right_spanish">
+                            <div class="progress progress_spanish"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="language_text">
+                    Spanish: basics
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--==================== PORTFOLIO ====================-->
+    <section class="portfolio section" id="portfolio">
+        <h2 class="section_title">Portfolio</h2>
+        <span class="section_subtitle">Most recent work</span>
+
+        <div class="portfolio_container container swiper">
+            <div class="swiper-wrapper">
+                <!--==================== PORTFOLIO 1====================-->
+                <div class="portfolio_content grid swiper-slide">
+                    <img src="assets/img/thereddit.png" alt="" class="portfolio_img">
+
+                    <div class="portfolio_data">
+                        <h3 class="portfolio_title">The reddit clone</h3>
+                        <p class="portfolio_description">
+                            <ul>
+                                <li>Description: A clone of the reddit application</li>
+                                <li>Technologies: Node, Angular, Bootstrap, MySQL</li>
+                                <li>Progress status: 75%</li>
+                                <li>Context: full stack, reddit</li>
+                            </ul>
+                        </p>
+                        <a href="https://www.reddit.com/" target="_blank" class="button button--flex button--small portfolio_button">
+                            Visit
+                            <i class="uil uil-arrow-right button_icon"></i>
+                        </a>
+
+
+                    </div>
+                </div>
+                <!--==================== PORTFOLIO 2====================-->
+                <div class="portfolio_content grid swiper-slide">
+                    <img src="assets/img/the3dopaminelab.PNG" alt="" class="portfolio_img">
+
+                    <div class="portfolio_data">
+                        <h3 class="portfolio_title">Online Store</h3>
+                        <p class="portfolio_description">
+                            <ul>
+                                <li>Description: online store for 3D printing products & services</li>
+                                <li>Technologies: Wordpress</li>
+                                <li>Progress status: 90%</li>
+                                <li>Context: wordpress, ecommerce, dropshipping, brand design, SEO, website policies</li>
+                            </ul>
+                        </p>
+                        <a href="https://the3dopaminelab.com/" target="_blank" class="button button--flex button--small portfolio_button">
+                            Visit
+                            <i class="uil uil-arrow-right button_icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!--Add Arrows-->
+            <div class="swiper-button-next">
+                <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+            </div>
+            <div class="swiper-button-prev">
+                <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+            </div>
+
+            <!--Add Pagination-->
+            <div class="swiper-pagination"></div>
+
+        </div>
+
+    </section>
+
+    <!---------- HOBBIES & INTERESTS ---------->
+
+    <section class="hobbies section" id="interests">
+        <h2 class="section_title">Hobbies & Interests</h2>
+
+        <div class="hobbies_grid">
+
+            <div class="hobbies_content">
+                <i class='bx bx-headphone hobbies_icon'></i>
+                <p>Music</p>
+            </div>
+
+            <div class="hobbies_content">
+                <i class='bx bxs-plane-alt hobbies_icon'></i>
+                <p>Traveling</p>
+            </div>
+
+            <div class="hobbies_content">
+                <i class='bx bxs-tree hobbies_icon'></i>
+                <p>Nature</p>
+            </div>
+
+            <div class="hobbies_content">
+                <i class='bx bx-fork hobbies_icon'></i>
+                <p>Cooking</p>
+            </div>
+
+            <div class="hobbies_content">
+                <i class='bx bx-football hobbies_icon'></i>
+                <p>Football</p>
+            </div>
+
+            <div class="hobbies_content">
+                <i class='bx bx-run hobbies_icon'></i>
+                <p>Running</p>
+            </div>
+
+            <div class="hobbies_content">
+                <i class='bx bx-cube hobbies_icon'></i>
+                <p>3D Printing</p>
+            </div>
+
+            <div class="hobbies_content">
+                <i class='bx bx-laptop hobbies_icon'></i>
+                <p>Programming</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scrollup_icon"></i>
+    </a>
+
+    <!--==================== Dark mode ====================-->
+    <button id="toggle-dark-mode-2">
+        <i class="uil"></i>
+    </button>
+
+    <!--==================== FOOTER ====================-->
+
+    <!-- <footer style="position: sticky; width: 100%; height: 200px; background-color: aqua; bottom: 0;">
+
+    </footer> -->
+    <footer class="footer" id="contact" style="width: 100%;">
+        <div class="footer_bg" style="width: 100%;">
+            <div class="footer_container grid">
+                <div style="width: 100%;">
+                    <h1 class="footer_title">Clément<br>Huchet</h1>
+                    <span class="footer_subtitle">Web Developer</span>
+                </div>
+
+                <ul class="footer_links">
+                    <li>
+                        <a href="#portfolio" class="footer_link">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="mailto: cl.huchet35@gmail.com" target="_blank" class="footer_link">ContactMe</a>
+                    </li>
+                </ul>
+
+                <div class="footer_socials">
+                    <a href="https://github.com/Klem35" target="_blank" class="footer_social">
+                        <i class='bx bxl-github' ></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/cl%C3%A9ment-huchet-5ba6a285/" target="_blank" class="footer_social">
+                        <i class='bx bxl-linkedin-square' ></i>
+                    </a>
+                </div>
+
+
+            </div>
+            <p class="footer_copy">&#169; Clément Huchet. All right reserved</p>
+
+        </div>
+
 
     </footer>
-  </main>
 
+    <!--==================== BOOTSTRAP ====================-->
 
-  <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Optional JavaScript; choose one of the two! -->
 
-  <!-- Option 1: Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
-  <script src="./assets/js/swiper-bundle.min.js"></script>
-  <script src="./assets/js/main.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-  <script>
-    anime({
-      targets: "#svg path",
-      strokeDashoffset: [anime.setDashoffset, 0],
-      easing: 'easeInOutSine',
-      duration: 1500,
-      delay: function (el, i) { return i * 250 },
-      direction: 'alternate',
-      loop: false
-    });
-  </script>
 
-  <script>
-    function toggleFrontEndSkills() {
-      var x = document.getElementsByClassName('skill_content');
-      var value = document.getElementsByClassName('skill_value')
-      var arrow = document.getElementsByClassName('uil');
+    <!--==================== TITLE ====================-->
 
-      for (i = 0; i < 3; i++) {
-        if (x[i].classList.contains('skill_close')) {
-          x[i].classList.remove('skill_close');
-          x[i].classList.add('skill_open');
-        } else {
-          x[i].classList.remove('skill_open');
-          x[i].classList.add('skill_close');
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <script>
+        anime({
+            targets: "#svg path",
+            strokeDashoffset: [anime.setDashoffset, 0],
+            easing: 'easeInOutSine',
+            duration: 1500,
+            delay: function (el, i) { return i * 250 },
+            direction: 'alternate',
+            loop: false
+        });
+    </script>
+
+    <!--==================== SWIPER JS ====================-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
+
+
+    
+    <!--==================== ANIMATE SKILL BARS ====================-->
+    <script>
+        function toggleFrontEndSkills() {
+            var x = document.getElementsByClassName('skill_content');
+            var value = document.getElementsByClassName('skill_value')
+            var arrow = document.getElementsByClassName('uil-angle-down');
+
+            for (i = 0; i < 6; i++) {
+                if (x[i].classList.contains('skill_close')) {
+                    x[i].classList.remove('skill_close');
+                    x[i].classList.add('skill_open');
+                } else {
+                    x[i].classList.remove('skill_open');
+                    x[i].classList.add('skill_close');
+                }
+            }
+
+            if (arrow[0].classList.contains('skill_arrow')) {
+                arrow[0].classList.remove('skill_arrow');
+                arrow[0].classList.add('skill_arrow_180');
+            } else {
+                arrow[0].classList.remove('skill_arrow_180');
+                arrow[0].classList.add('skill_arrow');
+            }
+
+            if (value[0].classList.contains('skill_value_move')) {
+                value[0].classList.remove('skill_value_move');
+            } else {
+                value[0].classList.add('skill_value_move');
+            }
+
         }
-      }
 
-      if (arrow[0].classList.contains('skill_arrow')) {
-        arrow[0].classList.remove('skill_arrow');
-        arrow[0].classList.add('skill_arrow_180');
-      } else {
-        arrow[0].classList.remove('skill_arrow_180');
-        arrow[0].classList.add('skill_arrow');
-      }
+        function toggleBackEndSkills() {
+            var x = document.getElementsByClassName('skill_content');
+            var arrow = document.getElementsByClassName('uil-angle-down');
+            for (i = 6; i < 12; i++) {
+                if (x[i].classList.contains('skill_close')) {
+                    x[i].classList.remove('skill_close');
+                    x[i].classList.add('skill_open');
+                } else {
+                    x[i].classList.remove('skill_open');
+                    x[i].classList.add('skill_close');
+                }
+            }
 
-      if (value[0].classList.contains('skill_value_move')) {
-        value[0].classList.remove('skill_value_move');
-      } else {
-        value[0].classList.add('skill_value_move');
-      }
-
-    }
-
-    function toggleBackEndSkills() {
-      var x = document.getElementsByClassName('skill_content');
-      var arrow = document.getElementsByClassName('uil');
-      for (i = 3; i < 6; i++) {
-        if (x[i].classList.contains('skill_close')) {
-          x[i].classList.remove('skill_close');
-          x[i].classList.add('skill_open');
-        } else {
-          x[i].classList.remove('skill_open');
-          x[i].classList.add('skill_close');
+            if (arrow[1].classList.contains('skill_arrow')) {
+                arrow[1].classList.remove('skill_arrow');
+                arrow[1].classList.add('skill_arrow_180');
+            } else {
+                arrow[1].classList.remove('skill_arrow_180');
+                arrow[1].classList.add('skill_arrow');
+            }
         }
-      }
 
-      if (arrow[1].classList.contains('skill_arrow')) {
-        arrow[1].classList.remove('skill_arrow');
-        arrow[1].classList.add('skill_arrow_180');
-      } else {
-        arrow[1].classList.remove('skill_arrow_180');
-        arrow[1].classList.add('skill_arrow');
-      }
-    }
+        // function toggleFrameworksSkills() {
+        //     var x = document.getElementsByClassName('skill_content');
+        //     var arrow = document.getElementsByClassName('uil-angle-down');
+        //     for (i = 7; i < 11; i++) {
+        //         if (x[i].classList.contains('skill_close')) {
+        //             x[i].classList.remove('skill_close');
+        //             x[i].classList.add('skill_open');
+        //         } else {
+        //             x[i].classList.remove('skill_open');
+        //             x[i].classList.add('skill_close');
+        //         }
+        //     }
 
-    function toggleFrameworksSkills() {
-      var x = document.getElementsByClassName('skill_content');
-      var arrow = document.getElementsByClassName('uil');
-      for (i = 6; i < 8; i++) {
-        if (x[i].classList.contains('skill_close')) {
-          x[i].classList.remove('skill_close');
-          x[i].classList.add('skill_open');
-        } else {
-          x[i].classList.remove('skill_open');
-          x[i].classList.add('skill_close');
+        //     if (arrow[2].classList.contains('skill_arrow')) {
+        //         arrow[2].classList.remove('skill_arrow');
+        //         arrow[2].classList.add('skill_arrow_180');
+        //     } else {
+        //         arrow[2].classList.remove('skill_arrow_180');
+        //         arrow[2].classList.add('skill_arrow');
+        //     }
+        // }
+
+        function toggleDesignSkills() {
+            var x = document.getElementsByClassName('skill_content');
+            var arrow = document.getElementsByClassName('uil-angle-down');
+            for (i = 12; i < 14; i++) {
+                if (x[i].classList.contains('skill_close')) {
+                    x[i].classList.remove('skill_close');
+                    x[i].classList.add('skill_open');
+                } else {
+                    x[i].classList.remove('skill_open');
+                    x[i].classList.add('skill_close');
+                }
+            }
+
+            if (arrow[3].classList.contains('skill_arrow')) {
+                arrow[3].classList.remove('skill_arrow');
+                arrow[3].classList.add('skill_arrow_180');
+            } else {
+                arrow[3].classList.remove('skill_arrow_180');
+                arrow[3].classList.add('skill_arrow');
+            }
         }
-      }
 
-      if (arrow[2].classList.contains('skill_arrow')) {
-        arrow[2].classList.remove('skill_arrow');
-        arrow[2].classList.add('skill_arrow_180');
-      } else {
-        arrow[2].classList.remove('skill_arrow_180');
-        arrow[2].classList.add('skill_arrow');
-      }
-    }
+        function toggleCADSkills() {
+            var x = document.getElementsByClassName('skill_content');
+            var arrow = document.getElementsByClassName('uil-angle-down');
+            for (i = 14; i < 19; i++) {
+                if (x[i].classList.contains('skill_close')) {
+                    x[i].classList.remove('skill_close');
+                    x[i].classList.add('skill_open');
+                } else {
+                    x[i].classList.remove('skill_open');
+                    x[i].classList.add('skill_close');
+                }
+            }
 
-    function toggleDesignSkills() {
-      var x = document.getElementsByClassName('skill_content');
-      var arrow = document.getElementsByClassName('uil');
-      for (i = 8; i < 10; i++) {
-        if (x[i].classList.contains('skill_close')) {
-          x[i].classList.remove('skill_close');
-          x[i].classList.add('skill_open');
-        } else {
-          x[i].classList.remove('skill_open');
-          x[i].classList.add('skill_close');
+            if (arrow[4].classList.contains('skill_arrow')) {
+                arrow[4].classList.remove('skill_arrow');
+                arrow[4].classList.add('skill_arrow_180');
+            } else {
+                arrow[4].classList.remove('skill_arrow_180');
+                arrow[4].classList.add('skill_arrow');
+            }
         }
-      }
 
-      if (arrow[3].classList.contains('skill_arrow')) {
-        arrow[3].classList.remove('skill_arrow');
-        arrow[3].classList.add('skill_arrow_180');
-      } else {
-        arrow[3].classList.remove('skill_arrow_180');
-        arrow[3].classList.add('skill_arrow');
-      }
-    }
+        function toggleSimulationSkills() {
+            var x = document.getElementsByClassName('skill_content');
+            var arrow = document.getElementsByClassName('uil-angle-down');
+            for (i = 19; i < 22; i++) {
+                if (x[i].classList.contains('skill_close')) {
+                    x[i].classList.remove('skill_close');
+                    x[i].classList.add('skill_open');
+                } else {
+                    x[i].classList.remove('skill_open');
+                    x[i].classList.add('skill_close');
+                }
+            }
 
-    function toggleCADSkills() {
-      var x = document.getElementsByClassName('skill_content');
-      var arrow = document.getElementsByClassName('uil');
-      for (i = 10; i < 15; i++) {
-        if (x[i].classList.contains('skill_close')) {
-          x[i].classList.remove('skill_close');
-          x[i].classList.add('skill_open');
-        } else {
-          x[i].classList.remove('skill_open');
-          x[i].classList.add('skill_close');
+            if (arrow[5].classList.contains('skill_arrow')) {
+                arrow[5].classList.remove('skill_arrow');
+                arrow[5].classList.add('skill_arrow_180');
+            } else {
+                arrow[5].classList.remove('skill_arrow_180');
+                arrow[5].classList.add('skill_arrow');
+            }
         }
-      }
 
-      if (arrow[4].classList.contains('skill_arrow')) {
-        arrow[4].classList.remove('skill_arrow');
-        arrow[4].classList.add('skill_arrow_180');
-      } else {
-        arrow[4].classList.remove('skill_arrow_180');
-        arrow[4].classList.add('skill_arrow');
-      }
-    }
-
-    function toggleSimulationSkills() {
-      var x = document.getElementsByClassName('skill_content');
-      var arrow = document.getElementsByClassName('uil');
-      for (i = 15; i < 18; i++) {
-        if (x[i].classList.contains('skill_close')) {
-          x[i].classList.remove('skill_close');
-          x[i].classList.add('skill_open');
-        } else {
-          x[i].classList.remove('skill_open');
-          x[i].classList.add('skill_close');
-        }
-      }
-
-      if (arrow[5].classList.contains('skill_arrow')) {
-        arrow[5].classList.remove('skill_arrow');
-        arrow[5].classList.add('skill_arrow_180');
-      } else {
-        arrow[5].classList.remove('skill_arrow_180');
-        arrow[5].classList.add('skill_arrow');
-      }
-    }
-
-  </script>
+    </script>
 
 
+    <!--==================== ANIMATE LANGUAGES CHART ====================-->
+    <script>
+
+        const startAnimation = (entries, observer) => {
+            entries.forEach(entry => {
+
+                entry.target.classList.toggle('progress_french', entry.isIntersecting);
+                entry.target.classList.toggle('progress_english', entry.isIntersecting);
+                entry.target.classList.toggle('progress_hungarian', entry.isIntersecting);
+                entry.target.classList.toggle('progress_spanish', entry.isIntersecting);
+
+            });
+
+            const french_numb = document.querySelector(".french_numb");
+            let french_counter = 0;
+            setInterval(() => {
+                if (french_counter == 100) {
+                    clearInterval();
+                } else {
+                    french_counter += 1;
+                    french_numb.textContent = french_counter + "%";
+                }
+            }, 30);
+
+            const english_numb = document.querySelector(".english_numb");
+            let english_counter = 0;
+            setInterval(() => {
+                if (english_counter == 90) {
+                    clearInterval();
+                } else {
+                    english_counter += 1;
+                    english_numb.textContent = english_counter + "%";
+                }
+            }, 30);
+
+            const hungarian_numb = document.querySelector(".hungarian_numb");
+            let hungarian_counter = 0;
+            setInterval(() => {
+                if (hungarian_counter == 55) {
+                    clearInterval();
+                } else {
+                    hungarian_counter += 1;
+                    hungarian_numb.textContent = hungarian_counter + "%";
+                }
+            }, 30);
+
+            const spanish_numb = document.querySelector(".spanish_numb");
+            let spanish_counter = 0;
+            setInterval(() => {
+                if (spanish_counter == 35) {
+                    clearInterval();
+                } else {
+                    spanish_counter += 1;
+                    spanish_numb.textContent = spanish_counter + "%";
+                }
+            }, 30);
+        };
+
+        const observer = new IntersectionObserver(startAnimation);
+
+
+
+        const hungarian_dot_animation = (entries, observer) => {
+            entries.forEach(entry => {
+                entry.target.classList.toggle('dot_hungarian', entry.isIntersecting);
+            });
+        };
+
+        const hungarian_dot_observer = new IntersectionObserver(hungarian_dot_animation);
+
+        const progress_hungarian = document.querySelectorAll('.progress_hungarian');
+        progress_hungarian.forEach(el => {
+            observer.observe(el);
+        });
+
+        const dot_hungarian = document.querySelectorAll('.dot_hungarian');
+        dot_hungarian.forEach(el => {
+            hungarian_dot_observer.observe(el);
+        });
+
+
+
+
+        const spanish_dot_animation = (entries, observer) => {
+            entries.forEach(entry => {
+                entry.target.classList.toggle('dot_spanish', entry.isIntersecting);
+            });
+        };
+
+        const spanish_dot_observer = new IntersectionObserver(spanish_dot_animation);
+
+        const progress_spanish = document.querySelectorAll('.progress_spanish');
+        progress_spanish.forEach(el => {
+            observer.observe(el);
+        });
+
+        const dot_spanish = document.querySelectorAll('.dot_spanish');
+        dot_spanish.forEach(el => {
+            spanish_dot_observer.observe(el);
+        });
+
+
+
+
+        const english_dot_animation = (entries, observer) => {
+            entries.forEach(entry => {
+                entry.target.classList.toggle('dot_english', entry.isIntersecting);
+            });
+        };
+
+        const english_dot_observer = new IntersectionObserver(english_dot_animation);
+
+        const progress_english = document.querySelectorAll('.progress_english');
+        progress_english.forEach(el => {
+            observer.observe(el);
+        });
+
+        const dot_english = document.querySelectorAll('.dot_english');
+        dot_english.forEach(el => {
+            english_dot_observer.observe(el);
+        });
+
+
+
+
+        const french_dot_animation = (entries, observer) => {
+            entries.forEach(entry => {
+                entry.target.classList.toggle('dot_french', entry.isIntersecting);
+            });
+        };
+
+        const french_dot_observer = new IntersectionObserver(french_dot_animation);
+
+        const progress_french = document.querySelectorAll('.progress_french');
+        progress_french.forEach(el => {
+            observer.observe(el);
+        });
+
+        const dot_french = document.querySelectorAll('.dot_french');
+        dot_french.forEach(el => {
+            french_dot_observer.observe(el);
+        });
+
+    </script>
 </body>
 
 </html>
