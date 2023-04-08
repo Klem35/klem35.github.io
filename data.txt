@@ -1,0 +1,26 @@
+
+// Angular
+// Handelbars, Thymeleaf
+// Spring, Springboot, CodeIgniter, NodeJs, ExpressJs
+// Java, Javascript, Typescript, PHP, Jquery
+// Bootstrap
+// Babel
+
+// Sequelize
+// Sweet alert
+// Pupeteer
+
+// Git 
+// Github, Bitbucket
+// Swagger, 
+// Nodemailer
+// Sass
+// JWT token
+// MySQL
+
+// Jira, Trello, 
+
+// FE library: RxJS
+
+// Jest
+// nodemon sequelize 
