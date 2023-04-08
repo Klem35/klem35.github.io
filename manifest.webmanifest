@@ -1,0 +1,22 @@
+{
+  "name": "My portfolio",
+  "short_name": "MPF",
+  "description": "My portfolio",
+
+  "scope": "/",
+  "start_url": "/",
+
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+
+  
+  "display": "standalone", 
+  
+  "icons": [
+      {
+        "src": "/assets/images/logo.png",
+        "type": "image/png",
+        "sizes": "700x700"
+      }
+  ]
+}
