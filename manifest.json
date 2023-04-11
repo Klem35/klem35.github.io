@@ -10,17 +10,17 @@
 "orientation": "portrait",
 "icons": [
   {
-    "src": "img/thumb/64.png",
+    "src": "assets/images/logo.png",
     "type": "image/png",
     "sizes": "64x64"
   },
   {
-    "src": "img/thumb/144.png",
+    "src": "assets/images/logo.png",
     "type": "image/png",
     "sizes": "144x144"
   },
   {
-    "src": "img/thumb/512.png",
+    "src": "assets/images/logo.png",
     "type": "image/png",
     "sizes": "512x512"
   }
