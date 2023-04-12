@@ -3,7 +3,7 @@
 "short_name": "html_temp",
 "description": "A simply htm template for static websites.",
 "lang": "it-IT",
-"start_url": "?utm_source=manifest",
+"start_url": "/",
 "background_color": "#EEEEEE",
 "theme_color": "#2196F3",
 "display": "standalone",
