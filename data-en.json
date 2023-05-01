@@ -66,5 +66,40 @@
          "description": "",
          "link": "https://angularjs.org/"
       }
+   ],
+   "experiences": [
+      {
+         "title": "Micro-business manager",
+         "company": "the3dopaminelab",
+         "date": "Nov. 2020 - Dec. 2022",
+         "location": "Vitré, FRANCE - Budapest, HUNGARY",
+         "description": "",
+         "activities": [
+            "Project management",
+            "Online store",
+            "Dropshipping",
+            "Brand design",
+            "Accounting",
+            "3D printing",
+            "CAD"
+         ],
+         "field": ""
+      },
+      {
+         "title": "Consulting engineer",
+         "company": "Altran",
+         "date": "Sep. 2019 - Nov. 2020",
+         "location": "Issac, FRANCE",
+         "description": "Technical leader and main customer contact fortool development of BAL (Building Assembly Line) of Ariane 6 Launcher.",
+         "activities": [
+            "Project management",
+            "Supplier management",
+            "Customer relationship",
+            "Bill of specifications",
+            "CAD"
+         ],
+         "field": ""
+      }
+      
    ]
 }

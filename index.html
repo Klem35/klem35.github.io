@@ -5,12 +5,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>My portfolio</title>
   <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="./assets/scripts/script.js" type="module"></script>
+  <script src="./assets/scripts/fadein.js"></script>
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <link href="./assets/css/reset.css" rel="stylesheet">
+  <link href="./assets/css/common.css" rel="stylesheet">
+
 
 
   <script
@@ -18,10 +23,12 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/custom.css">
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/custom.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   <!-- <link rel="canonical" href="https://klem35.github.io/" />
   <link rel="manifest" href="/manifest.webmanifest"> -->
+
 
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -35,17 +42,17 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <script async type="text/javascript">
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/serviceworker.js', {scope: '/'})
-      .then(function(registration) {
-        registration.addEventListener('updatefound', function() {
-          var installingWorker = registration.installing;
-          console.log('A new service worker is being installed:',
-            installingWorker);
+      navigator.serviceWorker.register('/serviceworker.js', { scope: '/' })
+        .then(function (registration) {
+          registration.addEventListener('updatefound', function () {
+            var installingWorker = registration.installing;
+            console.log('A new service worker is being installed:',
+              installingWorker);
+          });
+        })
+        .catch(function (error) {
+          console.log('Service worker registration failed:', error);
         });
-      })
-      .catch(function(error) {
-        console.log('Service worker registration failed:', error);
-      });
     } else {
       console.log('Service workers are not supported, switch to Firefox!.');
     }
@@ -107,40 +114,34 @@
 
   <main>
 
-    <section>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-
-        </div>
-      </div>
-    </section>
 
     <section>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-          <div class="row" id="languages_container">
+      <div class="row" id="experiences_container">
+        <div class="container py-5">
+          <div class="main-timeline-2">
+
           </div>
         </div>
       </div>
     </section>
 
+
+
+
+
+
+
+
+
+
+
     <section>
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-          <div class="row" id="technologies_container">
-          </div>
-        </div>
+      <div class="row" id="languages_container">
+      </div>
+    </section>
+
+    <section>
+      <div class="row" id="technologies_container">
       </div>
     </section>
 
@@ -170,7 +171,7 @@
 
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
@@ -200,7 +201,18 @@
       </form>
       <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
     </section>
+
+
+
+    <div class="js-scroll-trigger"></div>
+
+
+
+
   </main>
+  <section style="height: 2500px">
+
+  </section>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
@@ -222,43 +234,43 @@
   </script> -->
   <!-- <script src="./assets/scripts/circularProgressBar.js"></script> -->
 
-  <!-- <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        // get all progress bar
-        const elements = [].slice.call(document.querySelectorAll('.pie'));
-        // call to function
-        const circle = new CircularProgressBar('pie');
-  
-        // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
-        // if IntersectionObserver is supported by the browser
-        if ('IntersectionObserver' in window) {
-          const config = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.75,
-          };
-  
-          const ovserver = new IntersectionObserver((entries, observer) => {
-            entries.map((entry) => {
-              if (entry.isIntersecting && entry.intersectionRatio >= 0.75) {
-                circle.initial(entry.target);
-                observer.unobserve(entry.target);
-              }
-            });
-          }, config);
-  
-          elements.map((item) => {
-            ovserver.observe(item);
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      // get all progress bar
+      const elements = [].slice.call(document.querySelectorAll('.pie'));
+      // call to function
+      const circle = new CircularProgressBar('pie');
+
+      // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+      // if IntersectionObserver is supported by the browser
+      if ('IntersectionObserver' in window) {
+        const config = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.75,
+        };
+
+        const ovserver = new IntersectionObserver((entries, observer) => {
+          entries.map((entry) => {
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.75) {
+              circle.initial(entry.target);
+              observer.unobserve(entry.target);
+            }
           });
-        } else {
-          // if the browser does not support IntersectionObserver
-          // we run all progress bars at once
-          elements.map((element) => {
-            circle.initial(element);
-          });
-        }
-      });
-    </script> -->
+        }, config);
+
+        elements.map((item) => {
+          ovserver.observe(item);
+        });
+      } else {
+        // if the browser does not support IntersectionObserver
+        // we run all progress bars at once
+        elements.map((element) => {
+          circle.initial(element);
+        });
+      }
+    });
+  </script>
 
 
 
