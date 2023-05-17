@@ -115,6 +115,76 @@ const data = {
       ],
       field: ""
     }
+  ],
+  projects: [
+    {
+      title: "MyGreenStudio",
+      background_image: "mygreenstudio-1.png",
+      project_type: "professional",
+      project_logo: "",
+      company: "Yourosoft kft.",
+      company_logo: "",
+      date: "Nov. 2020 - Dec. 2022",
+      description: "",
+      front_website_link: "https://mygreenstudio.com/en/",
+      platform_website_link: "https://workspace.mygreenstudio.com/en/anonymous/sign-in",
+      activities: [
+        "Project management",
+        "Online store",
+        "Dropshipping",
+        "Brand design",
+        "Accounting",
+        "3D printing",
+        "CAD"
+      ],
+      technologies: {
+        frontend: [
+          "Code Igniter 4",
+          "PHP",
+          "Handelbars",
+          "jquery",
+          "javascript"
+        ],
+        backend: [
+          "Code Igniter 4",
+          "PHP"
+        ]
+      }
+    },
+    {
+      title: "MyExpatMobility",
+      class: "myexpatmobility",
+      project_type: "professional",
+      project_logo: "",
+      company: "Yourosoft kft.",
+      company_logo: "",
+      date: "Nov. 2020 - Dec. 2022",
+      description: "",
+      front_website_link: "https://www.myexpatdata.com/",
+      platform_website_link: "",
+      activities: [
+        "Project management",
+        "Online store",
+        "Dropshipping",
+        "Brand design",
+        "Accounting",
+        "3D printing",
+        "CAD"
+      ],
+      technologies: {
+        frontend: [
+          "Code Igniter 4",
+          "PHP",
+          "Handelbars",
+          "jquery",
+          "javascript"
+        ],
+        backend: [
+          "SpringBoot",
+          "Java"
+        ]
+      }
+    }
   ]
 }
 
@@ -145,7 +215,6 @@ $(document).ready(function () {
           </div>
         </div>
       </div>`;
-    console.log(experiencesContainer)
     experiencesContainer.append(block);
   });
 
@@ -168,13 +237,13 @@ $(document).ready(function () {
       var block = `
           <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">${experience.title}</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
         <ul>${listOfActivities}</ul>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
         </div>`;
       modalContent.append(block);
       $('#exampleModal').modal('show');
@@ -216,8 +285,8 @@ $(document).ready(function () {
   var technologiesContainer = $('#technologies_container');
   technologies.forEach(function (technology) {
     var block = `<div class="col">
-    <div class="card card-logo" data-bs-placement="top" data-bs-toggle="tooltip" data-bs-html="true"
-    data-bs-title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+    <div class="card card-logo box" data-mdb-placement="top" data-mdb-toggle="tooltip" data-mdb-html="true"
+    data-mdb-title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
       <div class="card-body d-flex justify-content-center">
         ${technology.icon}
       </div>
@@ -228,10 +297,8 @@ $(document).ready(function () {
 
   // Initializing tooltips
 
-  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  const tooltipTriggerList = document.querySelectorAll('[data-mdb-toggle="tooltip"]');
   const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
-
-  // Technologies cards
 
   var trainings = data.trainings;
   var trainingsContainer = $('#trainings');
@@ -244,18 +311,79 @@ $(document).ready(function () {
       var block = `
           <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           ${$(this).text()}
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
         </div>`;
       modalContent.append(block);
       $('#exampleModal').modal('show');
     });
   });
+
+  // Projects cards
+
+  var projects = data.projects;
+  var projectsContainer = $('#projects_container');
+  projects.forEach(function (project) {
+    var project_index = projects.indexOf(project);
+
+    var block = `<div class="col-4">
+    <div class="card project_card" data-project-index="${project_index}">
+    <img class="project_background" src="assets/images/${project.background_image}">
+    <span class="hover_project_card">
+    <i class="fa fa-plus"></i>  
+    </span>
+      
+    </div>`;
+    projectsContainer.append(block);
+
+
+  })
+
+  $(".project_card").mouseenter(function hoverProjectCard() {
+    $("span", this).css("opacity", 1)
+  })
+  $(".project_card").mouseleave(function hoverProjectCard() {
+    $("span", this).css("opacity", 0)
+  })
+
+
+  $(".project_card").each(function () {
+    $(this).on('click', function () {
+      modalContent.empty();
+      var project = Object.values(data.projects)[$(this).data("project-index")];
+
+      var block = `
+          <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">${project.title}</h1>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        
+        
+        </div>
+        <div class="modal-footer">
+        <a href="${project.front_website_link}" target="_blank"><button type="button" class="btn btn-primary"><i class="fa fa-arrow-right"></i> Visit front website</button></a>
+        <a href="${project.platform_website_link}" target="_blank"><button type="button" class="btn btn-primary"><i class="fa fa-arrow-right"></i> Visit platform</button></a>
+          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+        </div>`;
+      modalContent.append(block);
+      $('#exampleModal').modal('show');
+    });
+  });
+
+  // Map
+  var map = L.map('map').setView([47.497913,  19.040236], 13);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+var marker = L.marker([47.497913, 19.040236]).addTo(map);
+
 });
 
 
@@ -302,6 +430,65 @@ function animateCircleProgressBar() {
       circle.initial(element);
     });
   }
+}
+
+
+
+
+$(document).ready(function(){
+// PARALLAX
+  // Populate images from data attributes.
+  var scrolled = $(window).scrollTop()
+  $('.parallax').each(function(index) {
+      var imageSrc = $(this).data('image-src')
+      var imageHeight = $(this).data('height')
+      $(this).css('background-image','url(' + imageSrc + ')')
+      $(this).css('height', imageHeight)
+
+      // Adjust the background position.
+      var initY = $(this).offset().top
+      var height = $(this).height()
+      var diff = scrolled - initY
+      var ratio = Math.round((diff / height) * 100)
+      $(this).css('background-position','center ' + parseInt(-(ratio * 1.5)) + 'px')
+  })
+
+  // Attach scroll event to window. Calculate the scroll ratio of each element
+  // and change the image position with that ratio.
+  // https://codepen.io/lemagus/pen/RWxEYz
+  $(window).scroll(function() {
+    var scrolled = $(window).scrollTop()
+    $('.parallax').each(function(index, element) {
+      var initY = $(this).offset().top
+      var height = $(this).height()
+      var endY  = initY + $(this).height()
+
+      // Check if the element is in the viewport.
+      var visible = isInViewport(this)
+      if(visible) {
+        var diff = scrolled - initY
+        var ratio = Math.round((diff / height) * 100)
+        $(this).css('background-position','center ' + parseInt(-(ratio * 1.5)) + 'px')
+      }
+    })
+  })
+})
+
+// Check if the element is in the viewport.
+// http://www.hnldesign.nl/work/code/check-if-element-is-visible/
+function isInViewport(node) {
+  // Am I visible? Height and Width are not explicitly necessary in visibility
+  // detection, the bottom, right, top and left are the essential checks. If an
+  // image is 0x0, it is technically not visible, so it should not be marked as
+  // such. That is why either width or height have to be > 0.
+  var rect = node.getBoundingClientRect()
+  return (
+    (rect.height > 0 || rect.width > 0) &&
+    rect.bottom >= 0 &&
+    rect.right >= 0 &&
+    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.left <= (window.innerWidth || document.documentElement.clientWidth)
+  )
 }
 
 

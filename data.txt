@@ -24,3 +24,23 @@
 
 // Jest
 // nodemon sequelize 
+
+
+6pictures
+1 #HEADER (photo)
+2 #ABOUT ME (plain 1)
+#VALUE1 (Teamspirit)
+3 #TRAININGS (plain 2) (UI DONE)
+4 #EXPERIENCES (plain 1) (UI DONE)
+#VALUE2 (empathy)
+5 #SKILLS (plain 2) 
+6 #TECHNOLOGIES (plain 1)
+#VALUE3 (organization)
+7 #PROJECTS (plain 2)
+9 #REWARDS (plain 1) (SLIDES)
+#VALUE4 (altruism)
+8 #FEEDBACKS (plain 2) (SLIDES)
+12 #INTERESTS (plain 1)
+#VALUE5 (honesty)
+11 #LET'S GET IN TOUCH (CV, ask for reference contacts) (plain 2)
+12 #FOOTER (plain 1)
