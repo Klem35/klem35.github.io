@@ -22,7 +22,6 @@ $(document).ready(function () {
   L.tileLayer.colorFilter('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
     filter: defaultToDarkFilter,
-    user_agent: "cl.huchet35@gmail.com"
   }).addTo(map);
 
   L.TileLayer.ColorFilter = L.TileLayer.extend({
