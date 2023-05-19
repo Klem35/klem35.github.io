@@ -19,7 +19,7 @@ $(document).ready(function () {
     'invert:100%',
   ]
 
-  L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
+  L.tileLayer.colorFilter('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
     filter: defaultToDarkFilter,
     user_agent: "cl.huchet35@gmail.com"
