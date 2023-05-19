@@ -21,7 +21,8 @@ $(document).ready(function () {
 
   L.tileLayer.colorFilter('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png', {
     attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
-    filter: defaultToDarkFilter
+    filter: defaultToDarkFilter,
+    user_agent: "cl.huchet35@gmail.com"
   }).addTo(map);
 
   L.TileLayer.ColorFilter = L.TileLayer.extend({
