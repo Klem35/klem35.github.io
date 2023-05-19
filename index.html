@@ -2,102 +2,65 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Material Design for Bootstrap</title>
 
-  <title>My portfolio</title>
-
+  
 
   <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <!-- Leaflet -->
 
+  <!-- JS -->
   <script src="./assets/scripts/script.js"></script>
-  <script src="./assets/scripts/fadein.js"></script>
-  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-  <!-- <link href="./assets/css/reset.css" rel="stylesheet"> -->
-  <link href="./assets/css/common.css" rel="stylesheet">
 
-
+  <!-- Leaflet -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+  <script src="./assets/scripts/leaflet-tilelayer-colorfilter.js"></script>
+<!-- Bootstrap -->
+
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+
+  <!-- Handelbars -->
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
 
   
-  <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script> -->
+  
 
-
-
-
-  <script
-    src="https://cdn.jsdelivr.net/gh/tomik23/circular-progress-bar@1.1.9/dist/circularProgressBar.min.js"></script>
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./assets/css/custom.css">
   <!-- MDB -->
-  <!-- <link rel="stylesheet" href="./assets/css/mdb.min.css" /> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-  <!-- <link rel="canonical" href="https://klem35.github.io/" />
-  <link rel="manifest" href="/manifest.webmanifest"> -->
+  <link rel="stylesheet" href="./assets/css/mdb.dark.min.css" />
 
-
-  <!-- JS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script async src="./assets/scripts/index.js"></script>
-  <!-- <script  type="module" src="./assets/scripts/test-data-import.js"></script> -->
-
-
-
-  <!-- Manifest
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="manifest" href="/manifest.json">
-
-  <!-- Service Worker registration
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <script async type="text/javascript">
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/serviceworker.js', { scope: '/' })
-        .then(function (registration) {
-          registration.addEventListener('updatefound', function () {
-            var installingWorker = registration.installing;
-            console.log('A new service worker is being installed:',
-              installingWorker);
-          });
-        })
-        .catch(function (error) {
-          console.log('Service worker registration failed:', error);
-        });
-    } else {
-      console.log('Service workers are not supported, switch to Firefox!.');
-    }
-  </script>
+  <!-- Custom css -->
+  <link rel="stylesheet" href="./assets/css/custom.css" />
 
 
 
 </head>
 
 <body>
-
-  <p>{{}} {{lastname}}</p>
-
-
+  <!-- Start your project here-->
 
   <header>
-    <nav class="navbar fixed-top navbar-expand-lg">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></i></span>
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -105,303 +68,103 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
             <li class="nav-item">
               <a class="nav-link disabled">Disabled</a>
             </li>
           </ul>
+          <form class="d-flex input-group w-auto">
+            <input type="search" class="form-control" placeholder="Type query" aria-label="Search" />
+            <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
+              Search
+            </button>
+          </form>
         </div>
       </div>
     </nav>
-    <div class="header">
-      <div class="progress-container">
-        <div class="progress-bar-scroll" id="myBar"></div>
-      </div>
-    </div>
-
-
 
   </header>
 
-  <main>
-
-    <div class="parallax" id="parallax-1" data-image-src="./assets/images/1-bis.jpg">
-      <div class="dynamic_text">
-        <p>Hi there, my name is</p>
-        <h1>Clément Huchet<br></h1>
-        <h2>I'm <span class="auto-type"></span><i class="fa-solid fa-computer-mouse-scrollwheel"></i></h2>
-      </div>
-
-      <i class="fa-regular fa-computer-mouse-scrollwheel"></i>
-
-      <!-- <div class="caption">
-      <span class="border">SCROLL DOWN</span>
-    </div> -->
-      <div>
-        <i class="fa-brand fa-linkedin"></i>
-      </div>
+  <div class="card m-4" style="height: 2500px">
+    <h5 class="card-header">Featured</h5>
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
+  </div>
 
-    <div class="text">
-      <h3>Parallax Demo</h3>
-
-      <div class="profile_picture">
-        <img class="avatar"
-          src="https://media.licdn.com/dms/image/C5603AQFK7mrBfVXAow/profile-displayphoto-shrink_200_200/0/1652106978504?e=1687392000&v=beta&t=MuOvMofq3qS-oOWQyTg7fzm74mHzPyPWgsF4CLxYOFo"></img>
-      </div>
-      <p>Parallax scrolling is a web site trend where the background content is moved at a different speed than the
-        foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed
-        posuere
-        mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim.
-        Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede,
-        nullam
-        vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales
-        tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at
-        quibusdam
-        sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare.
-        Suscipit
-        proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo.</p>
-    </div>
-
-    <div class="parallax" id="parallax-2" data-image-src="assets/images/2.jpg" data-height="400px">
-      <div class="caption">
-        <span class="border">LESS HEIGHT</span>
-      </div>
-    </div>
-
-    <div class="text">
-      <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
-    </div>
-
-    <div class="parallax" id="parallax-3" data-image-src="assets/images/darkneedle.jpg" data-height="400px">
-      <div class="caption">
-        <span class="border">SCROLL UP</span>
-      </div>
-    </div>
-
-    <div class="parallax" id="parallax-4" data-image-src="assets/images/4.jpg" data-height="400px">
-      <div class="caption">
-        <span class="border">COOL!</span>
-      </div>
-    </div>
-
-    <div class="parallax" id="parallax-5" data-image-src="assets/images/5.jpg" data-height="400px">
-      <div class="caption">
-        <span class="border">COOL!</span>
-      </div>
-    </div>
-
-    <div class="parallax" id="parallax-6" data-image-src="assets/images/6.jpg" data-height="400px">
-      <div class="caption">
-        <span class="border">END!</span>
-      </div>
-    </div>
-
-    <!-- Element to contain animated typing -->
-    <span id="element"></span>
+  <section id="experiences_container"></section>
 
 
 
 
-    <section>
-      <div class="row" id="experiences_container">
-        <div class="container py-5">
-          <div class="main-timeline-2">
-
-          </div>
+  <script id="experiences_template" type="text/x-handlebars-template">
+    <!-- <div class="row"> -->
+      <div class="container py-5">
+        <div class="main-timeline-2">
+          {{#each experiences as |experience|}}
+            {{#moduloIf experience.index 2}}
+              <div class="timeline-2 left-2">
+                <div class="card m-4 u-fade-type-left js-scroll-trigger">
+                  {{/moduloIf}}
+            {{#moduloIf experience.index experience.index}}
+              <div class="timeline-2 right-2">
+                <div class="card m-4 u-fade-type-right js-scroll-trigger">
+                  {{/moduloIf}}
+                  <div class="card-body p-4">
+                    <h4 class="fw-bold mb-2">{{experience.title}} <span
+                        class="float-end badge text-bg-info">{{experience.field}} </span></h4>
+                    <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.date}}
+                    </p>
+                    <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
+                    <p class="mb-2">{{experience.description}}</p>
+                    <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
+                      data-mdb-target="#experience_modal" data-index="{{experience.index}}">
+                      Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+          {{/each}}
         </div>
-      </div>
-    </section>
+      <!-- </div> -->
+    </div>
 
+    
+  </script>
 
-
-
-
-
-
-
-
-
-
-    <section>
-      <div class="row" id="languages_container">
-      </div>
-    </section>
-
-    <section>
-      <div class="row" id="technologies_container">
-      </div>
-    </section>
-
-    <section class="container-fluid">
-      <div class="row" id="projects_container">
-      </div>
-    </section>
-
-
-    <section id="social_icons" class="position-fixed">
-      <ul>
-        <li class="social_icon_module">
-          <div class="social_icon_background"><span class="social_icon"><i
-                class="fa-brands fa-linkedin fa-xl"></i></span>
-          </div>
-          <div class="social_icon_text">text</div>
-        </li>
-        <li class="social_icon_module">
-          <div class="social_icon_background"><span class="social_icon"><i class="fa-brands fa-github fa-xl"></i></span>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <section id="training">
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary training_button" data-toggle="modal" data-target="#exampleModal">
-        Text1
-      </button>
-      <button type="button" class="btn btn-primary training_button" data-toggle="modal" data-target="#exampleModal">
-        Text2
-      </button>
-
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <form name="gform" id="gform" enctype="text/plain"
-        action="https://docs.google.com/forms/d/e/1FAIpQLSeSBplkWKWNJxq3o2kSRVeGxEgHHIEz3noHUvBKZ4h83ilaXw/formResponse?"
-        target="hidden_iframe" onsubmit="submitted=true;">
-        First name:<br>
-        <input type="text" name="entry.1905889807" id="entry.1905889807"><br>
-        Last name:<br>
-        <input type="text" name="entry.54245012" id="entry.54245012">
-        <input type="submit" value="Submit">
-      </form>
-      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
-    </section>
-
-
-
-    <div class="js-scroll-trigger"></div>
-
-    <div id="map"></div>
-
-
-  </main>
-  <section style="height: 2500px">
-    <div class="card">
-      <h5 class="card-header">Featured</h5>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="modal fade" id="experience_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        
       </div>
     </div>
-  </section>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
-
-    <!-- MDB -->
-    <!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
-  <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
-  <script>
-    var typed = new Typed('.auto-type', {
-      strings: ['a web developer', 'an engineer', 'a project manager'],
-      typeSpeed: 200,
-      backSpeed: 200,
-      loop: true
-    });
-  </script>
-  <script type="text/javascript">var submitted = false;</script>
-  <script type="text/javascript">
-    $('#gform').on('submit', function (e) {
-      $('#gform *').fadeOut(2000);
-      $('#gform').prepend('Your submission has been processed...');
-    });
-  </script>
-  <!-- <script>
-    if (navigator.serviceWorker) {
-      navigator.serviceWorker.register(
-        '/sw.js',
-        { scope: '/' }
-      )
-    }
-  </script> -->
-  <!-- <script src="./assets/scripts/circularProgressBar.js"></script> -->
-
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      // get all progress bar
-      const elements = [].slice.call(document.querySelectorAll('.pie'));
-      // call to function
-      const circle = new CircularProgressBar('pie');
-
-      // https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
-      // if IntersectionObserver is supported by the browser
-      if ('IntersectionObserver' in window) {
-        const config = {
-          root: null,
-          rootMargin: '0px',
-          threshold: 0.75,
-        };
-
-        const ovserver = new IntersectionObserver((entries, observer) => {
-          entries.map((entry) => {
-            if (entry.isIntersecting && entry.intersectionRatio >= 0.75) {
-              circle.initial(entry.target);
-              observer.unobserve(entry.target);
-            }
-          });
-        }, config);
-
-        elements.map((item) => {
-          ovserver.observe(item);
-        });
-      } else {
-        // if the browser does not support IntersectionObserver
-        // we run all progress bars at once
-        elements.map((element) => {
-          circle.initial(element);
-        });
-      }
-    });
-  </script>
+  </div>
 
 
 
 
+  <div class="js-scroll-trigger"></div>
 
-  </script>
+  <!-- MAP -->
+
+  <div id="map"></div>
+
+
+
+
+  <!-- End your project here-->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script> -->
+
+  <!-- MDB -->
+  <script type="text/javascript" src="./assets/scripts/mdb.min.js"></script>
+
+
+  <!-- fadein.js -->
+  <script src="./assets/scripts/fadein.js"></script>
+
 </body>
 
 </html>
