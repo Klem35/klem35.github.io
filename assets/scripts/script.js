@@ -10,69 +10,76 @@ $(document).ready(function () {
   // }).addTo(map);
   // var marker = L.marker([47.497913, 19.040236]).addTo(map);
 
+  let defaultFilter = [
+
+    'hue:0deg',
+    'invert:0%',
+  ]
 
   let map = L.map('map').setView([47.497913, 19.040236], 13);
 
-  let defaultToDarkFilter = [
+  function initMap(filterApplied) {
+    
 
-    'hue:180deg',
-    'invert:100%',
-  ]
-
-  L.tileLayer.colorFilter('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
-    filter: defaultToDarkFilter,
-  }).addTo(map);
-
-  L.TileLayer.ColorFilter = L.TileLayer.extend({
-    intialize: function (url, options) {
-      L.TileLayer.prototype.initialize.call(this, url, options);
-    },
-    colorFilter: function () {
-      let VALIDFILTERS = [
-        'blur:px',
-        'brightness:%', 'bright:brightness:%', 'bri:brightness:%',
-        'contrast:%', 'con:contrast:%',
-        'grayscale:%', 'gray:grayscale:%',
-        'hue-rotate:deg', 'hue:hue-rotate:deg', 'hue-rotation:hue-rotate:deg',
-        'invert:%', 'inv:invert:%',
-        'opacity:%', 'op:opacity:%',
-        'saturate:%', 'saturation:saturate:%', 'sat:saturate:%',
-        'sepia:%', 'sep:sepia:%',
-      ]
-
-      let colorFilterOptions = this.options.filter ? this.options.filter : [];
-      let filterSettings = colorFilterOptions.map((opt) => {
-        let filter = opt.toLowerCase().split(':');
-        if (filter.length === 2) {
-          let match = VALIDFILTERS.find(vf => {
-            return (vf.split(':')[0] === filter[0]);
-          });
-          if (match) {
-            match = match.split(':');
-            filter[1] += /^\d+$/.test(filter[1]) ? match[match.length - 1] : ''
-            return (`${match[match.length - 2]}(${filter[1]})`);
+    L.tileLayer.colorFilter('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
+      filter: filterApplied,
+    }).addTo(map);
+  
+    L.TileLayer.ColorFilter = L.TileLayer.extend({
+      intialize: function (url, options) {
+        L.TileLayer.prototype.initialize.call(this, url, options);
+      },
+      colorFilter: function () {
+        let VALIDFILTERS = [
+          'blur:px',
+          'brightness:%', 'bright:brightness:%', 'bri:brightness:%',
+          'contrast:%', 'con:contrast:%',
+          'grayscale:%', 'gray:grayscale:%',
+          'hue-rotate:deg', 'hue:hue-rotate:deg', 'hue-rotation:hue-rotate:deg',
+          'invert:%', 'inv:invert:%',
+          'opacity:%', 'op:opacity:%',
+          'saturate:%', 'saturation:saturate:%', 'sat:saturate:%',
+          'sepia:%', 'sep:sepia:%',
+        ]
+  
+        let colorFilterOptions = this.options.filter ? this.options.filter : [];
+        let filterSettings = colorFilterOptions.map((opt) => {
+          let filter = opt.toLowerCase().split(':');
+          if (filter.length === 2) {
+            let match = VALIDFILTERS.find(vf => {
+              return (vf.split(':')[0] === filter[0]);
+            });
+            if (match) {
+              match = match.split(':');
+              filter[1] += /^\d+$/.test(filter[1]) ? match[match.length - 1] : ''
+              return (`${match[match.length - 2]}(${filter[1]})`);
+            }
           }
-        }
-        return ('');
-      }).join(' ');
-      return (filterSettings);
-    },
-    _initContainer: function () {
-      let tile = L.TileLayer.prototype._initContainer.call(this);
-      this._container.style.filter = this.colorFilter();
-    },
-    updateFilter: function (newFilter) {
-      this.options.filter = newFilter;
-      if (this._container) {
+          return ('');
+        }).join(' ');
+        return (filterSettings);
+      },
+      _initContainer: function () {
+        let tile = L.TileLayer.prototype._initContainer.call(this);
         this._container.style.filter = this.colorFilter();
-      }
-    },
-  })
-
-  L.tileLayer.colorFilter = function (url, options) {
-    return new L.TileLayer.ColorFilter(url, options);
+      },
+      updateFilter: function (newFilter) {
+        this.options.filter = newFilter;
+        if (this._container) {
+          this._container.style.filter = this.colorFilter();
+        }
+      },
+    })
+  
+    L.tileLayer.colorFilter = function (url, options) {
+      return new L.TileLayer.ColorFilter(url, options);
+    }
   }
+
+  initMap(defaultFilter);
+
+  
 
 
 
@@ -443,7 +450,7 @@ $(document).ready(function () {
   //   // <span class="hover_project_card">
   //   // <i class="fa fa-plus"></i>  
   //   // </span>
-      
+
   //   // </div>`;
   //   // projectsContainer.append(block);
 
@@ -472,6 +479,27 @@ $(document).ready(function () {
     once: true
   });
 
+  $('#toggle_theme').on('click', function () {
+    if ($('#mdb_css_file').attr('href') == './assets/css/mdb.dark.min.css') {
+      $('#mdb_css_file').attr('href', './assets/css/mdb.min.css');
+      $(this).html('<i class="fas fa-moon"></i>')
+      var brightFilter = [
+        'hue:0deg',
+        'invert:0%',
+      ]
+      initMap(brightFilter);
+    } else {
+      $('#mdb_css_file').attr('href', './assets/css/mdb.dark.min.css');
+      $(this).html('<i class="fas fa-sun"></i>')
+
+      var darkFilter = [
+        'hue:180deg',
+        'invert:100%',
+      ]
+      initMap(darkFilter);
+    }
+
+  })
 
 
 });

@@ -38,7 +38,7 @@
 
 
   <!-- MDB -->
-  <link rel="stylesheet" href="./assets/css/mdb.dark.min.css" />
+  <link id="mdb_css_file" rel="stylesheet" href="./assets/css/mdb.min.css" />
 
   <!-- Custom css -->
   <link rel="stylesheet" href="./assets/css/custom.css" />
@@ -141,7 +141,7 @@
             
   
                 <div class="timeline-2 left-2">
-                  <div class="card m-4" data-aos="fade-right">
+                  <div class="card m-4" data-aos="fade-up">
                 <div class="card-body p-4">
                   <h4 class="fw-bold mb-2">{{experience.title}} {{e}}<span
                       class="float-end badge text-bg-info">{{experience.field}} </span></h4>
@@ -159,7 +159,7 @@
 
             {{else}}
             <div class="timeline-2 right-2">
-              <div class="card m-4" data-aos="fade-left">
+              <div class="card m-4" data-aos="fade-up">
             <div class="card-body p-4">
               <h4 class="fw-bold mb-2">{{experience.title}} {{e}}<span
                   class="float-end badge text-bg-info">{{experience.field}} </span></h4>
@@ -315,6 +315,10 @@
     
 
   </script>
+
+  <button type="button" id="toggle_theme"class="btn btn-primary btn-lg btn-floating" style="position: fixed;bottom: 1rem;; left: 1rem; z-index: 1001">
+    <i class="fas fa-moon"></i>
+  </button>
 
   <div class="modal fade" id="experience_modal" tabindex="-1" aria-labelledby="experienceModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
