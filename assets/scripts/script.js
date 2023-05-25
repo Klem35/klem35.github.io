@@ -161,10 +161,11 @@ $(document).ready(function () {
     ],
     experiences: [
       {
-        index: "0",
+        uuid: "71c014ab-a02f-4476-8907-7c12eab8f58f",
+        type: "training",
         title: "Micro-business manager",
         company: "the3dopaminelab",
-        date: "Nov. 2020 - Dec. 2022",
+        date: "2020",
         location: "Vitré, FRANCE - Budapest, HUNGARY",
         description: "",
         activities: [
@@ -179,10 +180,85 @@ $(document).ready(function () {
         field: ""
       },
       {
-        index: "1",
+        uuid: "62ba6812-1258-4e17-811b-71b049ea4385",
+        type: "training",
+        title: "Micro-business manager",
+        company: "the3dopaminelab",
+        date: "1965",
+        location: "Vitré, FRANCE - Budapest, HUNGARY",
+        description: "",
+        activities: [
+          "Project management",
+          "Online store",
+          "Dropshipping",
+          "Brand design",
+          "Accounting",
+          "3D printing",
+          "CAD"
+        ],
+        field: ""
+      },
+      {
+        uuid: "f6a68b06-2868-41fa-aa5a-bd0c9f616bb5",
+        type: "job",
+        title: "Micro-business manager",
+        company: "the3dopaminelab",
+        date: "1990",
+        location: "Vitré, FRANCE - Budapest, HUNGARY",
+        description: "",
+        activities: [
+          "Project management",
+          "Online store",
+          "Dropshipping",
+          "Brand design",
+          "Accounting",
+          "3D printing",
+          "CAD"
+        ],
+        field: ""
+      },
+      {
+        uuid: "fbbb60d4-87fe-4cd3-a268-b61dd7ae671b",
+        type: "training",
+        title: "Micro-business manager",
+        company: "the3dopaminelab",
+        date: "1992",
+        location: "Vitré, FRANCE - Budapest, HUNGARY",
+        description: "",
+        activities: [
+          "Project management",
+          "Online store",
+          "Dropshipping",
+          "Brand design",
+          "Accounting",
+          "3D printing",
+          "CAD"
+        ],
+        field: ""
+      },
+      {
+        uuid: "05b4f173-df61-41e4-a916-2b926e249d42",
+        type: "job",
         title: "Consulting engineer",
         company: "Altran",
-        date: "Sep. 2019 - Nov. 2020",
+        date: "2018",
+        location: "Issac, FRANCE",
+        description: "Technical leader and main customer contact fortool development of BAL (Building Assembly Line) of Ariane 6 Launcher.",
+        activities: [
+          "Project management",
+          "Supplier management",
+          "Customer relationship",
+          "Bill of specifications",
+          "CAD"
+        ],
+        field: ""
+      },
+      {
+        uuid: "de6ff341-ae35-4499-ae9b-8ba62cb8c018",
+        type: "job",
+        title: "Consulting engineer",
+        company: "Altran",
+        date: "2001",
         location: "Issac, FRANCE",
         description: "Technical leader and main customer contact fortool development of BAL (Building Assembly Line) of Ariane 6 Launcher.",
         activities: [
@@ -276,18 +352,51 @@ $(document).ready(function () {
   });
 
   Handlebars.registerHelper('moduloIf', function (num, mod, block) {
+
     if (parseInt(num) % parseInt(mod) === 0) {
       return block.fn(this);
+    } else {
+      return block.inverse(this);
     }
+
   });
+
+  Handlebars.registerHelper('sortReverse',
+    function (array, options) {
+      if (!Array.isArray(array)) {
+        ordered = []; i = 0
+        Object.keys(array).sort().reverse().forEach(function (key) {
+          ordered[i++] = array[key];
+        });
+
+        return ordered;
+      }
+      return array.sort().reverse();
+    })
+
+  Handlebars.registerHelper('filterByType',
+    function (array, value, options) {
+      var newArray = array.filter(obj => obj.type == value);
+      return newArray;
+    })
+
+  Handlebars.registerHelper('sortByDateDesc',
+    function (array, options) {
+      var newArray = array.sort((a, b) => (b.date) - (a.date));
+      return newArray;
+    }
+  )
+
 
   // grab the source
   const source = document.querySelector("#experiences_template").innerHTML;
+
   // compile it using Handlebars
   const template = Handlebars.compile(source);
 
   // get the HTML after passing the template the context
   const html = template(data);
+
 
   // get the element to set the new HTML into
   const destination = document.querySelector("#experiences_container");
@@ -297,13 +406,12 @@ $(document).ready(function () {
 
 
   var experienceButtons = $('.experience_button');
-  var modalContent = $('#experience_modal .modal-content');
 
   experienceButtons.each(function () {
     $(this).on('click', function () {
 
-      modalContent.empty();
-      var experience = Object.values(data.experiences)[$(this).data("index")];
+      var experience = Object.values(data.experiences).find(obj => obj.uuid == $(this).data("uuid"));
+
       function displayList(list) {
         var renderedList = "";
         list.forEach(function (el) {
@@ -312,24 +420,17 @@ $(document).ready(function () {
         return renderedList;
       };
       var listOfActivities = displayList(experience.activities);
-      console.log(listOfActivities)
 
-      var block = `
-      <div class="modal-header">
-      <h1 class="modal-title fs-5" id="exampleModalLabel">${experience.title}</h1>
-      <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
-    <ul>${listOfActivities}</ul>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">Close</button>
-    </div>`;
-      modalContent.append(block);
+      $("#experience_modal #experienceModalLabel").html(experience.title)
+      $("#experience_modal #experience_activities").html(listOfActivities)
       $('#exampleModal').modal('show');
     });
   });
 
+  AOS.init({
+    duration: 650,
+    once: true
+  });
 
 
 

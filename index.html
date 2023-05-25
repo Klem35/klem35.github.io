@@ -7,7 +7,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <title>Material Design for Bootstrap</title>
 
-  
+
 
   <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -20,10 +20,10 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
   <script src="./assets/scripts/leaflet-tilelayer-colorfilter.js"></script>
-<!-- Bootstrap -->
 
-<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
   <!-- Handelbars -->
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
@@ -34,8 +34,8 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
   <!-- Google Fonts Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
 
-  
-  
+
+
 
   <!-- MDB -->
   <link rel="stylesheet" href="./assets/css/mdb.dark.min.css" />
@@ -93,50 +93,216 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
     </div>
   </div>
 
+
+  <section>
+
+
+
+  </section>
+
+
+
+
+
   <section id="experiences_container"></section>
 
 
 
-
   <script id="experiences_template" type="text/x-handlebars-template">
-    <!-- <div class="row"> -->
-      <div class="container py-5">
-        <div class="main-timeline-2">
-          {{#each experiences as |experience|}}
-            {{#moduloIf experience.index 2}}
-              <div class="timeline-2 left-2">
-                <div class="card m-4 u-fade-type-left js-scroll-trigger">
-                  {{/moduloIf}}
-            {{#moduloIf experience.index experience.index}}
-              <div class="timeline-2 right-2">
-                <div class="card m-4 u-fade-type-right js-scroll-trigger">
-                  {{/moduloIf}}
-                  <div class="card-body p-4">
-                    <h4 class="fw-bold mb-2">{{experience.title}} <span
-                        class="float-end badge text-bg-info">{{experience.field}} </span></h4>
-                    <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.date}}
-                    </p>
-                    <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
-                    <p class="mb-2">{{experience.description}}</p>
-                    <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
-                      data-mdb-target="#experience_modal" data-index="{{experience.index}}">
-                      Details
-                    </button>
-                  </div>
+    <ul class="nav nav-pills mb-3" id="ex-with-icons" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="ex-with-icons-tab-1" data-mdb-toggle="tab" href="#ex-with-icons-tabs-1" role="tab"
+          aria-controls="ex-with-icons-tabs-1" aria-selected="true"><i class="fas fa-chart-pie fa-fw me-2"></i>Sales</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="ex-with-icons-tab-2" data-mdb-toggle="tab" href="#ex-with-icons-tabs-2" role="tab"
+          aria-controls="ex-with-icons-tabs-2" aria-selected="false"><i class="fas fa-chart-line fa-fw me-2"></i>Subscriptions</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="ex-with-icons-tab-3" data-mdb-toggle="tab" href="#ex-with-icons-tabs-3" role="tab"
+          aria-controls="ex-with-icons-tabs-3" aria-selected="false"><i class="fas fa-cogs fa-fw me-2"></i>Settings</a>
+      </li>
+    </ul>
+    <!-- Tabs navs -->
+    
+    <!-- Tabs content -->
+    <div class="tab-content" id="ex-with-icons-content">
+      <div class="tab-pane fade show active" id="ex-with-icons-tabs-1" role="tabpanel" aria-labelledby="ex-with-icons-tab-1">
+        <div class="container py-5">
+          <div class="main-timeline-2">
+            {{#each (sortByDateDesc experiences) as |experience e|}}
+            
+{{#moduloIf e 2}}
+              
+            
+  
+                <div class="timeline-2 left-2">
+                  <div class="card m-4" data-aos="fade-up">
+                <div class="card-body p-4">
+                  <h4 class="fw-bold mb-2">{{experience.title}} {{e}}<span
+                      class="float-end badge text-bg-info">{{experience.field}} </span></h4>
+                  <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.date}}
+                  </p>
+                  <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
+                  <p class="mb-2">{{experience.description}}</p>
+                  <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
+                    data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
+                    Details
+                  </button>
                 </div>
               </div>
-          {{/each}}
-        </div>
-      <!-- </div> -->
-    </div>
+            </div>
 
+            {{else}}
+            <div class="timeline-2 right-2">
+              <div class="card m-4" data-aos="fade-up">
+            <div class="card-body p-4">
+              <h4 class="fw-bold mb-2">{{experience.title}} {{e}}<span
+                  class="float-end badge text-bg-info">{{experience.field}} </span></h4>
+              <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.date}}
+              </p>
+              <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
+              <p class="mb-2">{{experience.description}}</p>
+              <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
+                data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
+                Details
+              </button>
+            </div>
+          </div>
+        </div>
+            
+            {{/moduloIf}}
+           
+
+
+            {{/each}}
+          </div>
+    
+      </div>
+      </div>
+      <div class="tab-pane fade" id="ex-with-icons-tabs-2" role="tabpanel" aria-labelledby="ex-with-icons-tab-2">
+        <div class="container py-5">
+          <div class="main-timeline-2">
+            {{#each (sortByDateDesc (filterByType experiences 'job')) as |experience e|}}
+            
+{{#moduloIf e 2}}
+              
+            
+  
+                <div class="timeline-2 left-2">
+                  <div class="card m-4" data-aos="fade-up">
+                <div class="card-body p-4">
+                  <h4 class="fw-bold mb-2">{{experience.title}} {{e}}<span
+                      class="float-end badge text-bg-info">{{experience.field}} </span></h4>
+                  <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.date}}
+                  </p>
+                  <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
+                  <p class="mb-2">{{experience.description}}</p>
+                  <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
+                    data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
+                    Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {{else}}
+            <div class="timeline-2 right-2">
+              <div class="card m-4" data-aos="fade-up">
+            <div class="card-body p-4">
+              <h4 class="fw-bold mb-2">{{experience.title}} {{e}}<span
+                  class="float-end badge text-bg-info">{{experience.field}} </span></h4>
+              <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.date}}
+              </p>
+              <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
+              <p class="mb-2">{{experience.description}}</p>
+              <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
+                data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
+                Details
+              </button>
+            </div>
+          </div>
+        </div>
+            
+            {{/moduloIf}}
+           
+
+
+            {{/each}}
+          </div>
+    
+      </div>
+      </div>
+      <div class="tab-pane fade" id="ex-with-icons-tabs-3" role="tabpanel" aria-labelledby="ex-with-icons-tab-3">
+        <div class="container py-5">
+          <div class="main-timeline-2">
+            {{#each (sortByDateDesc (filterByType experiences 'training')) as |experience e|}}
+            
+{{#moduloIf e 2}}
+              
+            
+  
+                <div class="timeline-2 left-2">
+                  <div class="card m-4" data-aos="fade-up">
+                <div class="card-body p-4">
+                  <h4 class="fw-bold mb-2">{{experience.title}} {{e}}<span
+                      class="float-end badge text-bg-info">{{experience.field}} </span></h4>
+                  <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.date}}
+                  </p>
+                  <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
+                  <p class="mb-2">{{experience.description}}</p>
+                  <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
+                    data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
+                    Details
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {{else}}
+            <div class="timeline-2 right-2">
+              <div class="card m-4" data-aos="fade-up">
+            <div class="card-body p-4">
+              <h4 class="fw-bold mb-2">{{experience.title}} {{e}}<span
+                  class="float-end badge text-bg-info">{{experience.field}} </span></h4>
+              <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.date}}
+              </p>
+              <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
+              <p class="mb-2">{{experience.description}}</p>
+              <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
+                data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
+                Details
+              </button>
+            </div>
+          </div>
+        </div>
+            
+            {{/moduloIf}}
+           
+
+
+            {{/each}}
+          </div>
+    
+      </div>
+      </div>
+    </div>
     
   </script>
 
-  <div class="modal fade" id="experience_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="experience_modal" tabindex="-1" aria-labelledby="experienceModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="experienceModalLabel"></h1>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        <ul id="experience_activities"></ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
@@ -144,12 +310,11 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 
 
 
-  <div class="js-scroll-trigger"></div>
+  <!-- <div class="js-scroll-trigger"></div> -->
 
   <!-- MAP -->
 
   <div id="map"></div>
-
 
 
 
@@ -163,7 +328,8 @@ integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jI
 
 
   <!-- fadein.js -->
-  <script src="./assets/scripts/fadein.js"></script>
+  <!-- <script src="./assets/scripts/fadein.js"></script> -->
+
 
 </body>
 
