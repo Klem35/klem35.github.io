@@ -273,6 +273,7 @@ $(document).ready(function () {
     ],
     projects: [
       {
+        uuid: "2e9b07a8-3a9b-4499-b76c-cf4e11ad3556",
         title: "MyGreenStudio",
         background_image: "mygreenstudio-1.png",
         project_type: "professional",
@@ -307,8 +308,9 @@ $(document).ready(function () {
         }
       },
       {
+        uuid: "151dd40a-2d7c-4167-9f76-4afa1b1b84e2",
         title: "MyExpatMobility",
-        class: "myexpatmobility",
+        background_image: "mygreenstudio-1.png",
         project_type: "professional",
         project_logo: "",
         company: "Yourosoft kft.",
@@ -404,7 +406,7 @@ $(document).ready(function () {
   // set the new HTML
   destination.innerHTML = html;
 
-
+  // EXPERIENCES
   var experienceButtons = $('.experience_button');
 
   experienceButtons.each(function () {
@@ -423,7 +425,45 @@ $(document).ready(function () {
 
       $("#experience_modal #experienceModalLabel").html(experience.title)
       $("#experience_modal #experience_activities").html(listOfActivities)
-      $('#exampleModal').modal('show');
+      $('#experience_modal').modal('show');
+    });
+  });
+
+  // PROJECTS
+
+  var projects = data.projects;
+  var projectsContainer = $('#projects_container');
+
+  // projects.forEach(function (project) {
+  //   var project_index = projects.indexOf(project);
+
+  //   // var block = `<div class="col-4">
+  //   // <div class="card project_card" data-project-index="${project_index}">
+  //   // <img class="project_background" src="assets/images/${project.background_image}">
+  //   // <span class="hover_project_card">
+  //   // <i class="fa fa-plus"></i>  
+  //   // </span>
+      
+  //   // </div>`;
+  //   // projectsContainer.append(block);
+
+
+  // })
+
+  $(".project_card").mouseenter(function hoverProjectCard() {
+    $("span", this).css("opacity", 1)
+  })
+  $(".project_card").mouseleave(function hoverProjectCard() {
+    $("span", this).css("opacity", 0)
+  })
+
+
+  $(".project_card").each(function () {
+    $(this).on('click', function () {
+      var project = Object.values(data.projects).find(obj => obj.uuid == $(this).data("uuid"));
+      $("#project_modal #projectModalLabel").html(project.title)
+
+      $('#project_modal').modal('show');
     });
   });
 

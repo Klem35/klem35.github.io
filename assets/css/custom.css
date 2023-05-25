@@ -121,3 +121,38 @@ body {
     filter: var(--map-tiles-filter, none);
   }
 }
+
+/* PROJECTS */
+
+.project_background {
+  max-width: 100%;
+  border-radius: 0.5rem;
+}
+
+
+.project_card {
+  background: #50b948;
+  cursor: pointer;
+}
+
+.project_card img {
+  opacity: 1;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+
+.project_card img:hover {
+  opacity: 0.6;
+}
+
+.hover_project_card {
+  opacity: 0;
+  position: absolute;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

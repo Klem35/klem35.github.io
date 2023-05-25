@@ -102,9 +102,13 @@
 
 
 
-
+  <div class="container-fluid">
 
   <section id="experiences_container"></section>
+
+</div>
+
+  
 
 
 
@@ -137,7 +141,7 @@
             
   
                 <div class="timeline-2 left-2">
-                  <div class="card m-4" data-aos="fade-up">
+                  <div class="card m-4" data-aos="fade-right">
                 <div class="card-body p-4">
                   <h4 class="fw-bold mb-2">{{experience.title}} {{e}}<span
                       class="float-end badge text-bg-info">{{experience.field}} </span></h4>
@@ -155,7 +159,7 @@
 
             {{else}}
             <div class="timeline-2 right-2">
-              <div class="card m-4" data-aos="fade-up">
+              <div class="card m-4" data-aos="fade-left">
             <div class="card-body p-4">
               <h4 class="fw-bold mb-2">{{experience.title}} {{e}}<span
                   class="float-end badge text-bg-info">{{experience.field}} </span></h4>
@@ -287,7 +291,29 @@
       </div>
       </div>
     </div>
+
+   <div class="row">
+    {{#each projects as |project p|}}
+    <div class="col-md-4">
+
+      
+      <div class="card project_card" data-uuid="{{project.uuid}}">
+        <img class="project_background" src="./assets/images/{{project.background_image}}">
+        <span class="hover_project_card">
+        <i class="fa fa-plus"></i>  
+        </span>
+          
+        </div>
+        
+
+    </div>
+    {{/each}}
+   </div>
+  </div>
+   
+
     
+
   </script>
 
   <div class="modal fade" id="experience_modal" tabindex="-1" aria-labelledby="experienceModalLabel" aria-hidden="true">
@@ -298,11 +324,32 @@
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-        <ul id="experience_activities"></ul>
+          <ul id="experience_activities"></ul>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">Close</button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="project_modal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="projectModalLabel"></h1>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <a href="{{project.front_website_link}}" target="_blank"><button type="button" class="btn btn-primary"><i
+                class="fa fa-arrow-right"></i> Visit front website</button></a>
+          <a href="{{project.platform_website_link}}" target="_blank"><button type="button" class="btn btn-primary"><i
+                class="fa fa-arrow-right"></i> Visit platform</button></a>
+          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+        </div>
+
       </div>
     </div>
   </div>
