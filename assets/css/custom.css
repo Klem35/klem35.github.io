@@ -1,8 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,500&family=Montserrat&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+root {
+  --mdb-secondary: #cf7d8e; /*#bb86fc;/*#bb86fc;*/
+  --mdb-primary: #79d3d3;/*#86f5fc;/*#86f5fc;*/
+  --mdb-light-theme-text-color: #303030;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 body {
@@ -10,10 +18,125 @@ body {
   background-repeat: no-repeat;
   background-position: 50% 0;
   min-height: 1000px;
-  font-family: sans-serif;
+  font-family: "DM Sans", sans-serif;
   background-size: cover;
 }
 
+html,
+body {
+  overflow: hidden;
+}
+
+/* LOADER */
+
+#loader-wrapper {
+  opacity: 0;
+  transition: opacity 1s;
+  transition-delay: 3s;
+  transition-property: opacity;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #222222;
+  z-index: 10000;
+}
+
+/* LOADER */
+
+/* #loader-wrapper .loader-section {
+  position: fixed;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: #222222;
+  z-index: 10000;
+}
+
+#loader-wrapper .loader-section.section-left {
+  left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+  right: 0;
+} */
+
+/* Loaded */
+/* .loaded #loader-wrapper .loader-section.section-left {
+  -webkit-transform: translateX(-100%);  
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+ 
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+                transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+} */
+/* 
+.loaded #loader {
+  opacity: 0;
+  overflow: hidden;
+}
+
+.loaded #loader-wrapper {
+  visibility: hidden;
+}
+
+.loaded #loader {
+  opacity: 0;
+  -webkit-transition: all 0.3s fade-out;
+          transition: all 0.3s fade-out;
+}
+
+.loaded #loader-wrapper .loader-section.section-left {
+ 
+  -webkit-transition: all 0.3s 0.3s fade-out;
+          transition: all 0.3s 0.3s fade-out;
+}
+
+.loaded #loader-wrapper {
+  -webkit-transform: translateY(-100vh);
+      -ms-transform: translateY(-100vh);
+          transform: translateY(-100vh);
+
+  -webkit-transition: all 0.3s 0.6s ease-out;
+          transition: all 0.3s 0.6s ease-out;
+} */
+
+/* HEADER */
+
+/* .header {
+  position: absolute;
+  top: 58.59px;
+  height: calc(100vh - 58.59px);
+} */
+
+.mouse {
+  position: absolute;
+  top: calc(100vh - 100px);
+  left: 50%;
+}
+
+.bounce {
+  -webkit-animation: bounce 0.7s ease infinite alternate;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
 /* TIMELINE START*/
 
 /* The actual timeline (the vertical ruler) */
@@ -26,7 +149,7 @@ body {
   content: "";
   position: absolute;
   width: 3px;
-  background-color: #6200ee;
+  background-color: var(--mdb-secondary);
   top: 20px;
   bottom: 0;
   left: 50%;
@@ -47,7 +170,7 @@ body {
   width: 25px;
   height: 25px;
   right: -11px;
-  background-color: #6200ee;
+  background-color: var(--mdb-secondary);
   top: 15px;
   border-radius: 50%;
   z-index: 1;
@@ -65,7 +188,6 @@ body {
   left: 50%;
 }
 
-
 /* Fix the circle for containers on the right side */
 .right-2::after {
   left: -14px;
@@ -73,7 +195,6 @@ body {
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
-
   /* Place the timelime to the left */
   .main-timeline-2::after {
     left: 31px;
@@ -85,8 +206,6 @@ body {
     padding-left: 70px;
     padding-right: 25px;
   }
-
-
 
   /* Make sure all circles are at the same spot */
   .left-2::after,
@@ -113,7 +232,8 @@ body {
 }
 
 :root {
-  --map-tiles-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+  --map-tiles-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg)
+    saturate(0.3) brightness(0.7);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -127,32 +247,212 @@ body {
 .project_background {
   max-width: 100%;
   border-radius: 0.5rem;
+  height: 300px;
 }
 
-
 .project_card {
-  background: #50b948;
+  background: var(--mdb-primary);
   cursor: pointer;
+  max-height: 300px;
 }
 
 .project_card img {
   opacity: 1;
-  transition: opacity .25s ease-in-out;
-  -moz-transition: opacity .25s ease-in-out;
-  -webkit-transition: opacity .25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.25s ease-in-out;
 }
 
 .project_card img:hover {
-  opacity: 0.6;
+  opacity: 0;
+}
+.hover_project_card {
+
+pointer-events: none;
 }
 
 .hover_project_card {
-  opacity: 0;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  opacity: 1;
   position: absolute;
-  transition: opacity .25s ease-in-out;
-  -moz-transition: opacity .25s ease-in-out;
-  -webkit-transition: opacity .25s ease-in-out;
-  top: 50%;
+  transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  /* top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
+}
+
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  width: 45px;
+  height: 45px;
+  z-index: 1001;
+}
+
+/* PARALLAX */
+.parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /**
+   * Default height
+   */
+  height: 100%;
+}
+
+.blur {
+  backdrop-filter: blur(5px); /* blur effect to the backdrop */
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.caption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+
+  height: 100%;
+}
+
+.caption {
+  font-family: "Space Mono", monospace;
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  /* letter-spacing: 10px; */
+}
+
+/* PROGRESS BAR */
+
+.progress_header {
+  position: fixed;
+  top: 58.59px;
+  z-index: 1002;
+  width: 100%;
+  background-color: transparent;
+}
+
+/* The progress container (grey background) */
+.progress_container {
+  width: 100%;
+  height: 8px;
+  background: transparent;
+}
+
+/* The progress bar (scroll indicator) */
+.progress_bar_scroll {
+  height: 8px;
+  background: var(--mdb-secondary);
+  width: 0%;
+}
+
+/* DYNAMIC TEXT */
+.dynamic_text {
+  width: 100%;
+  /* height: 100vh; */
+  /* color: #fff; */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.dynamic_text h1 {
+  font-size: 88px;
+  font-weight: 700;
+}
+
+.auto_type {
+  font-family: "Space Mono", monospace;
+  color: var(--mdb-primary);
+}
+
+/* RATING */
+
+.container:hover i {
+  color: var(--test-secondary);
+}
+.container i:hover {
+  color: var(--test-secondary);
+}
+.container i:hover ~ i {
+  color: black;
+}
+
+.fa-star:hover {
+  cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+  background: linear-gradient(
+    90deg,
+    rgba(207, 125, 142, 1) 0%,
+    rgba(121, 211, 211, 1) 100%
+  );
+}
+
+
+footer img {
+  height: 100px;
+}
+
+/* SKILLS */
+
+.progress-bar {
+  width: 0;
+}
+
+.progress-bar {
+  width: 0;
+  border-radius: 50px;
+}
+
+.blurry_text {
+    filter: blur(3px);
+  -webkit-filter: blur(3px);
+}
+
+.underline {
+  display: inline;
+  position: relative;
+  overflow: hidden;
+}
+.underline:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  width: 0;
+  bottom: -5px;
+  background: var(--mdb-primary);
+  height: 4px;
+  transition-property: width;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+.underline:hover:after,
+.underline:focus:after,
+.underline:active:after {
+  left: 0;
+  right: auto;
+  width: 100%;
 }

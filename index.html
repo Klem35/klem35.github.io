@@ -5,9 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Material Design for Bootstrap</title>
-
-
+  <title>My portfolio</title>
 
   <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -25,6 +23,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
+  <!-- Dynamic typed  -->
+  <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+
+  <!-- Circular progress bar -->
+  <script
+    src="https://cdn.jsdelivr.net/gh/tomik23/circular-progress-bar@1.1.9/dist/circularProgressBar.min.js"></script>
+
   <!-- Handelbars -->
   <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
@@ -34,304 +39,655 @@
   <!-- Google Fonts Roboto -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
 
+  <!-- Bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
   <!-- MDB -->
-  <link id="mdb_css_file" rel="stylesheet" href="./assets/css/mdb.min.css" />
+  <link id="mdb_css_file" rel="stylesheet" href="./assets/css/mdb.dark.css" />
 
   <!-- Custom css -->
-  <link rel="stylesheet" href="./assets/css/custom.css" />
-
-
+  <link id="custom_css_file" rel="stylesheet" href="./assets/css/custom.dark.css" />
 
 </head>
 
 <body>
+
+  <div id="loader-wrapper" class="d-flex justify-content-center align-items-center">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
   <!-- Start your project here-->
 
   <header>
-
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex input-group w-auto">
-            <input type="search" class="form-control" placeholder="Type query" aria-label="Search" />
-            <button class="btn btn-outline-primary" type="button" data-mdb-ripple-color="dark">
-              Search
-            </button>
-          </form>
+
+
+    <div class="parallax" id="parallax-1" data-image-src="assets/images/parallax_background.jpg" data-height="100vh">
+      <nav class="navbar navbar-expand-lg blur fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="assets/images/logo.png" width="30" height="30" alt=""></a>
+          <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+              <li class="nav-item">
+                <a class="nav-link underline" aria-current="page" href="#about_container">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link underline" href="#experiences_container">My journey</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link underline" href="#projects_container">
+                  My projects
+                  <span id="projects_notification" class="badge rounded-pill badge-notification bg-danger"></span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link underline" href="#skills_container">My skills</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link underline" href="#languages_container">My languages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link underline" href="#feedbacks_container">Feedbacks</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link underline" href="#contact_container">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="progress_header">
+        <div class="progress_container">
+          <div class="progress_bar_scroll" id="myBar"></div>
         </div>
       </div>
-    </nav>
 
+      <div class="container-fluid d-none d-lg-block" style="position: relative; top: 50%; transform: translateY(-50%);">
+        <div class="row">
+          <div class="col-lg-6 offset-lg-2">
+            <div class="row">
+              <div class="col-lg-10">
+                <span>Hi there, my name is</span>
+                <h1 style="font-size: 88px; font-weight: 700;">Clément Huchet</h1>
+                <h2>I'm <span class="auto_type" id="animated_text"></span></h2>
+                <button type="button" class="btn btn-primary">Download CV <i class="fa-solid fa-download"></i></button>
+
+              </div>
+              <div class="col-lg-2 d-flex align-items-center">
+                <img src="./assets/images/profile.jpeg" alt="Avatar"
+                  style="height: 200px;border-radius: 50%; border: 3px solid var(--mdb-primary);">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid d-lg-none" style="position: relative; top: 50%; transform: translateY(-50%);">
+        <div class="d-flex flex-column align-items-center justify-content-center">
+          <span>Hi there, my name is</span>
+          <h1 class="d-md-none " style="font-size: 44px; font-weight: 700;">Clément Huchet</h1>
+          <h1 class="d-md-block d-none" style="font-size: 88px; font-weight: 700;">Clément Huchet</h1>
+          <h2>I'm <span class="auto_type" id="animated_text_2"></span></h2>
+          <img src="./assets/images/profile.jpeg" alt="Avatar"
+            style="height: 200px;border-radius: 50%; border: 3px solid var(--mdb-primary);">
+          <button type="button" class="my-4 btn btn-primary">Download CV <i class="fa-solid fa-download"></i></button>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center align-items-center mouse">
+        <a href="#about_container">
+          <h3 class="bounce"><i class="bi bi-mouse"></i></h3>
+        </a>
+      </div>
+    </div>
   </header>
 
-  <div class="card m-4" style="height: 2500px">
-    <h5 class="card-header">Featured</h5>
-    <div class="card-body">
-      <h5 class="card-title">Special title treatment</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+
+
+
+  <section id="about_container" data-aos="fade-up"></section>
+
+  <div class="parallax" id="parallax-2" data-image-src="assets/images/parallax_background.jpg" data-height="400px">
+    <div class="caption blur">
+      <span data-aos="fade-up">EMPATHY</span>
     </div>
   </div>
-
-
-  <section>
-
-
-
-  </section>
-
-
-
-  <div class="container-fluid">
 
   <section id="experiences_container"></section>
 
-</div>
-
-  
-
-
-
-  <script id="experiences_template" type="text/x-handlebars-template">
-    <ul class="nav nav-pills mb-3" id="ex-with-icons" role="tablist">
-      <li class="nav-item" role="presentation">
-        <a class="nav-link active" id="ex-with-icons-tab-1" data-mdb-toggle="tab" href="#ex-with-icons-tabs-1" role="tab"
-          aria-controls="ex-with-icons-tabs-1" aria-selected="true"><i class="fas fa-chart-pie fa-fw me-2"></i>Sales</a>
-      </li>
-      <li class="nav-item" role="presentation">
-        <a class="nav-link" id="ex-with-icons-tab-2" data-mdb-toggle="tab" href="#ex-with-icons-tabs-2" role="tab"
-          aria-controls="ex-with-icons-tabs-2" aria-selected="false"><i class="fas fa-chart-line fa-fw me-2"></i>Subscriptions</a>
-      </li>
-      <li class="nav-item" role="presentation">
-        <a class="nav-link" id="ex-with-icons-tab-3" data-mdb-toggle="tab" href="#ex-with-icons-tabs-3" role="tab"
-          aria-controls="ex-with-icons-tabs-3" aria-selected="false"><i class="fas fa-cogs fa-fw me-2"></i>Settings</a>
-      </li>
-    </ul>
-    <!-- Tabs navs -->
-    
-    <!-- Tabs content -->
-    <div class="tab-content" id="ex-with-icons-content">
-      <div class="tab-pane fade show active" id="ex-with-icons-tabs-1" role="tabpanel" aria-labelledby="ex-with-icons-tab-1">
-        <div class="container py-5">
-          <div class="main-timeline-2">
-            {{#each (sortByDateDesc experiences) as |experience e|}}
-            
-{{#moduloIf e 2}}
-              
-            
-  
-                <div class="timeline-2 left-2">
-                  <div class="card m-4" data-aos="fade-up">
-                <div class="card-body p-4">
-                  <h4 class="fw-bold mb-2">{{experience.title}} {{e}}<span
-                      class="float-end badge text-bg-info">{{experience.field}} </span></h4>
-                  <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.date}}
-                  </p>
-                  <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
-                  <p class="mb-2">{{experience.description}}</p>
-                  <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
-                    data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
-                    Details
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {{else}}
-            <div class="timeline-2 right-2">
-              <div class="card m-4" data-aos="fade-up">
-            <div class="card-body p-4">
-              <h4 class="fw-bold mb-2">{{experience.title}} {{e}}<span
-                  class="float-end badge text-bg-info">{{experience.field}} </span></h4>
-              <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.date}}
-              </p>
-              <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
-              <p class="mb-2">{{experience.description}}</p>
-              <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
-                data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
-                Details
-              </button>
-            </div>
-          </div>
-        </div>
-            
-            {{/moduloIf}}
-           
-
-
-            {{/each}}
-          </div>
-    
-      </div>
-      </div>
-      <div class="tab-pane fade" id="ex-with-icons-tabs-2" role="tabpanel" aria-labelledby="ex-with-icons-tab-2">
-        <div class="container py-5">
-          <div class="main-timeline-2">
-            {{#each (sortByDateDesc (filterByType experiences 'job')) as |experience e|}}
-            
-{{#moduloIf e 2}}
-              
-            
-  
-                <div class="timeline-2 left-2">
-                  <div class="card m-4" data-aos="fade-up">
-                <div class="card-body p-4">
-                  <h4 class="fw-bold mb-2">{{experience.title}} {{e}}<span
-                      class="float-end badge text-bg-info">{{experience.field}} </span></h4>
-                  <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.date}}
-                  </p>
-                  <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
-                  <p class="mb-2">{{experience.description}}</p>
-                  <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
-                    data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
-                    Details
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {{else}}
-            <div class="timeline-2 right-2">
-              <div class="card m-4" data-aos="fade-up">
-            <div class="card-body p-4">
-              <h4 class="fw-bold mb-2">{{experience.title}} {{e}}<span
-                  class="float-end badge text-bg-info">{{experience.field}} </span></h4>
-              <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.date}}
-              </p>
-              <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
-              <p class="mb-2">{{experience.description}}</p>
-              <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
-                data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
-                Details
-              </button>
-            </div>
-          </div>
-        </div>
-            
-            {{/moduloIf}}
-           
-
-
-            {{/each}}
-          </div>
-    
-      </div>
-      </div>
-      <div class="tab-pane fade" id="ex-with-icons-tabs-3" role="tabpanel" aria-labelledby="ex-with-icons-tab-3">
-        <div class="container py-5">
-          <div class="main-timeline-2">
-            {{#each (sortByDateDesc (filterByType experiences 'training')) as |experience e|}}
-            
-{{#moduloIf e 2}}
-              
-            
-  
-                <div class="timeline-2 left-2">
-                  <div class="card m-4" data-aos="fade-up">
-                <div class="card-body p-4">
-                  <h4 class="fw-bold mb-2">{{experience.title}} {{e}}<span
-                      class="float-end badge text-bg-info">{{experience.field}} </span></h4>
-                  <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.date}}
-                  </p>
-                  <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
-                  <p class="mb-2">{{experience.description}}</p>
-                  <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
-                    data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
-                    Details
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {{else}}
-            <div class="timeline-2 right-2">
-              <div class="card m-4" data-aos="fade-up">
-            <div class="card-body p-4">
-              <h4 class="fw-bold mb-2">{{experience.title}} {{e}}<span
-                  class="float-end badge text-bg-info">{{experience.field}} </span></h4>
-              <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.date}}
-              </p>
-              <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
-              <p class="mb-2">{{experience.description}}</p>
-              <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
-                data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
-                Details
-              </button>
-            </div>
-          </div>
-        </div>
-            
-            {{/moduloIf}}
-           
-
-
-            {{/each}}
-          </div>
-    
-      </div>
-      </div>
+  <div class="parallax" id="parallax-3" data-image-src="assets/images/parallax_background.jpg" data-height="400px">
+    <div class="caption blur">
+      <span data-aos="fade-up">TEAMSPIRIT</span>
     </div>
-
-   <div class="row">
-    {{#each projects as |project p|}}
-    <div class="col-md-4">
-
-      
-      <div class="card project_card" data-uuid="{{project.uuid}}">
-        <img class="project_background" src="./assets/images/{{project.background_image}}">
-        <span class="hover_project_card">
-        <i class="fa fa-plus"></i>  
-        </span>
-          
-        </div>
-        
-
-    </div>
-    {{/each}}
-   </div>
   </div>
-   
 
-    
+  <section id="projects_container"></section>
 
+  <div class="parallax" id="parallax-4" data-image-src="assets/images/parallax_background.jpg" data-height="400px">
+    <div class="caption blur">
+      <span data-aos="fade-up">ORGANIZATION</span>
+    </div>
+  </div>
+
+  <section id="skills_container"></section>
+
+  <div class="parallax" id="parallax-5" data-image-src="assets/images/parallax_background.jpg" data-height="400px">
+    <div class="caption blur">
+      <span data-aos="fade-up">ORGANIZATION</span>
+    </div>
+  </div>
+
+  <section id="languages_container"></section>
+
+  <div class="parallax" id="parallax-6" data-image-src="assets/images/parallax_background.jpg" data-height="400px">
+    <div class="caption blur">
+      <span data-aos="fade-up">TEAMSPIRIT</span>
+    </div>
+  </div>
+
+  <section id="feedbacks_container"></section>
+
+  <script id="about_template" type="text/x-handlebars-template">
+    <section id="about" class="container-fluid my-4">
+      <h1 class="text-center">About</h1>
+      <div class="fst-italic text-center mb-4">A bit of me...</div>
+      {{about.content}}
+    </section>
   </script>
 
-  <button type="button" id="toggle_theme"class="btn btn-primary btn-lg btn-floating" style="position: fixed;bottom: 1rem;; left: 1rem; z-index: 1001">
+  <script id="experiences_template" type="text/x-handlebars-template">
+    <section id="experiences" class="container-fluid my-4">
+      <h1 class="text-center">My journey</h1>
+      <div class="fst-italic text-center mb-4">My experiences</div>
+      <ul class="nav nav-pills mb-3" id="ex-with-icons" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="ex-with-icons-tab-1" data-mdb-toggle="tab" href="#ex-with-icons-tabs-1" role="tab"
+                  aria-controls="ex-with-icons-tabs-1" aria-selected="true"><i class="fa-solid fa-brain fa-fw me-2"></i>All</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="ex-with-icons-tab-2" data-mdb-toggle="tab" href="#ex-with-icons-tabs-2" role="tab"
+                  aria-controls="ex-with-icons-tabs-2" aria-selected="false"><i class="fa-solid fa-briefcase fa-fw me-2"></i>Professional experience</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="ex-with-icons-tab-3" data-mdb-toggle="tab" href="#ex-with-icons-tabs-3" role="tab"
+                  aria-controls="ex-with-icons-tabs-3" aria-selected="false"><i class="fa-solid fa-graduation-cap fa-fw me-2"></i>Training</a>
+        </li>
+        <li class="nav-item" role="presentation"></li>
+          <a class="nav-link active" id="ex-with-icons-tab-4" data-mdb-toggle="tab" href="#ex-with-icons-tabs-4" role="tab"
+                  aria-controls="ex-with-icons-tabs-4" aria-selected="false"><i class="fa-solid fa-laptop fa-fw me-2"></i>IT</a>
+        </li>
+      </ul>
+      <!-- Tabs navs -->
+
+      <!-- Tabs content -->
+      <div class="tab-content" id="ex-with-icons-content">
+        <div class="tab-pane fade" id="ex-with-icons-tabs-1" role="tabpanel" aria-labelledby="ex-with-icons-tab-1">
+          <div class="container py-5">
+            <div class="main-timeline-2">
+              {{#each (sortByDateDesc experiences) as |experience e|}}
+                {{#moduloIf e 2}}
+                  <div class="timeline-2 left-2">
+                    <div class="card m-4" data-aos="fade-up">
+                      <div class="card-body p-4">
+                        <h4 class="fw-bold mb-2">{{experience.title}} {{e}}
+                          {{#ifCond experience.field "IT"}}
+                            <span class="float-end badge text-bg-warning">
+                              {{experience.field}}
+                            </span>
+                          {{/ifCond}}
+                        </h4>
+                        <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.date}}
+                        </p>
+                        <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
+                        <p class="mb-2">{{experience.description}}</p>
+                        <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
+                            data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
+                            Details
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                {{else}}
+                  <div class="timeline-2 right-2">
+                    <div class="card m-4" data-aos="fade-up">
+                      <div class="card-body p-4">
+                        <h4 class="fw-bold mb-2">{{experience.title}} {{e}}
+                          {{#ifCond experience.field "IT"}}
+                            <span class="float-end badge text-bg-warning">
+                              {{experience.field}}
+                            </span>
+                          {{/ifCond}}
+                        </h4>
+                        <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.date}}
+                        </p>
+                        <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
+                        <p class="mb-2">{{experience.description}}</p>
+                        <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
+                          data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
+                          Details
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                {{/moduloIf}}
+              {{/each}}
+            </div>
+          </div>
+        </div>
+              
+        <div class="tab-pane fade" id="ex-with-icons-tabs-2" role="tabpanel" aria-labelledby="ex-with-icons-tab-2">
+          <div class="container py-5">
+            <div class="main-timeline-2">
+              {{#each (sortByDateDesc (filterByType experiences 'work')) as |experience e|}}
+                {{#moduloIf e 2}}
+                  <div class="timeline-2 left-2">
+                    <div class="card m-4" data-aos="fade-up">
+                      <div class="card-body p-4">
+                        <h4 class="fw-bold mb-2">{{experience.title}} {{e}}
+                          {{#ifCond experience.field "IT"}}
+                            <span class="float-end badge text-bg-warning">
+                              {{experience.field}}
+                            </span>
+                          {{/ifCond}}
+                        </h4>
+                        <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.dates}}
+                        </p>
+                        <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
+                        <p class="mb-2">{{experience.description}}</p>
+                        <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
+                        data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
+                          Details
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                {{else}}
+                  <div class="timeline-2 right-2">
+                    <div class="card m-4" data-aos="fade-up">
+                      <div class="card-body p-4">
+                        <h4 class="fw-bold mb-2">{{experience.title}} {{e}}
+                          {{#ifCond experience.field "IT"}}
+                            <span class="float-end badge text-bg-warning">
+                              {{experience.field}}
+                            </span>
+                          {{/ifCond}}
+                        </h4>
+                        <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.dates}}
+                        </p>
+                        <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
+                        <p class="mb-2">{{experience.description}}</p>
+                        <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
+                        data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
+                        Details
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                {{/moduloIf}}
+              {{/each}}
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="ex-with-icons-tabs-3" role="tabpanel" aria-labelledby="ex-with-icons-tab-3">
+          <div class="container py-5">
+            <div class="main-timeline-2">
+              {{#each (sortByDateDesc (filterByType experiences 'training')) as |experience e|}}
+                {{#moduloIf e 2}}
+                  <div class="timeline-2 left-2">
+                    <div class="card m-4" data-aos="fade-up">
+                      <div class="card-body p-4">
+                        <h4 class="fw-bold mb-2">{{experience.title}} {{e}}
+                          {{#ifCond experience.field "IT"}}
+                            <span class="float-end badge text-bg-warning">
+                              {{experience.field}}
+                            </span>
+                          {{/ifCond}}
+                        </h4>
+                        <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.dates}}
+                        </p>
+                        <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
+                        <p class="mb-2">{{experience.description}}</p>
+                        <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
+                            data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
+                            Details
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                {{else}}
+                  <div class="timeline-2 right-2">
+                    <div class="card m-4" data-aos="fade-up">
+                      <div class="card-body p-4">
+                        <h4 class="fw-bold mb-2">{{experience.title}} {{e}}
+                          {{#ifCond experience.field "IT"}}
+                            <span class="float-end badge text-bg-warning">
+                              {{experience.field}}
+                            </span>
+                          {{/ifCond}}
+                        </h4>
+                        <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.dates}}
+                        </p>
+                        <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
+                        <p class="mb-2">{{experience.description}}</p>
+                        <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
+                          data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
+                          Details
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                {{/moduloIf}}
+              {{/each}}
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-pane fade show active" id="ex-with-icons-tabs-4" role="tabpanel" aria-labelledby="ex-with-icons-tab-4">
+          <div class="container py-5">
+            <div class="main-timeline-2">
+              {{#each (sortByDateDesc (filterByField experiences 'IT')) as |experience e|}}
+                {{#moduloIf e 2}}
+                  <div class="timeline-2 left-2">
+                    <div class="card m-4" data-aos="fade-up">
+                      <div class="card-body p-4">
+                        <h4 class="fw-bold mb-2">{{experience.title}} {{e}}
+                          {{#ifCond experience.field "IT"}}
+                            <span class="float-end badge text-bg-warning">
+                              {{experience.field}}
+                            </span>
+                          {{/ifCond}}
+                        </h4>
+                        <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.dates}}
+                        </p>
+                        <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
+                        <p class="mb-2">{{experience.description}}</p>
+                        <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
+                            data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
+                            Details
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                {{else}}
+                  <div class="timeline-2 right-2">
+                    <div class="card m-4" data-aos="fade-up">
+                      <div class="card-body p-4">
+                        <h4 class="fw-bold mb-2">{{experience.title}} {{e}}
+                          {{#ifCond experience.field "IT"}}
+                            <span class="float-end badge text-bg-warning">
+                              {{experience.field}}
+                            </span>
+                          {{/ifCond}}
+                        </h4>
+                        <p class="text-muted mb-2"><i class="fa-solid fa-clock" aria-hidden="true"></i> {{experience.dates}}
+                        </p>
+                        <p class="fw-bold mb-2"><i class="fa-solid fa-location-dot"></i> {{experience.location}}</p>
+                        <p class="mb-2">{{experience.description}}</p>
+                        <button type="button" class="btn btn-primary experience_button" data-mdb-toggle="modal"
+                          data-mdb-target="#experience_modal" data-uuid="{{experience.uuid}}">
+                          Details
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                {{/moduloIf}}
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </script>
+
+  <script id="skills_template" type="text/x-handlebars-template">
+    <section id="skills" class="container-fluid my-4">
+      <h1 class="text-center">My skills</h1>
+      <div class="fst-italic text-center mb-4">Technologies and tools I'm familiar with</div>
+      <div class="row">
+        <div class="accordion" id="accordionExample">
+          {{#each skills as |skill s|}}
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading-{{s}}">
+              <button class="accordion-button" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#skill-{{s}}" aria-expanded="true" aria-controls="skill-{{s}}">
+                <div class="col-1">
+                  {{skill.title}}
+                </div>
+                <div class="col-10">
+                  <div class="progress" style="align-self: center; height:20px; background-color: transparent">
+                    <div class="progress-bar skill-progress-bar" role="progressbar" aria-valuenow="{{skill.confidenceLevel}}" aria-valuemin="0" aria-valuemax="100" style="height: 4px; align-self: center;"></div><span class="progress-bar-value"></span>
+                  </div>
+                </div>
+                              </button>
+            </h2>
+            {{#ifCond s 0}}
+            <div id="skill-{{s}}" class="accordion-collapse collapse show"
+              aria-labelledby="heading-{{s}}" data-mdb-parent="#accordionExample">
+              <div class="accordion-body">
+                Placeholder content for this accordion, which is intended to demonstrate the
+                <code>.accordion-flush</code> class. This is the first item's accordion body.
+              </div>
+            </div>
+          {{else}}
+          <div id="skill-{{s}}" class="accordion-collapse collapse"
+              aria-labelledby="heading-{{s}}" data-mdb-parent="#accordionExample">
+              <div class="accordion-body">
+                Placeholder content for this accordion, which is intended to demonstrate the
+                <code>.accordion-flush</code> class. This is the first item's accordion body.
+                  </div>
+                </div>
+              {{/ifCond}}
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </section>
+  </script>
+
+  <script id="projects_template" type="text/x-handlebars-template">
+    <section id="projects" class="container-fluid my-4">
+      <h1 class="text-center">My projects</h1>
+      <div class="fst-italic text-center mb-4">Some of my recent achievements</div>
+      <div class="row">
+        {{#each projects as |project p|}}
+          <div class="col-md-6 col-xl-4">
+            <div class="card m-4 project_card" data-aos="fade-up" data-uuid="{{project.uuid}}">
+              <img class="project_background" src="./assets/images/{{project.background_image}}">
+              <!-- <span class=""> -->
+                <div class="card-body d-none hover_project_card">
+                  <h4 class="fw-bold mb-2 d-flex justify-content-between">
+                    <span>{{project.title}} </span>
+                    {{#ifCond project.status "alpha"}}
+                      <span class="float-end badge badge-primary">
+                        {{project.status}}
+                      </span>
+                    {{/ifCond}}
+                    {{#ifCond project.status "beta"}}
+                      <span class="float-end badge badge-primary">
+                        {{project.status}}
+                      </span>
+                    {{/ifCond}}
+                    {{#ifCond project.status "development"}}
+                      <span class="float-end badge badge-primary">
+                        {{project.status}}
+                      </span>
+                    {{/ifCond}}
+                    {{#ifCond project.status "draft"}}
+                      <span class="float-end badge badge-primary">
+                        {{project.status}}
+                      </span>
+                    {{/ifCond}}
+                    {{#ifCond project.status "inactive"}}
+                      <span class="float-end badge badge-primary">
+                        {{project.status}}
+                      </span>
+                    {{/ifCond}}
+                  </h4>
+                  <div class="progress" style="align-self: center; height:20px; background-color: transparent">
+                    <div class="progress-bar project_progress_bar" role="progressbar" aria-valuenow="{{project.progress}}" aria-valuemin="0" aria-valuemax="100" style="height: 4px; align-self: center;"></div><span class="progress-bar-value"></span>
+                  </div>
+                  <p>Tags:</p>
+                  <p>Description:</p>
+                  <p>Technlogies:</p>
+                  <div class="position-absolute" style="bottom: 20px; right: 20px">
+                    <a href="{{project.front_website_link}}" class="btn btn-primary project_link" target="_blank" style="pointer-events: auto;" {{#if project.front_website_link}}{{else}}disabled{{/if}}>
+                      <i class="fa fa-arrow-right"></i> Front website
+                    </a>
+                    <a href="{{project.platform_website_link}}" class="btn btn-primary project_link" target="_blank" style="pointer-events: auto;" {{#if project.platform_website_link}}{{else}}disabled{{/if}}>
+                      <i class="fa fa-arrow-right"></i> Platform
+                    </a>
+                    <a href="{{project.repository_website_link}}" class="btn btn-primary project_link" target="_blank" style="pointer-events: auto;" {{#if project.platform_website_link}}{{else}}disabled{{/if}}>
+                      <i class="fa fa-arrow-right"></i> Repository
+                    </a>
+                  </div>
+
+                </div>
+                
+              <!-- </span> -->
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </section>
+  </script>
+
+  <script id="feedbacks_template" type="text/x-handlebars-template">
+    <section id="feedbacks" class="container-fluid my-4">
+      <h1 class="text-center">Feedbacks & Awards</h1>
+      <div class="fst-italic text-center mb-4">Very much appreciated &#128591</div>
+        <!-- Carousel wrapper -->
+        <div id="carouselMaterialStyle" class="carousel slide carousel-dark" data-mdb-ride="carousel">
+          <!-- Indicators -->
+          <div class="carousel-indicators">
+            <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+
+          <!-- Inner -->
+            <div class="carousel-inner">
+            <!-- Single item -->
+
+            {{#each feedbacks as |feedback f|}}
+            {{#ifCond f 0}}
+            <div class="carousel-item active">
+              {{else}}
+              <div class="carousel-item">
+              {{/ifCond}}
+              <div class="d-flex justify-content-center align-items-center flex-column my-5">
+                {{#if feedback.image}}
+                <img src="image" alt="Avatar" class="d-block" style="height: 200px;border-radius: 50%;">
+                {{else}}
+                {{#ifCond feedback.gender 'male'}}
+                <img src="./assets/images/man.jpg" alt="Avatar" style="height: 200px;border-radius: 50%;">
+                {{else}}
+                <img src="./assets/images/woman.jpg" alt="Avatar" style="height: 200px;border-radius: 50%;">
+                {{/ifCond}}
+                {{/if}}
+                <h5>{{feedback.first_name}} {{feedback.last_name}} ({{feedback.position}})</h5>
+                                <p>{{feedback.date}} - {{feedback.company}}</p>
+               
+                {{#if rate}}
+                <span>
+                {{#times rate 0}}
+                <i class="fa-solid fa-star"></i>
+                  {{/times}}
+                  {{#times 5 rate}}
+                  <i class="fa-regular fa-star"></i>
+                    {{/times}}
+                </span>
+                {{/if}}
+                {{#ifCond feedback.type "award"}}
+                <p>{{feedback.text}}</p>
+                {{else}}
+                <p class="fst-italic">"{{feedback.text}}"</p>
+{{/ifCond}}
+              </div>
+            </div>
+            {{/each}}
+
+          </div>
+          <!-- Inner -->
+
+          <!-- Controls -->
+          <button class="carousel-control-prev" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-mdb-target="#carouselMaterialStyle" data-mdb-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <!-- Carousel wrapper -->
+      </section>
+    </script>
+
+  <script id="languages_template" type="text/x-handlebars-template">
+      <section id="languages" class="container-fluid my-4">
+        <h1 class="text-center">My languages</h1>
+        <div class="fst-italic text-center mb-4">🇫🇷 🇬🇧 🇭🇺 🇪🇸</div>
+        <div class="row">
+          {{#each languages as |lang l|}}
+          <div class="col-lg-6 col-xl-3 mb-4" style="text-align: center;">
+            <div class="col-lg-3 col-md-6 pie mx-auto" data-pie='{ 
+              "fill": "var(--mdb-body-color)",
+              "percent": {{lang.score}},
+              "stroke": 6,
+              "strokeBottom": 10,
+              "colorSlice": "var(--mdb-primary)",
+              "colorCircle": "var(--mdb-body-color)",
+              "fontSize": "1.3em",
+              "round": true,
+              "fontColor": "white"
+            }'>
+              </div>
+              <span>{{lang.title}} ({{lang.level}})</span>              
+            </div>
+          {{/each}}
+        </div>
+      </section>
+    </script>
+
+
+  <button type="button" id="toggle_theme" class="btn btn-secondary btn-lg btn-floating d-none"
+    style="position: fixed; bottom: 1rem; left: 1rem; z-index: 1001">
     <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Back to top button -->
+  <button type="button" class="btn btn-primary d-none justify-content-center align-items-center" id="btn-back-to-top">
+    <i class="fas fa-arrow-up fa-xl"></i>
   </button>
 
   <div class="modal fade" id="experience_modal" tabindex="-1" aria-labelledby="experienceModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="experienceModalLabel"></h1>
+          <h1 class="modal-title fs-5" style="width: -webkit-fill-available;" id="experienceModalLabel">
+          </h1>
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <ul id="experience_activities"></ul>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">
+            Close
+          </button>
         </div>
       </div>
     </div>
@@ -344,24 +700,23 @@
           <h1 class="modal-title fs-5" id="projectModalLabel"></h1>
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-        </div>
+        <div class="modal-body"></div>
         <div class="modal-footer">
-          <a href="{{project.front_website_link}}" target="_blank"><button type="button" class="btn btn-primary"><i
-                class="fa fa-arrow-right"></i> Visit front website</button></a>
-          <a href="{{project.platform_website_link}}" target="_blank"><button type="button" class="btn btn-primary"><i
-                class="fa fa-arrow-right"></i> Visit platform</button></a>
-          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close</button>
+          <a href="{{project.front_website_link}}" target="_blank"><button type="button" class="btn btn-success">
+              <i class="fa fa-arrow-right"></i> Visit front website
+            </button></a>
+          <a href="{{project.platform_website_link}}" target="_blank"><button type="button" class="btn btn-primary">
+              <i class="fa fa-arrow-right"></i> Visit platform
+            </button></a>
+          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+            Close
+          </button>
         </div>
-
       </div>
     </div>
   </div>
 
-
-
-
-  <!-- <div class="js-scroll-trigger"></div> -->
+  <!-- <div class="js-scroll-trigger"></div>
 
   <!-- MAP -->
 
@@ -369,17 +724,299 @@
 
 
 
+  <!-- FORM -->
+
+  <section id="contact_container" class="container-fluid">
+    <h1 class="text-center">Contact</h1>
+    <div class="fst-italic text-center mb-4">Let's get in touch!</div>
+
+
+
+    <form class="needs-validation row g-3" name="gform" id="gform" enctype="text/plain"
+      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeA44lXYtxSddm5aakRXTAf_GY9NZh0an7HY0KkekY7koHstQ/formResponse"
+      target="hidden_iframe" onsubmit="submitted=true;" novalidate>
+
+      <!--<div class="col-sm-6 d-flex flex-column justify-content-evenly">
+
+             <div class="form-check d-flex justify-content-between pe-4">
+              <label class="form-check-label" for="send_a_message">Send a message</label>
+              <input class="form-check-input" type="radio" name="entry.1785071607" value="Send a message"
+                id="send_a_message" checked />
+            </div>
+
+            <div class="form-check d-flex justify-content-between pe-4">
+              <label class="form-check-label" for="cv_request">Detailed CV request</label>
+              <input class="form-check-input" type="radio" name="entry.1785071607" value="Detailed CV request"
+                id="cv_request" />
+            </div>
+
+            <div class="form-check d-flex justify-content-between pe-4">
+              <label class="form-check-label" for="feedback">Leave a feedback</label>
+              <input class="form-check-input" type="radio" name="entry.1785071607" value="Leave a feedback"
+                id="feedback" />
+            </div>
+
+            <div class="form-check d-flex justify-content-between pe-4">
+              <label class="form-check-label" for="other">Other</label>
+              <input class="form-check-input" type="radio" name="entry.1785071607" value="Other" id="other" />
+            </div> 
+
+          </div>-->
+
+      <div class="col-sm-6 offset-sm-3">
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-4">
+              <select class="form-select" aria-label="Default select example" name="entry.1785071607"
+                id="select_object">
+                <option selected>Choose a topic</option>
+                <option value="Send a message">Send a message</option>
+                <option value="Detailed CV request">Detailed CV request</option>
+                <option value="Leave a feedback">Leave a feedback</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="rating_container d-none justify-content-between mb-4">
+              <div>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="fst-italic" id="mark">0</span>/<span class="fst-italic">5</span>
+                <input type="hidden" id="rating" name="entry.1154849452" value="">
+              </div>
+              <div>
+                <i class="fa-solid fa-circle-question" data-mdb-toggle="tooltip" title="Rate my work &#128522"></i>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-4">
+              <div class="form-outline">
+                <i class="fa-solid fa-user trailing"></i>
+                <input type="text" name="entry.1455171555" id="entry.1455171555" class="form-control form-icon-trailing"
+                  required />
+                <label class="form-label" for="entry.1455171555">First name</label>
+                <div class="invalid-feedback">Please provide a first name</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="mb-4">
+              <div class="form-outline">
+                <i class="fa-solid fa-user trailing"></i>
+                <input type="text" name="entry.11688688" id="entry.11688688" class="form-control form-icon-trailing"
+                  required />
+                <label class="form-label" for="entry.11688688">Last name</label>
+                <div class="invalid-feedback">Please provide a last name</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-4">
+              <div class="form-outline">
+                <i class="fa-solid fa-at trailing"></i>
+                <input type="email" name="entry.317689906" id="entry.317689906" class="form-control form-icon-trailing"
+                  required />
+                <label class="form-label" for="entry.317689906">Email</label>
+                <div class="invalid-feedback">Please provide a valid email address</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="mb-4">
+              <div class="form-outline">
+                <i class="fa-solid fa-phone trailing"></i>
+                <input type="text" name="entry.981287981" id="entry.981287981"
+                  class="form-control form-icon-trailing" />
+                <label class="form-label" for="entry.981287981">Phone number</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="form-outline">
+            <textarea type="text" name="entry.1466753438" id="entry.1466753438" class="form-control" /></textarea>
+            <label class="form-label" for="entry.1466753438">Message</label>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="mb-4">
+            <button class="btn btn-primary" type="submit" value="Submit" id="submit_form">Send message <i
+                class="fa-regular fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="..." class="rounded me-2" alt="...">
+          <strong class="me-auto">Bootstrap</strong>
+          <small>11 mins ago</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          SuccessToast
+        </div>
+      </div>
+      <div id="dangerToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="..." class="rounded me-2" alt="...">
+          <strong class="me-auto">Bootstrap</strong>
+          <small>11 mins ago</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          dangerToast </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- <section>
+    <form name="gform" id="gform" enctype="text/plain"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSeSBplkWKWNJxq3o2kSRVeGxEgHHIEz3noHUvBKZ4h83ilaXw/formResponse?"
+      target="hidden_iframe" onsubmit="submitted=true;">
+
+      First name:<br>
+      <input type="text" name="entry.1905889807" id="entry.1905889807"><br>
+      Last name:<br>
+      <input type="text" name="entry.54245012" id="entry.54245012">
+      <input type="submit" value="Submit">
+    </form>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+  </section> -->
+
+
+
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-footer">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="https://www.linkedin.com/in/cl%C3%A9ment-huchet-5ba6a285/" class="me-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/Klem35" class="me-4">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-4 text-center">
+            <!-- Content -->
+            <h6 class="fw-bold mb-4">
+              Clément HUCHET
+            </h6>
+            <a href="#"><img src="assets/images/logo.png" alt=""></a>
+
+          </div>
+          <!-- Grid column -->
+
+
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <!-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+          <!--<h6 class="text-uppercase fw-bold mb-4">
+              Useful links
+            </h6>
+            <p>
+              <a href="#!" class="text-footer">Pricing</a>
+            </p>
+            <p>
+              <a href="#!" class="text-footer">Settings</a>
+            </p>
+            <p>
+              <a href="#!" class="text-footer">Orders</a>
+            </p>
+            <p>
+              <a href="#!" class="text-footer">Help</a>
+            </p>
+          </div> -->
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i><span class="blurry_text"> Budapest, Hungary</span></p>
+            <p>
+              <i class="fas fa-envelope me-3"></i><span class="blurry_text"> info@example.com</span>
+            </p>
+            <p><i class="fas fa-phone me-3"></i><span class="blurry_text"> + 33 1 23 45 67 89</span></p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2023 Copyright:
+      <a class="text-reset fw-bold" href="https://klem35.github.io/">klem35.github.io</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+  <!-- Element to contain animated typing -->
+  <!-- <span id="element"></span> -->
+
   <!-- End your project here-->
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script> -->
 
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+
   <!-- MDB -->
   <script type="text/javascript" src="./assets/scripts/mdb.min.js"></script>
 
-
   <!-- fadein.js -->
   <!-- <script src="./assets/scripts/fadein.js"></script> -->
+
+
 
 
 </body>
