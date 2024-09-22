@@ -321,7 +321,7 @@ $(document).ready(function () {
   const data = {
     about: {
       content:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui nesciunt alias culpa blanditiis hic distinctio ab saepe modi sit. Eligendi enim incidunt voluptatum fugit numquam reprehenderit nostrum saepe sapiente nihil. Dolorem autem culpa mollitia tempora a fugiat debitis esse voluptates consequuntur quasi dicta ex, perferendis adipisci repudiandae quis vero eum ea harum est! Officiis, natus esse atque velit nobis tempora. Unde officia sapiente nesciunt adipisci necessitatibus maxime, doloremque vel fugiat iste, aliquam modi eaque consequuntur illum. Obcaecati nesciunt minima, ratione laborum, enim dolor rerum eum ad odit, consequuntur voluptate blanditiis? Itaque unde maiores praesentium fugiat dicta vitae aliquid nobis eaque dolorem ducimus voluptate quibusdam, atque rerum optio eligendi, eius veritatis quis quasi vel sunt cupiditate eos harum? Ipsum, magnam a?",
+        "I’m a dedicated Fullstack Developer with a background in engineering and project management. My journey into software development was sparked during the Covid pandemic and personal life events, when I realized I was increasingly drawn to automating repetitive tasks in my daily work. This passion for problem-solving and efficiency led me to dive deeper into programming. I’m hardworking, tolerant, and thrive in social environments. I’m particularly excited about new technologies, AI, and prompt engineering, constantly looking to expand my skill set in these areas.",
     },
     skills: [
       {
@@ -434,23 +434,50 @@ $(document).ready(function () {
     ],
     experiences: [
       {
-        uuid: "bbb7cb88-48c6-44e5-8b80-ab5b4b27c472",
+        uuid: "773dfc1d-5af7-4269-bc67-cae74f4b4469",
         type: "work",
-        title: "Web developer",
-        company: "Yourosoft Kft.",
-        date: "2020",
-        dates: "June 2020 - Now",
-        location: "Budapest, HUNGARY",
-        description: "",
+        title: "Web developer (fullstack)",
+        company: "E-apps",
+        date: "2024",
+        dates: "Apr 2024 - Now",
+        location: "Szentendre, HUNGARY",
+        description:
+          "International mobility applications development for major French listed companies (CAC 40).",
         activities: [
           "Web development",
-          "Online store",
-          "Dropshipping",
-          "Brand design",
-          "Accounting",
-          "3D printing",
-          "CAD",
+          "Project management",
+          "Customer relationship",
         ],
+        field: "IT",
+      },
+      {
+        uuid: "5fe57290-179a-4beb-9f6c-08c19b8a2096",
+        type: "work",
+        title: "CDO (Chief Design Officer) - Web developer (fullstack)",
+        company: "Raise Your Concern Kft.",
+        date: "2023",
+        dates: "Sep 2023 - Now",
+        location: "Budapest, HUNGARY",
+        description: "B2B multi-language whistleblower platform.",
+        activities: [
+          "Web development",
+          "Project management",
+          "Company leadership",
+          "Customer relationship",
+        ],
+        field: "IT",
+      },
+      {
+        uuid: "bbb7cb88-48c6-44e5-8b80-ab5b4b27c472",
+        type: "work",
+        title: "Web developer (frontend)",
+        company: "Yourosoft Kft.",
+        date: "2022",
+        dates: "Jun 2022 - Apr 2024",
+        location: "Budapest, HUNGARY",
+        description:
+          "B2B multi-language web applications development mainly for major French listed companies (CAC 40).",
+        activities: ["Web development", "Project management"],
         field: "IT",
       },
       {
@@ -461,26 +488,7 @@ $(document).ready(function () {
         date: "2020",
         dates: "June 2020 - Dec 2022",
         location: "Vitré, FRANCE - Budapest, HUNGARY",
-        description: "",
-        activities: [
-          "Project management",
-          "Online store",
-          "Dropshipping",
-          "Brand design",
-          "Accounting",
-          "3D printing",
-          "CAD",
-        ],
-        field: "IT",
-      },
-      {
-        uuid: "62ba6812-1258-4e17-811b-71b049ea4385",
-        type: "training",
-        title: "Micro-business manager",
-        company: "the3dopaminelab",
-        date: "1965",
-        location: "Vitré, FRANCE - Budapest, HUNGARY",
-        description: "",
+        description: "3D Printing services & products.",
         activities: [
           "Project management",
           "Online store",
@@ -495,79 +503,86 @@ $(document).ready(function () {
       {
         uuid: "f6a68b06-2868-41fa-aa5a-bd0c9f616bb5",
         type: "work",
-        title: "Micro-business manager",
-        company: "the3dopaminelab",
-        date: "1990",
-        location: "Vitré, FRANCE - Budapest, HUNGARY",
-        description: "",
+        title: "Technical project leader",
+        company: "Altran & ArianeGroup",
+        date: "2019",
+        dates: "Sep 2019 - Nov 2020",
+        location: "Issac, FRANCE",
+        description:
+          "Technical leader and main customer contact fortool development of BAL (Building Assembly Line) of Ariane 6 Launcher.",
         activities: [
           "Project management",
-          "Online store",
-          "Dropshipping",
-          "Brand design",
-          "Accounting",
-          "3D printing",
-          "CAD",
-        ],
-        field: "IT",
-      },
-      {
-        uuid: "fbbb60d4-87fe-4cd3-a268-b61dd7ae671b",
-        type: "training",
-        title: "Micro-business manager",
-        company: "the3dopaminelab",
-        date: "1992",
-        location: "Vitré, FRANCE - Budapest, HUNGARY",
-        description: "",
-        activities: [
-          "Project management",
-          "Online store",
-          "Dropshipping",
-          "Brand design",
-          "Accounting",
-          "3D printing",
+          "Bill of specifications",
+          "Supplier management",
+          "Customer relationship",
           "CAD",
         ],
         field: null,
       },
       {
         uuid: "05b4f173-df61-41e4-a916-2b926e249d42",
-        type: "job",
-        title: "Consulting engineer",
-        company: "Altran",
-        date: "2018",
-        location: "Issac, FRANCE",
+        type: "work",
+        title: "MRSS project leader (Magnet Resonance Siting & Shielding)",
+        company: "GE Healthcare",
+        date: "2017",
+        dates: "Mar 2017 - Sep 2019",
+        location: "Budapest, HUNGARY",
         description:
-          "Technical leader and main customer contact fortool development of BAL (Building Assembly Line) of Ariane 6 Launcher.",
+          "MRI rooms environment study for Europe, EGM & Africa regions.",
         activities: [
-          "Project management",
-          "Supplier management",
-          "Customer relationship",
-          "Bill of specifications",
-          "CAD",
+          "Magnetic shield design",
+          "RF cages examination",
+          "Steel mass analysis",
+          "Helium pressure drops calculations",
+          "Vibration examination",
+          "EMI analysis",
+          "Tools & processes improvement",
         ],
         field: null,
       },
       {
         uuid: "de6ff341-ae35-4499-ae9b-8ba62cb8c018",
-        type: "job",
-        title: "Consulting engineer",
-        company: "Altran",
-        date: "2001",
-        location: "Issac, FRANCE",
+        type: "work",
+        title: "CAD Designer",
+        company: "GE Healthcare",
+        date: "2015",
+        dates: "Oct 2014 - Mar 2017",
+        location: "Budapest, HUNGARY",
         description:
-          "Technical leader and main customer contact fortool development of BAL (Building Assembly Line) of Ariane 6 Launcher.",
+          "Technical support to PMIs (Project Manager of Installations) for the implementation of GE medical equipment.",
         activities: [
-          "Project management",
-          "Supplier management",
-          "Customer relationship",
-          "Bill of specifications",
-          "CAD",
+          "Installation plans design",
+          "GE medical equipment installation template creation from PIMs (Pre-Installation Manuals)",
+          "Main contact with Western Europe PMIs (Project Manager of Installations) to fulfill local requirements",
         ],
         field: null,
       },
     ],
     projects: [
+      {
+        uuid: "00a11055-9978-4cd5-8033-abdb8d8880a8",
+        title: "Raise Your Concern",
+        background_image: "ryc-1.png",
+        project_type: "professional",
+        project_logo: "",
+        company: "Raise Your Concern kft.",
+        company_logo: "",
+        date: "Sep. 2023 - Now",
+        description:
+          "A whistleblower platform to help people sending alerts safely in a confidential or anonymous way",
+        front_website_link: "https://raiseyourconcern.com/",
+        platform_website_link: "",
+        link: "https://raiseyourconcern.com/",
+        status: "Bêta",
+        progress: "90",
+        technologies: [
+          "Code Igniter 4",
+          "PHP",
+          "Handlebars",
+          "jquery",
+          "javascript",
+        ],
+      },
       {
         uuid: "2e9b07a8-3a9b-4499-b76c-cf4e11ad3556",
         title: "MyGreenStudio",
@@ -576,23 +591,21 @@ $(document).ready(function () {
         project_logo: "",
         company: "Yourosoft kft.",
         company_logo: "",
-        date: "Nov. 2020 - Dec. 2022",
-        description: "",
+        date: "Jun. 2022 - Dec. 2023",
+        description: "Digital platform to design sustainable interior",
         front_website_link: "https://mygreenstudio.com/en/",
         platform_website_link:
           "https://workspace.mygreenstudio.com/en/anonymous/sign-in",
-        status: "beta",
+        link: "https://mygreenstudio.com/en/",
+        status: "Bêta",
         progress: "90",
-        technologies: {
-          frontend: [
-            "Code Igniter 4",
-            "PHP",
-            "Handelbars",
-            "jquery",
-            "javascript",
-          ],
-          backend: ["Code Igniter 4", "PHP"],
-        },
+        technologies: [
+          "Code Igniter 4",
+          "PHP",
+          "Handlebars",
+          "jquery",
+          "javascript",
+        ],
       },
       {
         uuid: "151dd40a-2d7c-4167-9f76-4afa1b1b84e2",
@@ -600,24 +613,25 @@ $(document).ready(function () {
         background_image: "myexpatmobility.png",
         project_type: "professional",
         project_logo: "",
-        company: "Yourosoft kft.",
+        company: "Yourosoft kft. & E-apps",
         company_logo: "",
-        date: "Nov. 2020 - Dec. 2022",
-        description: "",
+        date: "Sep. 2022 - Now",
+        description:
+          "Platform to ease international mobility processes between major French listed companies and service suppliers",
         front_website_link: "https://www.myexpatdata.com/",
         platform_website_link: "",
-        status: "devlopment",
+        link: "https://www.myexpatdata.com/",
+        status: "Alpha",
         progress: "80",
-        technologies: {
-          frontend: [
-            "Code Igniter 4",
-            "PHP",
-            "Handelbars",
-            "jquery",
-            "javascript",
-          ],
-          backend: ["SpringBoot", "Java"],
-        },
+        technologies: [
+          "Code Igniter 4",
+          "PHP",
+          "Handlebars",
+          "jquery",
+          "javascript",
+          "SpringBoot",
+          "Java",
+        ],
       },
       {
         uuid: "719763cc-2cb0-43da-a740-c473b5c9b107",
@@ -625,24 +639,23 @@ $(document).ready(function () {
         background_image: "myexpatdata.png",
         project_type: "professional",
         project_logo: "",
-        company: "Yourosoft kft.",
+        company: "Yourosoft kft. & E-apps",
         company_logo: "",
-        date: "Nov. 2020 - Dec. 2022",
-        description: "",
+        date: "Sep. 2023 - Now",
+        description:
+          "Platform to ease international mobility processes for major French listed companies",
         front_website_link: "https://www.myexpatdata.com/",
+        link: "https://www.myexpatdata.com/",
         platform_website_link: "",
-        status: "devlopment",
+        status: "Stable",
         progress: "80",
-        technologies: {
-          frontend: [
-            "Code Igniter 4",
-            "PHP",
-            "Handelbars",
-            "jquery",
-            "javascript",
-          ],
-          backend: ["SpringBoot", "Java"],
-        },
+        technologies: [
+          "Code Igniter 3",
+          "PHP",
+          "Handlebars",
+          "jquery",
+          "javascript",
+        ],
       },
       {
         uuid: "6be80973-50c3-45f5-bf0a-386994d16f86",
@@ -652,22 +665,15 @@ $(document).ready(function () {
         project_logo: "",
         company: "Yourosoft kft.",
         company_logo: "",
-        date: "Nov. 2020 - Dec. 2022",
-        description: "",
-        front_website_link: "https://www.myexpatdata.com/",
+        date: "Jan. 2023 - Aug. 2023",
+        description:
+          "Platform to connect runners with races. (Similar to Strava)",
+        front_website_link: "https://kin.run/",
         platform_website_link: "",
-        status: "devlopment",
-        progress: "80",
-        technologies: {
-          frontend: [
-            "Code Igniter 4",
-            "PHP",
-            "Handelbars",
-            "jquery",
-            "javascript",
-          ],
-          backend: ["SpringBoot", "Java"],
-        },
+        link: "https://kin.run/",
+        status: "Devlopment",
+        progress: "10",
+        technologies: ["Angular", "SpringBoot", "Java"],
       },
       {
         uuid: "2b94358f-5b4a-4d1f-9dcf-e25a292cf6ce",
@@ -675,24 +681,17 @@ $(document).ready(function () {
         background_image: "myportfolio.png",
         project_type: "perso",
         project_logo: "",
-        company: "Yourosoft kft.",
+        company: "",
         company_logo: "",
         date: "Nov. 2020 - Dec. 2022",
-        description: "",
-        front_website_link: "https://www.myexpatdata.com/",
+        description:
+          "A simple static website to present my projects and who I am.",
+        front_website_link: "https://klem35.github.io/",
         platform_website_link: "",
-        status: "devlopment",
-        progress: "80",
-        technologies: {
-          frontend: [
-            "Code Igniter 4",
-            "PHP",
-            "Handelbars",
-            "jquery",
-            "javascript",
-          ],
-          backend: ["SpringBoot", "Java"],
-        },
+        link: "https://klem35.github.io/",
+        status: "stable",
+        progress: "100",
+        technologies: ["Handlebars", "jquery", "javascript"],
       },
       {
         uuid: "eb0b6a3b-c0a3-41b6-b6c1-0c707809b38c",
@@ -703,15 +702,14 @@ $(document).ready(function () {
         company: "GreenFox Academy",
         company_logo: "",
         date: "Apr. 2022 - June. 2022",
-        description: "",
+        description:
+          "A school project where a clone of the Reddit platform (as its name shows) was created.",
         front_website_link: "",
         platform_website_link: "",
+        link: "",
         status: "inactive",
         progress: "100",
-        technologies: {
-          frontend: ["Angular"],
-          backend: ["NodeJS", "MySQL"],
-        },
+        technologies: ["Angular", "NodeJS", "MySQL"],
       },
       {
         uuid: "eb0b6a3b-c0a3-41b6-b6c1-0c707809b38c",
@@ -722,55 +720,66 @@ $(document).ready(function () {
         company: "The3DopamineLab",
         company_logo: "",
         date: "Jan. 2021 - Dec. 2022",
-        description: "",
+        description: "A platform to offer 3D printing services and products",
         front_website_link: "",
         platform_website_link: "",
+        link: "",
         status: "inactive",
         progress: "100",
-        technologies: {
-          frontend: ["Wordpress"],
-          backend: ["NodeJS", "MySQL"],
-        },
+        technologies: ["Wordpress"],
       },
     ],
     feedbacks: [
-      {
-        uuid: "a35d55be-b350-4403-8bd9-c01126236e32",
-        type: "award",
-        first_name: "Marta",
-        last_name: "Jagusztyn",
-        gender: "female",
-        position: "Design Center Manager",
-        company: "GE Healthcare",
-        date: "2016",
-        text: "Best designer",
-        rate: 4,
-        image: null,
-      },
       {
         uuid: "16b080a8-4024-494e-9f4b-021ee62ab1d4",
         type: "award",
         first_name: "Ergin",
         last_name: "Aydinalp",
         gender: "male",
-        position: "Installation Support Leader",
+        position: "Installation Support Leader, Europe, EGM & Africa",
         company: "GE Healthcare",
-        date: "2015",
-        text: "Most devoted designer",
+        date: "2017 Q1",
+        text: "Customers determine our success.",
         rate: 5,
         image: null,
       },
       {
         uuid: "70f04f6f-f3aa-4ff7-9c23-f3357b63edfb",
-        type: "feedback",
-        first_name: "Patrick",
-        last_name: "Durand",
+        type: "award",
+        first_name: "Design",
+        last_name: "Center",
         gender: "male",
-        position: "CEO",
-        company: "L'eco vert",
-        date: "2021",
-        text: "A real pleasure to work with Clément, very professional. I highly recommand him.",
-        rate: 3,
+        position: "",
+        company: "GE Healthcare",
+        date: "2016 Q4",
+        text: "Most devoted designer.",
+        rate: 5,
+        image: null,
+      },
+      {
+        uuid: "ab5a5484-02e2-47d4-a891-532b0aa5788b",
+        type: "award",
+        first_name: "Róbert",
+        last_name: "Pároczai,",
+        gender: "male",
+        position: "Design Center Manager, Europe, EGM & Africa. GE Healthcare",
+        company: "GE Healthcare",
+        date: "2015 Q4",
+        text: "Customers determine our success.",
+        rate: 5,
+        image: null,
+      },
+      {
+        uuid: "363aef31-5956-415f-9c0e-027608a82b92",
+        type: "award",
+        first_name: "Design",
+        last_name: "Center",
+        gender: "male",
+        position: "",
+        company: "GE Healthcare",
+        date: "2015 Q4",
+        text: "Most devoted designer.",
+        rate: 5,
         image: null,
       },
     ],
@@ -894,28 +903,28 @@ $(document).ready(function () {
     });
   });
 
-  // SKILLS
+  // // SKILLS
 
-  // grab the source
-  const skills_source = document.querySelector("#skills_template").innerHTML;
+  // // grab the source
+  // const skills_source = document.querySelector("#skills_template").innerHTML;
 
-  // compile it using Handlebars
-  const skills_template = Handlebars.compile(skills_source);
+  // // compile it using Handlebars
+  // const skills_template = Handlebars.compile(skills_source);
 
-  // get the HTML after passing the template the context
-  const skills_html = skills_template(data);
+  // // get the HTML after passing the template the context
+  // const skills_html = skills_template(data);
 
-  // get the element to set the new HTML into
-  const skills_destination = document.querySelector("#skills_container");
+  // // get the element to set the new HTML into
+  // const skills_destination = document.querySelector("#skills_container");
 
-  // set the new HTML
-  skills_destination.innerHTML = skills_html;
+  // // set the new HTML
+  // skills_destination.innerHTML = skills_html;
 
-  var skills = data.skills;
-  var skillsContainer = $("#skills_container");
+  // var skills = data.skills;
+  // var skillsContainer = $("#skills_container");
 
-  $(window).on("scroll resize", checkIfInView);
-  $(window).trigger("scroll");
+  // $(window).on("scroll resize", checkIfInView);
+  // $(window).trigger("scroll");
 
   // PROJECTS
 
@@ -963,7 +972,6 @@ $(document).ready(function () {
       $(".card-body", this).addClass("d-block");
     });
     $(this).on("mouseleave", function hoverProjectCard(e) {
-
       // $("span", this).css("opacity", 0);
       $(".card-body", this).css("opacity", 0);
       $(".card-body", this).removeClass("d-block");
@@ -999,7 +1007,6 @@ $(document).ready(function () {
 
   //   });
   // });
-
 
   // LANGUAGES
 
